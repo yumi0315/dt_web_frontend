@@ -15,7 +15,7 @@ const Side = () => {
     <aside
       style={{
         flexDirection: "column",
-        height: "800px",
+        height: "945px",
         Width: "8%",
         background: "#0F16A4",
         padding: "10px",
