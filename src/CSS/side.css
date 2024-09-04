@@ -1,0 +1,13 @@
+.icon {
+  display: inline-block;
+  padding: 13px; /* 아이콘 주변 여백 */
+  border-radius: 20%; /* 원형 배경 */
+  transition: background-color 0.3s;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.icon:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* 호버 시 배경색 */
+  color: #ffd700; /* 호버 시 아이콘 색상 */
+  transform: scale(1.1); /* 호버 시 아이콘 확대 */
+}
