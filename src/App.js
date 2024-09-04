@@ -11,8 +11,8 @@ function App() {
       <Routes>
         <Route path={"/"} element={<Layout />}>
           <Route index element={<Main />} /> {/* 기본 경로 */}
-          {/* <Route path="gallery" element={<Gallery />} />
-          <Route path="guestbook" element={<Guestbook />} /> 추가할 페이지들
+          <Route path="abc" element={<div>1234</div>} />
+          {/*<Route path="guestbook" element={<Guestbook />} /> 추가할 페이지들
           <Route path="*" element={<Error404 />} /> 404 페이지 */}
         </Route>
       </Routes>
