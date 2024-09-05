@@ -1,0 +1,71 @@
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: rgba(221, 240, 243, 0.3);
+}
+.wave {
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  width: 200vw;
+  height: 200vw;
+  margin-left: -100vw;
+  margin-top: -196vw;
+  border-radius: 40%;
+  z-index: 1;
+}
+.wave.-one {
+  animation: waveAnimation 10000ms infinite linear;
+  opacity: 0.5;
+  background: #0af;
+}
+.wave.-two {
+  animation: waveAnimation 13500ms infinite linear;
+  opacity: 0.1;
+  background: yellow;
+}
+
+.wave.-three {
+  animation: waveAnimation 11000ms infinite linear;
+  opacity: 0.1;
+  background: #e8a;
+}
+
+@keyframes waveAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 1000px;
+  margin: 0 10%;
+  z-index: 2;
+}
+form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: center;
+  width: 20%;
+  border: 1px solid rgba(221, 240, 243, 0.3);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5%;
+  z-index: 2;
+}
+.login {
+  margin: 10px;
+}
+button {
+  width: 100%;
+}
+p {
+  width: 100%;
+}
