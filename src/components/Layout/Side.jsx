@@ -16,9 +16,9 @@ const Side = () => {
       style={{
         flexDirection: "column",
         height: "945px",
-        Width: "8%",
-        background: "#0F16A4",
-        padding: "10px",
+        Width: "20px",
+        background: "#3490DD",
+        padding: " 30px 10px",
       }}
     >
       {/* 헤더 내용 */}
@@ -33,8 +33,8 @@ const Side = () => {
           <FontAwesomeIcon
             icon={faChartSimple}
             className="icon"
-            size="2x"
-            style={{ color: "white" }}
+            size="xl"
+            style={{ color: "#CBC28D" }}
             onClick={handleClick}
           />
         </div>
@@ -50,8 +50,8 @@ const Side = () => {
           <FontAwesomeIcon
             icon={faGears}
             className="icon"
-            size="2x"
-            style={{ color: "white" }}
+            size="xl"
+            style={{ color: "#CBC28D" }}
           />
         </div>
 
