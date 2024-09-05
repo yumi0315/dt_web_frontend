@@ -7,6 +7,10 @@ import "../../CSS/header.css"; // CSS 파일을 불러옴
 function Header() {
   return (
     <div className="HeaderContainer">
+      <div className="TitleContainer">
+        <img src="/4FRONTlogo.png" alt="Logo" />
+        <h3>F4RONT Dashboard</h3>
+      </div>
       <button className="button LogOut">
         로그아웃
         <LogoutIcon />
