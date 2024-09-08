@@ -1,0 +1,46 @@
+main {
+  margin: 0px;
+  padding: 0px;
+  background-color: #e4e8ee;
+}
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.chart-box1,
+.chart-box2,
+.chart-box3,
+.chart-box4 {
+  border: 1px solid rgb(211, 211, 211);
+  flex-direction: column;
+  background-color: white;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.chart-box1 {
+  width: 840px;
+  height: 350px;
+}
+
+.chart-box2 {
+  width: 455px;
+  height: 350px;
+}
+
+.chart-box3 {
+  width: 455px;
+  height: 350px;
+}
+
+.chart-box4 {
+  width: 900px;
+  height: 450px;
+}
+
+.boxHeader {
+  border-bottom: 1px;
+  width: 100%;
+}
