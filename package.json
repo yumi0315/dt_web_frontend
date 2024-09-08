@@ -54,5 +54,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "1. 처음에 클론받고 할 거\r - npm install\r - git branch -M 자신브런치(이름영문이든 알아서)",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }
