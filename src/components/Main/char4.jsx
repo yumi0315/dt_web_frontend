@@ -3,6 +3,8 @@ import "../../CSS/main.css";
 import { Box, Typography } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { useDemoData } from "@mui/x-data-grid-generator";
+import BasicTable from "./BasicTable";
+
 function ChartBox4() {
   const { data } = useDemoData({
     dataSet: "",
@@ -64,13 +66,10 @@ function ChartBox4() {
             justifyContent: "space-between",
             alignItems: "center",
             padding: "5px",
+            width: "40%",
           }}
         >
-          <div style={{ width: "100%" }}>
-            <div style={{ height: 350, width: "100%" }}>
-              <DataGrid {...data} />
-            </div>
-          </div>
+          <BasicTable />
         </Box>
       </Box>
     </Box>
