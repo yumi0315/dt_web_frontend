@@ -1,6 +1,6 @@
 .icon {
   display: inline-block;
-  padding: 13px; /* 아이콘 주변 여백 */
+  padding: 7px; /* 아이콘 주변 여백 */
   border-radius: 20%; /* 원형 배경 */
   transition: background-color 0.3s;
   transition: color 0.3s, transform 0.3s;
