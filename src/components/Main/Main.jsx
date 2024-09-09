@@ -19,9 +19,9 @@ const Main = () => {
           <h1>날짜 선택기</h1>
           <DatePickerComponent />
         </div> */}
-        <div>
+        {/* <div>
           <DateCalendarComponent />
-        </div>
+        </div> */}
       </div>
     </main>
   );

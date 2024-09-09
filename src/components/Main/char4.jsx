@@ -1,8 +1,15 @@
 import React from "react";
 import "../../CSS/main.css";
 import { Box, Typography } from "@mui/material";
-
+import { DataGrid } from "@mui/x-data-grid";
+import { useDemoData } from "@mui/x-data-grid-generator";
 function ChartBox4() {
+  const { data } = useDemoData({
+    dataSet: "",
+    rowLength: 5,
+    maxColumns: 6,
+  });
+
   return (
     <Box
       className="chart-box4"
@@ -19,15 +26,52 @@ function ChartBox4() {
           justifyContent: "space-between",
           alignItems: "center",
           padding: "5px",
-          height: "30px",
+          height: "20px",
         }}
       >
         <Typography
           variant="subtitle1"
-          sx={{ margin: "0px", padding: "0px", fontSize: "14px" }}
+          sx={{ margin: "10px", padding: "0px", fontSize: "12px" }}
         >
           용접 불량률 관리
         </Typography>
+      </Box>
+      <Box
+        className="Chart"
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "5px",
+        }}
+      >
+        <Box
+          className="PieChart"
+          sx={{
+            borderRight: "1px solid rgb(211, 211, 211)",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "5px",
+            margin: "10px",
+          }}
+        >
+          123
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "5px",
+          }}
+        >
+          <div style={{ width: "100%" }}>
+            <div style={{ height: 350, width: "100%" }}>
+              <DataGrid {...data} />
+            </div>
+          </div>
+        </Box>
       </Box>
     </Box>
   );
