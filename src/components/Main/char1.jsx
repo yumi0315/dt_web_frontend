@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography, Select, MenuItem } from "@mui/material";
 import BasicTable from "./BasicTable";
-import { customFetch } from "../Custom/customFetch";
+import { customFetch } from "../custom/customFetch";
 import { useLocation } from "react-router-dom";
 
 function ChartBox1() {
