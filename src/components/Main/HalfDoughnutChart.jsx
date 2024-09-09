@@ -6,13 +6,15 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 // Chart.js 요소 등록
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const HalfDoughnutChart = () => {
+const HalfDoughnutChart = ({ selectedOption, chartData }) => {
+  const selectData =
+    chartData && chartData.filter((x) => x.proj === selectedOption)[0];
+
   const data = {
-    labels: ["Red", "Blue"],
+    labels: ["완료율", "미완료율"],
     datasets: [
       {
-        label: "# of Votes",
-        data: [12, 19],
+        data: [selectData?.total_per, 100 - selectData?.total_per],
         backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)"],
         borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
         borderWidth: 1,
