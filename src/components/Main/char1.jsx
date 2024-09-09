@@ -1,13 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Typography, Select, MenuItem } from "@mui/material";
 import BasicTable from "./BasicTable";
+import { customFetch } from "../Custom/customFetch";
+import { useLocation } from "react-router-dom";
 
 function ChartBox1() {
-  const [selectedOption, setSelectedOption] = useState("option1");
+  const pageLocation = useLocation();
+  const [selectedOption, setSelectedOption] = useState("P1");
+  const [data, setData] = useState(undefined);
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await customFetch({
+        path: `${pageLocation.pathname}chart1/${selectedOption}`,
+        method: "GET",
+      });
+      console.log(result);
+
+      setData(result); // 데이터를 상태에 저장
+    };
+    fetchData(); // 비동기 함수 호출
+  }, [selectedOption]);
 
   return (
     <Box
@@ -47,9 +64,9 @@ function ChartBox1() {
             fontSize: "14px",
           }}
         >
-          <MenuItem value="option1">P1</MenuItem>
-          <MenuItem value="option2">P2</MenuItem>
-          <MenuItem value="option3">P3</MenuItem>
+          <MenuItem value="P1">P1</MenuItem>
+          <MenuItem value="P2">P2</MenuItem>
+          <MenuItem value="P3">P3</MenuItem>
         </Select>
       </Box>
 
@@ -64,7 +81,7 @@ function ChartBox1() {
         }}
       >
         <Box sx={{ width: "95%" }}>
-          <BasicTable />
+          <BasicTable tableData={data} />
         </Box>
       </Box>
     </Box>

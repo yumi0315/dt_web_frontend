@@ -28,25 +28,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-// 데이터 생성 함수
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
-];
-
-// 테이블 컴포넌트
-export default function CustomizedTables() {
-  return (
+export default function CustomizedTables({ tableData }) {
+  return tableData ? (
     <TableContainer
       component={Paper}
       sx={{
@@ -63,27 +46,25 @@ export default function CustomizedTables() {
       >
         <TableHead>
           <TableRow>
-            <StyledTableCell>디저트</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+            {Object.keys(tableData[0]).map((key) => (
+              <StyledTableCell align="center">{key}</StyledTableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
+          {tableData.map((row, idx) => (
+            <StyledTableRow key={idx}>
+              {/* <StyledTableCell component="th" scope="row">{row.name}</StyledTableCell> */}
+              <StyledTableCell align="center">{row.draw_name}</StyledTableCell>
+              <StyledTableCell align="center">{row.disp_date}</StyledTableCell>
+              <StyledTableCell align="center">{row.disp_num}</StyledTableCell>
+              <StyledTableCell align="center">{row.code_name}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
+  ) : (
+    <></>
   );
 }
