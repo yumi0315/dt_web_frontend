@@ -21,23 +21,28 @@ main {
 }
 
 .chart-box1 {
-  width: 840px;
+  width: 48.5%;
   height: 350px;
 }
 
 .chart-box2 {
-  width: 455px;
+  width: 25%;
   height: 350px;
 }
 
 .chart-box3 {
-  width: 455px;
+  width: 25%;
   height: 350px;
 }
 
 .chart-box4 {
-  width: 1000px;
+  width: 100%;
   height: 450px;
+}
+
+.Chart {
+  display: flex;
+  flex-direction: row;
 }
 
 .boxHeader {
