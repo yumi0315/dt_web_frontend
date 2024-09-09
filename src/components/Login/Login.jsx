@@ -5,8 +5,11 @@ import Button from "@mui/material/Button";
 import "../../CSS/Login.css";
 import Alert from "@mui/material/Alert";
 import Stack from "@mui/material/Stack";
+import { useLocation } from "react-router-dom";
 
 const Login = ({ onLoginSuccess }) => {
+  const pageLocation = useLocation();
+
   // 상태 훅을 사용하여 입력 값과 로그인 상태를 관리합니다.
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -24,6 +27,8 @@ const Login = ({ onLoginSuccess }) => {
       setMessage("");
       onLoginSuccess();
     } else {
+      console.log(pageLocation);
+
       setMessage(
         <Stack sx={{ width: "100%" }} spacing={2}>
           <Alert severity="error">아이디 또는 비밀번호가 잘못되었습니다</Alert>

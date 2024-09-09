@@ -8,7 +8,7 @@ const Side = () => {
   const navigate = useNavigate();
 
   function handleClick() {
-    navigate("/abc");
+    navigate("/page2");
   }
 
   return (
