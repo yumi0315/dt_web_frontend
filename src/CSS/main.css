@@ -41,7 +41,6 @@ main {
 }
 
 .boxHeader {
-  border-bottom: 1px;
   width: 100%;
   box-sizing: border-box;
 }

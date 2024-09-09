@@ -1,6 +1,8 @@
 import React from "react";
 import "../../CSS/main.css";
 import { Box, Typography } from "@mui/material";
+import PieChart from "./PieChart"; // PieChart 컴포넌트 import
+// npm install chart.js react-chartjs-2 를 실행해서 모듈 설치 필요
 
 function ChartBox2() {
   return (
@@ -28,6 +30,9 @@ function ChartBox2() {
         >
           설계 변경 요청 완료 현황
         </Typography>
+      </Box>
+      <Box>
+        <PieChart />
       </Box>
     </Box>
   );

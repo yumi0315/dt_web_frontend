@@ -1,5 +1,7 @@
+// ChartBox1.jsx
 import React, { useState } from "react";
 import { Box, Typography, Select, MenuItem } from "@mui/material";
+import BasicTable from "./BasicTable"; // 테이블 컴포넌트 import
 
 function ChartBox1() {
   // 상태 관리: 선택된 값을 저장
@@ -51,6 +53,15 @@ function ChartBox1() {
           <MenuItem value="option2">P2</MenuItem>
           <MenuItem value="option3">P3</MenuItem>
         </Select>
+      </Box>
+
+      <Box
+        className="tableContainer"
+        sx={{
+          overflowY: "auto",
+        }}
+      >
+        <BasicTable />
       </Box>
     </Box>
   );
