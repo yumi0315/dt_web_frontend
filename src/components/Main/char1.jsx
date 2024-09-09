@@ -1,13 +1,10 @@
-// ChartBox1.jsx
 import React, { useState } from "react";
 import { Box, Typography, Select, MenuItem } from "@mui/material";
-import BasicTable from "./BasicTable"; // 테이블 컴포넌트 import
+import BasicTable from "./BasicTable";
 
 function ChartBox1() {
-  // 상태 관리: 선택된 값을 저장
   const [selectedOption, setSelectedOption] = useState("option1");
 
-  // 드롭다운 값 변경 핸들러
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -19,6 +16,9 @@ function ChartBox1() {
         border: "1px solid rgb(211, 211, 211)",
         padding: "0",
         boxSizing: "border-box",
+        height: "350px",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <Box
@@ -30,15 +30,13 @@ function ChartBox1() {
           padding: "5px",
         }}
       >
-        {/* 개정도 현황 제목 */}
         <Typography
-          variant="subtitle1" // 더 작은 variant 사용
+          variant="subtitle1"
           sx={{ margin: "0px", padding: "0px", fontSize: "14px" }}
         >
           개정도 현황
         </Typography>
 
-        {/* 드롭다운 메뉴 */}
         <Select
           value={selectedOption}
           onChange={handleSelectChange}
@@ -56,12 +54,18 @@ function ChartBox1() {
       </Box>
 
       <Box
-        className="tableContainer"
         sx={{
           overflowY: "auto",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flex: 1,
+          padding: "0",
         }}
       >
-        <BasicTable />
+        <Box sx={{ width: "95%" }}>
+          <BasicTable />
+        </Box>
       </Box>
     </Box>
   );
