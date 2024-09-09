@@ -36,11 +36,12 @@ main {
 }
 
 .chart-box4 {
-  width: 900px;
+  width: 1000px;
   height: 450px;
 }
 
 .boxHeader {
   border-bottom: 1px;
   width: 100%;
+  box-sizing: border-box;
 }

@@ -1,16 +1,5 @@
 import React, { useState } from "react";
-import "../../CSS/main.css";
-
-const styles = {
-  borderBottom: "1px solid rgb(211, 211, 211)",
-  display: "flex",
-  margin: "2px",
-  padding: "10px",
-};
-const styles2 = {
-  margin: "10px",
-  padding: "0px",
-};
+import { Box, Typography, Select, MenuItem } from "@mui/material";
 
 function ChartBox1() {
   // 상태 관리: 선택된 값을 저장
@@ -22,18 +11,48 @@ function ChartBox1() {
   };
 
   return (
-    <div className="chart-box1">
-      <div className="boxHeader" style={styles}>
-        <h4 style={styles2}>개정도 현황</h4>
+    <Box
+      className="chart-box1"
+      sx={{
+        border: "1px solid rgb(211, 211, 211)",
+        padding: "0",
+        boxSizing: "border-box",
+      }}
+    >
+      <Box
+        sx={{
+          borderBottom: "1px solid rgb(211, 211, 211)",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "5px",
+        }}
+      >
+        {/* 개정도 현황 제목 */}
+        <Typography
+          variant="subtitle1" // 더 작은 variant 사용
+          sx={{ margin: "0px", padding: "0px", fontSize: "14px" }}
+        >
+          개정도 현황
+        </Typography>
 
-        {/* 드롭다운 메뉴 추가 */}
-        <select value={selectedOption} onChange={handleSelectChange}>
-          <option value="option1">P1</option>
-          <option value="option2">P2</option>
-          <option value="option3">P3</option>
-        </select>
-      </div>
-    </div>
+        {/* 드롭다운 메뉴 */}
+        <Select
+          value={selectedOption}
+          onChange={handleSelectChange}
+          sx={{
+            minWidth: "80px",
+            height: "30px",
+            padding: "0px",
+            fontSize: "14px",
+          }}
+        >
+          <MenuItem value="option1">P1</MenuItem>
+          <MenuItem value="option2">P2</MenuItem>
+          <MenuItem value="option3">P3</MenuItem>
+        </Select>
+      </Box>
+    </Box>
   );
 }
 
