@@ -35,7 +35,14 @@ const HalfDoughnutChart = () => {
   };
 
   return (
-    <div style={{ width: "100%", maxWidth: "400px", margin: "0 auto" }}>
+    <div
+      style={{
+        width: "100%",
+        height: "300px",
+        maxWidth: "400px",
+        margin: "0 auto",
+      }}
+    >
       <Doughnut data={data} options={options} />
     </div>
   );
