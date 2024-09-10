@@ -1,7 +1,4 @@
 import React from "react";
-
-import Chart5 from "./char5";
-
 import Apple from "./apple";
 import Table5 from "./Table5";
 import { Box } from "@mui/material";
