@@ -1,26 +1,32 @@
 import React from "react";
 import Apple from "./apple";
-import Banana from "./Banana";
+import Table5 from "./Table5";
 import { Box } from "@mui/material";
+import "../../CSS/page5.css";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 const Page5 = () => {
   return (
     <main>
       <Box
-        className="page2-container"
+        className="container"
         sx={{
           display: "flex",
           flexDirection: "column",
-          width: "100%",
-          maxWidth: "2000px",
-          background: "white",
+          width: "1595px",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
         <Apple />
-        <Banana />
+        <Table5 />
       </Box>
+      <div className="Contact">
+        <Stack spacing={2} direction="row">
+          <Button variant="contained">Contact</Button>
+        </Stack>
+      </div>
     </main>
   );
 };
