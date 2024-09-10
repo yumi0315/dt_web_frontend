@@ -11,13 +11,13 @@ import dayjs from "dayjs";
 import BasicTable from "../Main/BasicTable";
 
 function ChartBox4() {
-  const [selectedMonth, setSelectedMonth] = useState(dayjs().startOf("month"));
+  const [selectedMonth, setSelectedMonth] = useState(dayjs().startOf("day"));
   const [data, setData] = useState([]); // 데이터는 선택된 월에 따라 필터링되어야 합니다.
 
   // 월 선택 핸들러
   const handleMonthChange = (date) => {
     if (date) {
-      const startOfMonth = date.startOf("month");
+      const startOfMonth = date.startOf("day");
       setSelectedMonth(startOfMonth);
       fetchDataForMonth(startOfMonth); // 선택된 월에 따라 데이터 가져오기
     }
@@ -75,11 +75,10 @@ function ChartBox4() {
           >
             <DatePicker
               // maxDate={searchTextFiled.enddt || dayjs().subtract(-6, "day")}
-              format="YY.MM"
+              format="YY.MM.DD"
               slotProps={{
                 textField: { size: "small", style: { minWidth: "unset" } },
               }}
-              views={["year", "month"]}
               value={selectedMonth}
               onChange={handleMonthChange}
               renderInput={(params) => (
@@ -98,19 +97,21 @@ function ChartBox4() {
                   },
                 "& .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.MuiInputBase-sizeSmall.MuiInputBase-adornedEnd":
                   {
-                    width: "98px",
+                    width: "120px",
                     height: "22px",
                   },
               }}
             ></DatePicker>
-            <span style={{ alignSelf: "center" }}>~</span>
+            <span style={{ alignSelf: "center", paddingLeft: "8px" }}>~</span>
             <DatePicker
               // maxDate={searchTextFiled.enddt || dayjs().subtract(-6, "day")}
-              format="YY.MM"
+              format="YY.MM.DD"
               slotProps={{
-                textField: { size: "small", style: { minWidth: "unset" } },
+                textField: {
+                  size: "small",
+                  style: { minWidth: "unset", marginLeft: "0px" },
+                },
               }}
-              views={["year", "month"]}
               value={selectedMonth}
               onChange={handleMonthChange}
               renderInput={(params) => (
@@ -129,7 +130,7 @@ function ChartBox4() {
                   },
                 "& .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.MuiInputBase-sizeSmall.MuiInputBase-adornedEnd":
                   {
-                    width: "98px",
+                    width: "120px",
                     height: "22px",
                   },
               }}
