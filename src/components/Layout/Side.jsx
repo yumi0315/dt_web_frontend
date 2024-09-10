@@ -7,12 +7,10 @@ import "../../CSS/side.css";
 const Side = () => {
   const navigate = useNavigate();
 
-  function handleClick1() {
-    navigate("/page2");
-  }
-  function handleClick2() {
-    navigate("/page4");
-  }
+  const handleClick = (path) => {
+    navigate(path);
+  };
+
   return (
     <aside>
       {/* 헤더 내용 */}
@@ -22,10 +20,10 @@ const Side = () => {
             icon={faChartSimple}
             className="icon"
             size="xl"
-            style={{ color: "#CBC28D" }}
-            onClick={handleClick1}
+            style={{ color: "#EDEEFF" }}
+            onClick={() => handleClick("/page1")}
           />
-          <h6>메뉴 1번</h6>
+          <h5>메뉴 1번</h5>
         </div>
 
         <div className="Menu">
@@ -33,12 +31,51 @@ const Side = () => {
             icon={faGears}
             className="icon"
             size="xl"
-            style={{ color: "#CBC28D" }}
-            onClick={handleClick2}
+            style={{ color: "#EDEEFF" }}
+            onClick={() => handleClick("/page2")}
           />
-          <h6>메뉴</h6>
+          <h5>메뉴 2번</h5>
         </div>
-
+        <div className="Menu">
+          <FontAwesomeIcon
+            icon={faChartSimple}
+            className="icon"
+            size="xl"
+            style={{ color: "#EDEEFF" }}
+            onClick={() => handleClick("/page3")}
+          />
+          <h5>메뉴 3번</h5>
+        </div>
+        <div className="Menu">
+          <FontAwesomeIcon
+            icon={faChartSimple}
+            className="icon"
+            size="xl"
+            style={{ color: "#EDEEFF" }}
+            onClick={() => handleClick("/page4")}
+          />
+          <h5>메뉴 4번</h5>
+        </div>
+        <div className="Menu">
+          <FontAwesomeIcon
+            icon={faChartSimple}
+            className="icon"
+            size="xl"
+            style={{ color: "#EDEEFF" }}
+            onClick={() => handleClick("/page5")}
+          />
+          <h5>메뉴 5번</h5>
+        </div>
+        <div className="Menu">
+          <FontAwesomeIcon
+            icon={faChartSimple}
+            className="icon"
+            size="xl"
+            style={{ color: "#EDEEFF" }}
+            onClick={() => handleClick("/page6")}
+          />
+          <h5>메뉴 6번</h5>
+        </div>
         {/* 추가 링크들 */}
       </nav>
     </aside>
