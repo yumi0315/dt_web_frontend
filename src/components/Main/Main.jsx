@@ -5,7 +5,7 @@ import DateCalendarComponent from "./DateCalendarComponent";
 import Chart1 from "./char1";
 import Chart2 from "./char2";
 import Chart3 from "./char3";
-import Chart4 from "../Page5/char5";
+import Chart5 from "../Page5/char5";
 
 const Main = () => {
   return (

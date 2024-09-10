@@ -1,14 +1,15 @@
 import React from "react";
-import Chart5 from "./char5";
 
-const Page5 = () => {
+import Chart4 from "./char4";
+
+const Page1 = () => {
   return (
     <main>
       <div className="main-container">
-        <Chart5 />
+        <Chart4 />
       </div>
     </main>
   );
 };
 
-export default Page5;
+export default Page1;
