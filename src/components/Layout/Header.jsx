@@ -10,12 +10,6 @@ function Header() {
   return (
     <div className="HeaderContainer">
       <div className="TitleContainer">
-        <FontAwesomeIcon
-          icon={faBars}
-          className="icon"
-          size="xl"
-          style={{ color: "gray" }}
-        />
         <img
           src="/Logo.png"
           alt="Logo"
