@@ -7,16 +7,18 @@ import "../../CSS/side.css";
 const Side = () => {
   const navigate = useNavigate();
 
-  function handleClick() {
+  function handleClick1() {
     navigate("/page2");
   }
-
+  function handleClick2() {
+    navigate("/page3");
+  }
   return (
     <aside
       style={{
         flexDirection: "column",
         height: "945px",
-        Width: "20px",
+        Width: "120px",
         background: "#3490DD",
         padding: " 30px 10px",
       }}
@@ -35,7 +37,7 @@ const Side = () => {
             className="icon"
             size="xl"
             style={{ color: "#CBC28D" }}
-            onClick={handleClick}
+            onClick={handleClick1}
           />
         </div>
 
@@ -52,6 +54,7 @@ const Side = () => {
             className="icon"
             size="xl"
             style={{ color: "#CBC28D" }}
+            onClick={handleClick2}
           />
         </div>
 
