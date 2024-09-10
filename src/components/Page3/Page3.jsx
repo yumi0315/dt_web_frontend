@@ -1,5 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
+import Excel3 from "./Excel3";
+import Excel4 from "./Excel4";
 
 const Page3 = () => {
   return (
@@ -10,12 +12,14 @@ const Page3 = () => {
           display: "flex",
           flexDirection: "column",
           width: "100%",
-          maxWidth: "2000px",
-          background: "white",
+          height: "100%",
           justifyContent: "center",
           alignItems: "center",
         }}
-      ></Box>
+      >
+        <Excel3 />
+        <Excel4 />
+      </Box>
     </main>
   );
 };
