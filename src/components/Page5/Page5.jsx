@@ -1,12 +1,12 @@
 import React from "react";
 
-import Chart4 from "./char4";
+import Chart5 from "./char5";
 
 const Page5 = () => {
   return (
     <main>
       <div className="main-container">
-        <Chart4 />
+        <Chart5 />
       </div>
     </main>
   );

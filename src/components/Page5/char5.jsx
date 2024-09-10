@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../CSS/main.css";
 import { Box, TextField, Typography } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
@@ -9,31 +9,53 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { useDemoData } from "@mui/x-data-grid-generator";
 import dayjs from "dayjs";
 import BasicTable from "../Main/BasicTable";
+import { customFetch } from "../custom/customFetch";
+import { useLocation } from "react-router-dom";
+import { Donut } from "./Donut";
 
 function ChartBox4() {
-  const [selectedMonth, setSelectedMonth] = useState(dayjs().startOf("day"));
-  const [data, setData] = useState([]); // 데이터는 선택된 월에 따라 필터링되어야 합니다.
+  const pageLocation = useLocation();
+  const [selectedOption, setSelectedOption] = useState(undefined);
+  const [data, setData] = useState(undefined);
 
-  // 월 선택 핸들러
-  const handleMonthChange = (date) => {
-    if (date) {
-      const startOfMonth = date.startOf("day");
-      setSelectedMonth(startOfMonth);
-      fetchDataForMonth(startOfMonth); // 선택된 월에 따라 데이터 가져오기
-    }
+  const handleSelectChange = (text) => {
+    setSelectedOption(text);
   };
 
-  // 월에 대한 데이터 가져오기
-  const fetchDataForMonth = (month) => {
-    // 여기에 데이터 필터링 로직 추가
-    // 예를 들어, API 호출 또는 로컬 데이터 필터링 등
-    console.log(`Fetching data for ${month.format("YYYY-MM")}`);
-    // 예시로 임의의 데이터 설정
-    setData([
-      /* 필터링된 데이터 배열 */
-    ]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await customFetch({
+        path: `/chart5`,
+        method: "GET",
+      });
+
+      const filterData = result.reduce((acc, obj) => {
+        if (!acc[obj.welding_meth]) {
+          acc[obj.welding_meth] = [];
+        }
+
+        acc[obj.welding_meth].push(obj);
+
+        return acc;
+      }, {});
+      console.log(filterData);
+
+      setData(filterData); // 데이터를 상태에 저장
+    };
+    fetchData(); // 비동기 함수 호출
+  }, []);
+
+  const [startDate, setStartDate] = useState(dayjs().startOf("month"));
+  const [endDate, setEndDate] = useState(dayjs().endOf("month"));
+
+  // 날짜 변경 핸들러
+  const handleStartDateChange = (newValue) => {
+    setStartDate(newValue);
   };
 
+  const handleEndDateChange = (newValue) => {
+    setEndDate(newValue);
+  };
   return (
     <Box
       className="chart-box4"
@@ -79,8 +101,8 @@ function ChartBox4() {
               slotProps={{
                 textField: { size: "small", style: { minWidth: "unset" } },
               }}
-              value={selectedMonth}
-              onChange={handleMonthChange}
+              value={startDate}
+              onChange={handleStartDateChange}
               renderInput={(params) => (
                 <TextField {...params} sx={{ width: "150px" }} />
               )}
@@ -102,7 +124,7 @@ function ChartBox4() {
                   },
               }}
             ></DatePicker>
-            <span style={{ alignSelf: "center", paddingLeft: "8px" }}>~</span>
+            <span style={{ alignSelf: "center", marginLeft: "8px" }}>~</span>
             <DatePicker
               // maxDate={searchTextFiled.enddt || dayjs().subtract(-6, "day")}
               format="YY.MM.DD"
@@ -112,8 +134,8 @@ function ChartBox4() {
                   style: { minWidth: "unset", marginLeft: "0px" },
                 },
               }}
-              value={selectedMonth}
-              onChange={handleMonthChange}
+              value={endDate}
+              onChange={handleEndDateChange}
               renderInput={(params) => (
                 <TextField {...params} sx={{ width: "150px" }} />
               )}
@@ -158,7 +180,10 @@ function ChartBox4() {
             margin: "10px",
           }}
         >
-          123
+          {data &&
+            Object.keys(data).map((key) => {
+              <Donut chartData={data[key]} onClick={handleSelectChange} />;
+            })}
         </Box>
         <Box
           sx={{
