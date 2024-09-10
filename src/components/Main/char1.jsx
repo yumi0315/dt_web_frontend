@@ -19,7 +19,6 @@ function ChartBox1() {
         path: `${pageLocation.pathname}chart1/${selectedOption}`,
         method: "GET",
       });
-      console.log(result);
 
       setData(result); // 데이터를 상태에 저장
     };
