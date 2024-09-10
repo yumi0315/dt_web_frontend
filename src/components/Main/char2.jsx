@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Typography, Select, MenuItem } from "@mui/material";
 import "../../CSS/main.css";
 import HalfDoughnutChart from "./HalfDoughnutChart";
-import { customFetch } from "../Custom/customFetch";
+import { customFetch } from "../custom/customFetch";
 import { useLocation } from "react-router-dom";
 
 const styles = {
