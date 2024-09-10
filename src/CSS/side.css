@@ -1,9 +1,24 @@
+Aside {
+  flexdirection: column;
+  height: 945px;
+  width: 300px;
+  background: #3490dd;
+  padding: 30px 10px;
+}
+.Menu {
+  display: flex;
+  justifycontent: center;
+  aligncontent: center;
+}
+
 .icon {
-  display: inline-block;
+  display: flex;
   padding: 7px; /* 아이콘 주변 여백 */
   border-radius: 20%; /* 원형 배경 */
   transition: background-color 0.3s;
   transition: color 0.3s, transform 0.3s;
+  justifycontent: center;
+  aligncontent: center;
 }
 
 .icon:hover {
