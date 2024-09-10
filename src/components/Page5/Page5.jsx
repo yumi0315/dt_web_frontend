@@ -1,26 +1,12 @@
 import React from "react";
-import Apple from "./apple";
-import Banana from "./Banana";
-import { Box } from "@mui/material";
+import Chart5 from "./char5";
 
 const Page5 = () => {
   return (
     <main>
-      <Box
-        className="page2-container"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          maxWidth: "2000px",
-          background: "white",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Apple />
-        <Banana />
-      </Box>
+      <div className="main-container">
+        <Chart5 />
+      </div>
     </main>
   );
 };
