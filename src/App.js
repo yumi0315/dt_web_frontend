@@ -5,6 +5,7 @@ import Main from "./components/Main/Main";
 import Login from "./components/Login/Login";
 import Page2 from "./components/Page2/Page2";
 import Page3 from "./components/Page3/Page3";
+import Page4 from "./components/Page4/Page4";
 
 import "./App.css";
 import { useState } from "react";
@@ -24,6 +25,7 @@ function App() {
             <Route index element={<Main />} /> {/* 기본 경로 */}
             <Route path="page2" element={<Page2 />} />
             <Route path="page3" element={<Page3 />} />
+            <Route path="page4" element={<Page4 />} />
             {/*<Route path="guestbook" element={<Guestbook />} /> 추가할 페이지들
           <Route path="*" element={<Error404 />} /> 404 페이지 */}
           </Route>

@@ -11,27 +11,13 @@ const Side = () => {
     navigate("/page2");
   }
   function handleClick2() {
-    navigate("/page3");
+    navigate("/page4");
   }
   return (
-    <aside
-      style={{
-        flexDirection: "column",
-        height: "945px",
-        Width: "120px",
-        background: "#3490DD",
-        padding: " 30px 10px",
-      }}
-    >
+    <aside>
       {/* 헤더 내용 */}
       <nav>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-          }}
-        >
+        <div className="Menu">
           <FontAwesomeIcon
             icon={faChartSimple}
             className="icon"
@@ -39,16 +25,10 @@ const Side = () => {
             style={{ color: "#CBC28D" }}
             onClick={handleClick1}
           />
+          <h6>메뉴 1번</h6>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-            margin: "30px 0",
-          }}
-        >
+        <div className="Menu">
           <FontAwesomeIcon
             icon={faGears}
             className="icon"
@@ -56,6 +36,7 @@ const Side = () => {
             style={{ color: "#CBC28D" }}
             onClick={handleClick2}
           />
+          <h6>메뉴</h6>
         </div>
 
         {/* 추가 링크들 */}

@@ -11,10 +11,10 @@ const Main = () => {
   return (
     <main>
       <div className="main-container">
-        <Chart1 />
+        {/* <Chart1 />
         <Chart2 />
         <Chart3 />
-        <Chart4 />
+        <Chart4 /> */}
         {/* <div>
           <h1>날짜 선택기</h1>
           <DatePickerComponent />

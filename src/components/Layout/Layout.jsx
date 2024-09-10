@@ -8,10 +8,11 @@ const Layout = () => {
     <div>
       <Header />
       <div style={{ display: "flex" }}>
-        <Side />
+        <Side style={{ width: "300px" }} />
         <main style={{ flex: 1, padding: "20px" }}>
           {/* 현재 라우트에 해당하는 컴포넌트가 여기에 렌더링됩니다. */}
           <Outlet />
+          <div>123</div>
           <footer>
             {/* 푸터 내용 */}
             <p>Footer Content</p>
