@@ -1,13 +1,14 @@
 // ChartBox3.js
 import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
-import DatePickercom from "./DatePickercom"; // 수정된 파일 경로
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import Chart3_Line from "./Chart3_Line";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 
 function ChartBox3() {
-  const [searchDateString, setSearchDateString] = useState("");
-  const [selectedEndDateString, setSelectedEndDateString] = useState("");
-  const isRangeSearch = true; // or false based on your requirement
+  const [value, setValue] = React.useState(null);
 
   return (
     <Box
@@ -34,13 +35,14 @@ function ChartBox3() {
         >
           부서별 업무 현황
         </Typography>
-        <div style={{ margin: "20px" }}>
-          <DatePickercom
-            setSearchDateString={setSearchDateString}
-            setSelectedEndDateString={setSelectedEndDateString}
-            isRangeSearch={isRangeSearch}
-          />
-        </div>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DemoContainer components={["DatePicker"]}>
+            <DatePicker
+              value={value}
+              onChange={(newValue) => setValue(newValue)}
+            />
+          </DemoContainer>
+        </LocalizationProvider>
       </Box>
       <Box>
         <Chart3_Line />
