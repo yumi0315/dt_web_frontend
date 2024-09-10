@@ -7,24 +7,10 @@ import "../../CSS/side.css";
 const Side = () => {
   const navigate = useNavigate();
 
-  function handleClick1() {
-    navigate("/");
-  }
-  function handleClick2() {
-    navigate("/page2");
-  }
-  function handleClick3() {
-    navigate("/page3");
-  }
-  function handleClick4() {
-    navigate("/page4");
-  }
-  function handleClick5() {
-    navigate("/page5");
-  }
-  function handleClick6() {
-    navigate("/page6");
-  }
+  const handleClick = (path) => {
+    navigate(path);
+  };
+
   return (
     <aside>
       {/* 헤더 내용 */}
@@ -35,7 +21,7 @@ const Side = () => {
             className="icon"
             size="xl"
             style={{ color: "#EDEEFF" }}
-            onClick={handleClick1}
+            onClick={() => handleClick("/page1")}
           />
           <h5>메뉴 1번</h5>
         </div>
@@ -46,7 +32,7 @@ const Side = () => {
             className="icon"
             size="xl"
             style={{ color: "#EDEEFF" }}
-            onClick={handleClick2}
+            onClick={() => handleClick("/page2")}
           />
           <h5>메뉴 2번</h5>
         </div>
@@ -56,7 +42,7 @@ const Side = () => {
             className="icon"
             size="xl"
             style={{ color: "#EDEEFF" }}
-            onClick={handleClick3}
+            onClick={() => handleClick("/page3")}
           />
           <h5>메뉴 3번</h5>
         </div>
@@ -66,7 +52,7 @@ const Side = () => {
             className="icon"
             size="xl"
             style={{ color: "#EDEEFF" }}
-            onClick={handleClick4}
+            onClick={() => handleClick("/page4")}
           />
           <h5>메뉴 4번</h5>
         </div>
@@ -76,7 +62,7 @@ const Side = () => {
             className="icon"
             size="xl"
             style={{ color: "#EDEEFF" }}
-            onClick={handleClick5}
+            onClick={() => handleClick("/page5")}
           />
           <h5>메뉴 5번</h5>
         </div>
@@ -86,7 +72,7 @@ const Side = () => {
             className="icon"
             size="xl"
             style={{ color: "#EDEEFF" }}
-            onClick={handleClick6}
+            onClick={() => handleClick("/page6")}
           />
           <h5>메뉴 6번</h5>
         </div>
