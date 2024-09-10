@@ -20,18 +20,12 @@ function Header() {
         <Button
           variant="contained"
           sx={{
-            color: "white",
+            color: "#edeeff",
             fontWeight: "bold",
             background: "#3490DD",
             width: "80px",
             fontSize: "10px",
             height: "25px",
-            // "&:hover": {
-            //   backgroundColor: "white",
-            //   border: "1px solid #0F16A4",
-            //   color: "#0F16A4",
-            //   fontweight: "bold",
-            // },
           }}
           className="LogoutBtn"
         >

@@ -23,20 +23,19 @@ function Apple() {
   return (
     <Box
       sx={{
-        background: "white",
+        // background: "white",
         display: "flex",
         flexDirection: "row",
         padding: "10px",
-        width: "100%", // 너비가 부모 요소의 100%를 차지
-        maxWidth: "1900px", // 최대 너비 설정
-        height: "30%",
+        width: "95%", // 너비가 부모 요소의 100%를 차지
+        height: "100%",
         gap: "20px",
         margin: "10px",
         flexGrow: 0, // flex-grow가 0이면 요소가 더 이상 늘어나지 않음
       }}
     >
       {/* 첫 번째 드롭다운 */}
-      <FormControl fullWidth>
+      <FormControl sx={{ width: "150px", background: "white" }}>
         <InputLabel id="dropdown1-label">선박 종류</InputLabel>
         <Select
           labelId="dropdown1-label"
@@ -52,7 +51,7 @@ function Apple() {
       </FormControl>
 
       {/* 두 번째 드롭다운 */}
-      <FormControl fullWidth>
+      <FormControl sx={{ width: "200px", background: "white" }}>
         <InputLabel id="dropdown2-label">용접 방법</InputLabel>
         <Select
           labelId="dropdown2-label"
