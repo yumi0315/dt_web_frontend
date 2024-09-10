@@ -21,7 +21,7 @@ function App() {
         {isLogin ? (
           <Route path={"/"} element={<Layout />}>
             <Route index element={<Main />} /> {/* 기본 경로 */}
-            <Route path="abc" element={<Page2 />} />
+            <Route path="page2" element={<Page2 />} />
             {/*<Route path="guestbook" element={<Guestbook />} /> 추가할 페이지들
           <Route path="*" element={<Error404 />} /> 404 페이지 */}
           </Route>
