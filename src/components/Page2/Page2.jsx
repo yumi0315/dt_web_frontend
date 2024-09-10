@@ -1,24 +1,28 @@
 import React from "react";
 import Apple from "./apple";
 import Banana from "./Banana";
-// import DatePickerComponent from "./DatePickerComponent";
-// import DateCalendarComponent from "./DateCalendarComponent";
+import { Box } from "@mui/material";
 
-const Main = () => {
+const Page2 = () => {
   return (
-    <main
-      sx={{
-        display: "flex",
-        width: "100%",
-        maxWidth: "1700px",
-      }}
-    >
-      <div className="main-container">
+    <main>
+      <Box
+        className="page2-container"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+          maxWidth: "2000px",
+          background: "white",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Apple />
         <Banana />
-      </div>
+      </Box>
     </main>
   );
 };
 
-export default Main;
+export default Page2;
