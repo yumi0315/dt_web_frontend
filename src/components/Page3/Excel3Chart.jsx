@@ -96,7 +96,7 @@ const Excel3Chart = () => {
         width: "100%",
         height: "500px", // 고정된 높이 유지
         margin: "0px",
-        padding: "0px",
+        padding: "10px",
         display: "flex", // Flexbox 사용
         justifyContent: "center", // 가로 중앙 정렬
         alignItems: "center", // 세로 중앙 정렬
