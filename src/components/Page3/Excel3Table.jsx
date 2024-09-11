@@ -32,13 +32,12 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 export default function Excel3Table({ tableData }) {
   return tableData ? (
     <TableContainer
-      component={Paper}
-      sx={{ width: "100%", margin: "0 auto", padding: "0px" }}
+      sx={{
+        width: "70%",
+        height: "400px",
+      }}
     >
-      <Table
-        sx={{ minWidth: 500, margin: "0px", padding: "0px" }}
-        aria-label="basic table"
-      >
+      <Table sx={{ margin: "0px", padding: "0px" }} aria-label="basic table">
         <TableHead>
           <TableRow>
             {Object.keys(tableData[0]).map((key) => (

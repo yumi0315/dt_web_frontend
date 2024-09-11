@@ -1,4 +1,6 @@
+import React from "react";
 import { Bar } from "react-chartjs-2";
+import { Box } from "@mui/material";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -30,10 +32,19 @@ const Excel3Chart = () => {
       {
         yAxisID: "y1",
         type: "bar",
-        label: "Bar차트",
+        label: "Bar차트 1",
         data: [3000, 5000, 4000, 7000, 2000, 5000], // 임의의 고정된 데이터
         backgroundColor: "rgba(255, 99, 132, 0.5)",
         borderColor: "rgba(255, 99, 132, 1)",
+        borderWidth: 1,
+      },
+      {
+        yAxisID: "y1",
+        type: "bar",
+        label: "Bar차트 2", // 새로 추가된 막대그래프
+        data: [2000, 3000, 2500, 6000, 3000, 4000], // 새 막대그래프의 데이터
+        backgroundColor: "rgba(75, 192, 192, 0.5)",
+        borderColor: "rgba(75, 192, 192, 1)",
         borderWidth: 1,
       },
       {
@@ -91,19 +102,17 @@ const Excel3Chart = () => {
   };
 
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "500px", // 고정된 높이 유지
-        margin: "0px",
-        padding: "10px",
-        display: "flex", // Flexbox 사용
-        justifyContent: "center", // 가로 중앙 정렬
-        alignItems: "center", // 세로 중앙 정렬
+    <Box
+      sx={{
+        display: "flex",
+        width: "70%",
+        height: "40%",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       <Bar data={chartData} options={options} plugins={[ChartDataLabels]} />
-    </div>
+    </Box>
   );
 };
 
