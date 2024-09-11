@@ -4,6 +4,7 @@ import Layout from "./components/Layout/Layout";
 import Main from "./components/Main/Main";
 import Login from "./components/Login/Login";
 import Page1 from "./components/Page1/Page1";
+import Page2 from "./components/Page2/Page2";
 import Page3 from "./components/Page3/Page3";
 import Page4 from "./components/Page4/Page4";
 import Page5 from "./components/Page5/Page5";
@@ -26,7 +27,7 @@ function App() {
           <Route path={"/"} element={<Layout />}>
             <Route index element={<Main />} /> {/* 기본 경로 */}
             <Route path="page1" element={<Page1 />} />
-            {/* <Route path="page2" element={<Page2 />} /> */}
+            <Route path="page2" element={<Page2 />} />
             <Route path="page3" element={<Page3 />} />
             <Route path="page4" element={<Page4 />} />
             <Route path="page5" element={<Page5 />} />

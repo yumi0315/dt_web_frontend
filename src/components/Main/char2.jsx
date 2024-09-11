@@ -21,7 +21,7 @@ function ChartBox2() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await customFetch({
-        path: `${pageLocation.pathname}chart2`,
+        path: `/chart2`,
         method: "GET",
       });
 

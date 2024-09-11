@@ -1,58 +1,45 @@
 import { Box } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import React, { Component } from "react";
-import "../../CSS/page6.css";
+import "../../CSS/Page2.css";
 import { Pagination } from "@mui/material";
 
-function Table5() {
+function Table2() {
   const columns = [
-    { field: "Depnt No", headerName: "과", width: 190, headerAlign: "center" },
     {
-      field: "Ratio",
-      headerName: "불량률",
+      field: "Part",
+      headerName: "등록구분",
       width: 190,
       headerAlign: "center",
     },
     {
-      field: "EGFC",
-      headerName: "EGFC",
-      width: 140,
-      headerAlign: "center",
-    },
-    {
-      field: "EGW",
-      headerName: "EGW",
-      width: 140,
-      headerAlign: "center",
-    },
-    {
-      field: "FAW",
-      headerName: "FAW",
-      width: 140,
-      headerAlign: "center",
-    },
-    {
-      field: "FCAW",
-      headerName: "FCAW",
-      width: 140,
-      headerAlign: "center",
-    },
-    {
-      field: "FCSA",
-      headerName: "FCSA",
-      width: 140,
-      headerAlign: "center",
-    },
-    {
-      field: "SAW",
-      headerName: "SAW",
-      width: 140,
-      headerAlign: "center",
-    },
-    {
-      field: "Range",
-      headerName: "작업 가능 기간",
+      field: "ECN No",
+      headerName: "ECN No.",
       width: 190,
+      headerAlign: "center",
+    },
+    {
+      field: "IMPORT",
+      headerName: "긴급도",
+      width: 140,
+      headerAlign: "center",
+    },
+    {
+      field: "URG",
+      headerName: "중요도",
+      width: 140,
+      headerAlign: "center",
+    },
+    {
+      field: "Req_Dep",
+      headerName: "요청부서",
+      width: 140,
+      headerAlign: "center",
+    },
+    {
+      field: "State",
+      headerName: "진행 상태",
+      width: 140,
       headerAlign: "center",
     },
   ];
@@ -70,7 +57,7 @@ function Table5() {
   ];
 
   return (
-    <Box sx={{ height: 600, width: "95%" }}>
+    <Box sx={{ height: 400, width: "98%", margin: " 0 19px" }}>
       <DataGrid
         rows={rows}
         columns={columns}
@@ -83,4 +70,4 @@ function Table5() {
   );
 }
 
-export default Table5;
+export default Table2;
