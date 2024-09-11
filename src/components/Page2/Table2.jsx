@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import React, { Component } from "react";
-import "../../CSS/Page2.css";
+import "../../CSS/page2.css";
 import { Pagination } from "@mui/material";
 
 function Table2() {

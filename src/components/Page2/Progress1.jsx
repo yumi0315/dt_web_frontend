@@ -2,7 +2,7 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from "chart.js";
-import "../../CSS/Page2.css";
+import "../../CSS/page2.css";
 
 // Chart.js 요소 등록
 ChartJS.register(ArcElement, Tooltip, Legend, Title);

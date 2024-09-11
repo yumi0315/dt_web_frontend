@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography, Select, MenuItem } from "@mui/material";
-import "../../CSS/Page2.css";
+import "../../CSS/page2.css";
 import { customFetch } from "../custom/customFetch";
 import { useLocation } from "react-router-dom";
 import Progress1 from "./Progress1";
