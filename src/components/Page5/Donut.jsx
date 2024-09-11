@@ -3,23 +3,51 @@ import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const Donut = ({ chartData, onClick }) => {
+const Donut = ({ chartData, onClick }) => {
+  const filterData = chartData.reduce(
+    (acc, cur) => {
+      acc.dep.push(cur.dep);
+      acc.dep_def_rate.push(cur.dep_def_rate);
+
+      return acc;
+    },
+    { dep: [], dep_def_rate: [] }
+  );
+
   const Data = {
-    labels: ["입출금", "증권", "기타"],
+    labels: filterData.dep,
     datasets: [
       {
-        data: [40, 20, 35],
+        data: filterData.dep_def_rate,
         backgroundColor: ["#ffeb9b", "#b5f2ff", "#c5f2ba"],
         borderColor: ["#ffeb9b", "#b5f2ff", "#c5f2ba"],
       },
     ],
   };
 
-  const Options = {};
+  const options = {
+    responsive: true, // 반응형
+    plugins: {
+      legend: {
+        position: "right", // 범례 위치
+      },
+      tooltip: {
+        enabled: true, // 툴팁 활성화
+      },
+    },
+  };
 
   return (
-    <div onClick={onClick}>
-      <Doughnut data={Data} options={Options}></Doughnut>
+    <div
+      onClick={() => onClick(chartData[0].welding_meth)}
+      style={{
+        width: "100%",
+        height: "300px",
+        maxWidth: "400px",
+        margin: "0 auto",
+      }}
+    >
+      <Doughnut data={Data} options={options}></Doughnut>
     </div>
   );
 };

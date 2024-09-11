@@ -11,7 +11,7 @@ import dayjs from "dayjs";
 import BasicTable from "../Main/BasicTable";
 import { customFetch } from "../custom/customFetch";
 import { useLocation } from "react-router-dom";
-import { Donut } from "./Donut";
+import Donut from "./Donut";
 
 function ChartBox4() {
   const pageLocation = useLocation();
@@ -19,6 +19,8 @@ function ChartBox4() {
   const [data, setData] = useState(undefined);
 
   const handleSelectChange = (text) => {
+    console.log(text);
+
     setSelectedOption(text);
   };
 
@@ -160,7 +162,7 @@ function ChartBox4() {
           </DemoContainer>
         </LocalizationProvider>
       </Box>
-      <Box
+      {/* <Box
         className="Chart"
         sx={{
           display: "flex",
@@ -179,11 +181,8 @@ function ChartBox4() {
             padding: "5px",
             margin: "10px",
           }}
-        >
-          {data &&
-            Object.keys(data).map((key) => {
-              <Donut chartData={data[key]} onClick={handleSelectChange} />;
-            })}
+        > 
+        
         </Box>
         <Box
           sx={{
@@ -196,7 +195,14 @@ function ChartBox4() {
         >
           <BasicTable />
         </Box>
-      </Box>
+      </Box> */}
+      {data ? (
+        Object.keys(data).map((key, idx) => (
+          <Donut key={idx} chartData={data[key]} onClick={handleSelectChange} />
+        ))
+      ) : (
+        <></>
+      )}
     </Box>
   );
 }
