@@ -41,8 +41,8 @@ const Donut = ({ chartData, onClick }) => {
     <div
       onClick={() => onClick(chartData[0].welding_meth)}
       style={{
-        width: "100%",
-        height: "300px",
+        width: "200px",
+        height: "200px",
         maxWidth: "400px",
         margin: "0 auto",
       }}

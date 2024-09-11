@@ -12,12 +12,12 @@ main {
 .chart-box1,
 .chart-box2,
 .chart-box3,
-.chart-box4 {
+.chart-box4,
+.chart-box5 {
   border: 1px solid rgb(211, 211, 211);
   flex-direction: column;
   background-color: white;
-  margin-left: 10px;
-  margin-bottom: 15px;
+  width: 85%;
 }
 
 .chart-box1 {
@@ -36,6 +36,11 @@ main {
 }
 
 .chart-box4 {
+  width: 100%;
+  height: 450px;
+}
+
+.chart-box5 {
   width: 100%;
   height: 450px;
 }

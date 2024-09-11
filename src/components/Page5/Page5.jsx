@@ -3,11 +3,14 @@ import Chart5 from "./char5";
 
 const Page5 = () => {
   return (
-    <main>
-      <div className="main-container">
-        <Chart5 />
-      </div>
-    </main>
+    <div
+      className="page5-container"
+      sx={{
+        display: "flex",
+      }}
+    >
+      <Chart5 />
+    </div>
   );
 };
 

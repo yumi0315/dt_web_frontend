@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "../../CSS/main.css";
 import { Box, TextField, Typography } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
-import { useDemoData } from "@mui/x-data-grid-generator";
 import dayjs from "dayjs";
-import BasicTable from "../Main/BasicTable";
 import { customFetch } from "../custom/customFetch";
 import { useLocation } from "react-router-dom";
 import Donut from "./Donut";
+import Page5Table from "./Page5Table";
 
-function ChartBox4() {
+function ChartBox5() {
   const pageLocation = useLocation();
   const [selectedOption, setSelectedOption] = useState(undefined);
   const [data, setData] = useState(undefined);
@@ -58,13 +56,15 @@ function ChartBox4() {
   const handleEndDateChange = (newValue) => {
     setEndDate(newValue);
   };
+
   return (
     <Box
-      className="chart-box4"
+      className="chart-box5"
       sx={{
         border: "1px solid rgb(211, 211, 211)",
         padding: "0",
         boxSizing: "border-box",
+        width: "1600px",
       }}
     >
       <Box
@@ -98,7 +98,6 @@ function ChartBox4() {
             }}
           >
             <DatePicker
-              // maxDate={searchTextFiled.enddt || dayjs().subtract(-6, "day")}
               format="YY.MM.DD"
               slotProps={{
                 textField: { size: "small", style: { minWidth: "unset" } },
@@ -128,7 +127,6 @@ function ChartBox4() {
             ></DatePicker>
             <span style={{ alignSelf: "center", marginLeft: "8px" }}>~</span>
             <DatePicker
-              // maxDate={searchTextFiled.enddt || dayjs().subtract(-6, "day")}
               format="YY.MM.DD"
               slotProps={{
                 textField: {
@@ -162,49 +160,38 @@ function ChartBox4() {
           </DemoContainer>
         </LocalizationProvider>
       </Box>
-      {/* <Box
-        className="Chart"
+
+      <Box
         sx={{
+          width: "100%",
           display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "5px",
         }}
       >
         <Box
-          className="PieChart"
-          sx={{
-            borderRight: "1px solid rgb(211, 211, 211)",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "5px",
-            margin: "10px",
-          }}
-        > 
-        
-        </Box>
-        <Box
           sx={{
             display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "5px",
-            width: "40%",
+            flexWrap: "wrap", // 여러 개의 차트가 가로로 나열되다가 공간이 부족하면 다음 줄로 넘김
+            justifyContent: "space-around",
+            width: "50%", // 각 차트 사이에 일정한 간격을 유지
           }}
         >
-          <BasicTable />
+          {data ? (
+            Object.keys(data).map((key, idx) => (
+              <Donut
+                key={idx}
+                chartData={data[key]}
+                onClick={handleSelectChange}
+                sx={{ width: "200px", height: "200px", margin: "10px" }} // 각 Donut 차트의 크기를 지정
+              />
+            ))
+          ) : (
+            <></>
+          )}
         </Box>
-      </Box> */}
-      {data ? (
-        Object.keys(data).map((key, idx) => (
-          <Donut key={idx} chartData={data[key]} onClick={handleSelectChange} />
-        ))
-      ) : (
-        <></>
-      )}
+        <Page5Table />
+      </Box>
     </Box>
   );
 }
 
-export default ChartBox4;
+export default ChartBox5;
