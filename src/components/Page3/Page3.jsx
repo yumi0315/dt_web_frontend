@@ -3,23 +3,7 @@ import { Box } from "@mui/material";
 import Excel3 from "./Excel3";
 
 const Page3 = () => {
-  return (
-    <main>
-      <Box
-        className="page3-container"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          height: "100%",
-          justifyContent: "center",
-          alignItems: "space-between",
-        }}
-      >
-        <Excel3 />
-      </Box>
-    </main>
-  );
+  return <Excel3 />;
 };
 
 export default Page3;
