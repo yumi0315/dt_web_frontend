@@ -49,10 +49,16 @@ export default function Excel3Table({ tableData }) {
         <TableBody>
           {tableData.map((row, idx) => (
             <StyledTableRow key={idx}>
-              <StyledTableCell align="center">{row.draw_name}</StyledTableCell>
-              <StyledTableCell align="center">{row.disp_date}</StyledTableCell>
-              <StyledTableCell align="center">{row.disp_num}</StyledTableCell>
-              <StyledTableCell align="center">{row.code_name}</StyledTableCell>
+              <StyledTableCell align="center">
+                {row.dp_bom_desc}
+              </StyledTableCell>
+              <StyledTableCell align="center">{row.Plan_count}</StyledTableCell>
+              <StyledTableCell align="center">
+                {row.Completed_Tasks}
+              </StyledTableCell>
+              <StyledTableCell align="center">
+                {row.Achievement_Rate}
+              </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
