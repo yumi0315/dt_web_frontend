@@ -9,8 +9,6 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
 function Page5Table({ tableData }) {
-  console.log(tableData);
-
   return (
     <TableContainer
       component={Paper}
@@ -32,7 +30,7 @@ function Page5Table({ tableData }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {tableData.map((row, index) => (
+          {tableData?.map((row, index) => (
             <TableRow key={index}>
               <TableCell component="th" scope="row">
                 {row.dep}
