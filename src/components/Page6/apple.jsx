@@ -7,6 +7,7 @@ import {
   InputLabel,
   TextField,
 } from "@mui/material";
+import DatePicker6 from "./DatePicker6";
 
 function Apple() {
   const [selectedOption1, setSelectedOption1] = useState("");
@@ -23,19 +24,19 @@ function Apple() {
   return (
     <Box
       sx={{
-        // background: "white",
         display: "flex",
         flexDirection: "row",
+        justifyContent: "space-between",
         padding: "10px",
-        width: "95%", // 너비가 부모 요소의 100%를 차지
+        width: "95%",
         height: "100%",
         gap: "20px",
         margin: "10px",
-        flexGrow: 0, // flex-grow가 0이면 요소가 더 이상 늘어나지 않음
+        flexGrow: 0,
       }}
     >
       {/* 첫 번째 드롭다운 */}
-      <FormControl sx={{ width: "150px", background: "white" }}>
+      <FormControl sx={{ width: "150px", height: "95%", background: "white" }}>
         <InputLabel id="dropdown1-label">선박 종류</InputLabel>
         <Select
           labelId="dropdown1-label"
@@ -49,25 +50,7 @@ function Apple() {
           <MenuItem value="option3">P3</MenuItem>
         </Select>
       </FormControl>
-
-      {/* 두 번째 드롭다운 */}
-      <FormControl sx={{ width: "200px", background: "white" }}>
-        <InputLabel id="dropdown2-label">용접 방법</InputLabel>
-        <Select
-          labelId="dropdown2-label"
-          id="dropdown2"
-          value={selectedOption2}
-          label="Select Option 2"
-          onChange={handleChange2}
-        >
-          <MenuItem value="optionA">EGFC</MenuItem>
-          <MenuItem value="optionB">EGW</MenuItem>
-          <MenuItem value="optionC">FAB</MenuItem>
-          <MenuItem value="optionD">FCAW</MenuItem>
-          <MenuItem value="optionE">FCSA</MenuItem>
-          <MenuItem value="optionF">SAW</MenuItem>
-        </Select>
-      </FormControl>
+      <DatePicker6 />
     </Box>
   );
 }

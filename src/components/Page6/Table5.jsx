@@ -1,8 +1,10 @@
 import { Box } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import React from "react";
-import "../../CSS/page5.css";
+import React, { Component } from "react";
+import "../../CSS/page6.css";
 import { Pagination } from "@mui/material";
+// import { styled } from "@mui/material/styles";
+// import { Padding, Style } from "@mui/icons-material";
 
 function Table5() {
   const columns = [
@@ -69,6 +71,16 @@ function Table5() {
     { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
   ];
 
+  // const StyledPagenation = styled(Pagination)(({ theme }) => ({
+  //   "& .MuiPagination-ul": {
+  //     display: "flex",
+  //     justifyContent: "flex-end",
+  //   },
+  //   "& .MuiPaginationItem-root": {
+  //     Padding: "0px",
+  //   },
+  // }));
+
   return (
     <Box sx={{ height: 600, width: "95%" }}>
       <DataGrid
@@ -77,14 +89,19 @@ function Table5() {
         pageSizeOptions={[15]}
         checkboxSelection
         disableRowSelectionOnClick
-        componentsProps={{
-          pagination: {
-            sx: {
-              width: "100%",
-              overflow: "hidden", // 스크롤 숨기기
-            },
-          },
-        }}
+        pagination={false}
+        // componentsProps={{
+        //   pagination: {
+        //     component: StyledPagenation,
+        //     sx: {
+        //       width: "100%",
+        //       overflow: "hidden", // 스크롤 숨기기
+        //     },
+        //   },
+        // }}
+        // component={{
+        //   Pagination: StyledPagenation,
+        // }}
       />
     </Box>
   );

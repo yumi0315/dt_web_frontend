@@ -6,10 +6,9 @@ Aside {
 
   border-right: 8px solid rgba(255, 255, 255, 0.5);
 }
-.Menu {
+.menu {
   display: flex;
   align-item: center;
-
   overflow: hidden;
   height: 53px;
 }
@@ -26,7 +25,13 @@ h5 {
   width: 35px;
 }
 
-.Menu:hover {
+.menu:hover {
+  background-color: #3456dd; /* 호버 시 배경색 */
+  color: #ffd700; /* 호버 시 아이콘 색상 */
+  transform: scale(1.06);
+  overflow-y: hidden;
+}
+.menu.active {
   background-color: #3456dd; /* 호버 시 배경색 */
   color: #ffd700; /* 호버 시 아이콘 색상 */
   transform: scale(1.06);
