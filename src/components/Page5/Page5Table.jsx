@@ -8,15 +8,9 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-// Example data
-const rows = [
-  { name: "Item 1", calories: 159, fat: 6.0, carbs: 24, protein: 4.0 },
-  { name: "Item 2", calories: 237, fat: 9.0, carbs: 37, protein: 4.3 },
-  { name: "Item 3", calories: 262, fat: 16.0, carbs: 24, protein: 6.0 },
-];
+function Page5Table({ tableData }) {
+  console.log(tableData);
 
-// BasicTable component
-function Page5Table() {
   return (
     <TableContainer
       component={Paper}
@@ -27,23 +21,29 @@ function Page5Table() {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell align="right">부서명</TableCell>
+            <TableCell align="right">보류수량</TableCell>
+            <TableCell align="right">전체보류비율</TableCell>
+            <TableCell align="right">C1</TableCell>
+            <TableCell align="right">C2</TableCell>
+            <TableCell align="right">C3</TableCell>
+            <TableCell align="right">C4</TableCell>
+            <TableCell align="right">C5</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row, index) => (
+          {tableData.map((row, index) => (
             <TableRow key={index}>
               <TableCell component="th" scope="row">
-                {row.name}
+                {row.dep}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right">{row.defect_count}</TableCell>
+              <TableCell align="right">{row.def_rate}</TableCell>
+              <TableCell align="right">{row.C1}</TableCell>
+              <TableCell align="right">{row.C2}</TableCell>
+              <TableCell align="right">{row.C3}</TableCell>
+              <TableCell align="right">{row.C4}</TableCell>
+              <TableCell align="right">{row.C5}</TableCell>
             </TableRow>
           ))}
         </TableBody>
