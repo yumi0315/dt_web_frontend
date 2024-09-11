@@ -2,9 +2,10 @@ import React from "react";
 import Apple from "./apple";
 import Table5 from "./Table5";
 import { Box } from "@mui/material";
-import "../../CSS/page5.css";
+import "../../CSS/page6.css";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import DatePicker6 from "./DatePicker6";
 
 const Page6 = () => {
   return (
