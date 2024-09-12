@@ -53,6 +53,7 @@ const Progress1 = ({ selectedOption, chartData }) => {
           ctx.fillStyle = "black"; // 텍스트 색상 설정
           ctx.textAlign = "center"; // 텍스트 정렬 설정
           ctx.textBaseline = "middle"; // 텍스트 기준선 설정
+          ctx.fontFamily = "Spoqa-Bold";
 
           // 총 건수 텍스트
           const totalCount = selectData
@@ -76,7 +77,11 @@ const Progress1 = ({ selectedOption, chartData }) => {
         borderRight: "1px solid #ccc",
       }}
     >
-      <Doughnut data={data} options={options} />
+      <Doughnut
+        data={data}
+        options={options}
+        sx={{ fontFamily: "Spoqa-Bold" }}
+      />
     </div>
   );
 };

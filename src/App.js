@@ -9,6 +9,7 @@ import Page3 from "./components/Page3/Page3";
 import Page4 from "./components/Page4/Page4";
 import Page5 from "./components/Page5/Page5";
 import Page6 from "./components/Page6/Page6";
+import Home from "./components/Home/Home";
 
 import "./App.css";
 import { useState } from "react";
@@ -26,6 +27,7 @@ function App() {
         {isLogin ? (
           <Route path={"/"} element={<Layout />}>
             <Route index element={<Main />} /> {/* 기본 경로 */}
+            <Route path="Home" element={<Home />} />
             <Route path="page1" element={<Page1 />} />
             <Route path="page2" element={<Page2 />} />
             <Route path="page3" element={<Page3 />} />
