@@ -58,7 +58,8 @@ function ChartBox5() {
           flexDirection: "column",
           padding: "0",
           boxSizing: "border-box",
-          width: "49.5%",
+          width: "49%",
+          height: "700px",
         }}
       >
         <Box
@@ -105,7 +106,9 @@ function ChartBox5() {
           flexDirection: "column",
           padding: "0",
           boxSizing: "border-box",
-          width: "49.5%",
+          width: "49%",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
         <Page5Table2 />

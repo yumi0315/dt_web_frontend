@@ -23,12 +23,7 @@ ChartJS.register(
 const options = {
   responsive: true,
   scales: {
-    x: {
-      title: {
-        display: true,
-        text: "항목",
-      },
-    },
+    x: {},
     y: {
       type: "linear",
       display: true,
@@ -68,26 +63,28 @@ const data = {
       label: "CNT",
       data: [15, 35], // 첫 번째 값은 보류, 두 번째 값은 전체
       backgroundColor: "rgba(255, 99, 132, 0.5)",
-      yAxisID: "y", // 보류 건수에 해당하는 데이터 (왼쪽 y축)
     },
     {
       label: "COT",
       data: [25, 45], // 첫 번째 값은 보류, 두 번째 값은 전체
       backgroundColor: "rgba(54, 162, 235, 0.5)",
-      yAxisID: "y", // 보류 건수에 해당하는 데이터 (왼쪽 y축)
     },
     {
       label: "LNG",
       data: [30, 40], // 첫 번째 값은 보류, 두 번째 값은 전체
       backgroundColor: "rgba(75, 192, 192, 0.5)",
-      yAxisID: "y", // 보류 건수에 해당하는 데이터 (왼쪽 y축)
     },
   ],
 };
 
 function Page5Chart2() {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box
+      sx={{
+        marginTop: "50px",
+        width: "100%",
+      }}
+    >
       <Bar options={options} data={data} />
     </Box>
   );

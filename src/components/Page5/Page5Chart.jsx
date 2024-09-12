@@ -43,7 +43,8 @@ const Page5Chart = ({ chartData, onClick }) => {
     responsive: true, // 반응형
     plugins: {
       legend: {
-        position: "right", // 범례 위치
+        // position: "right",
+        display: false,
       },
       tooltip: {
         enabled: true, // 툴팁 활성화
