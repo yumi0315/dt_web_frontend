@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../CSS/main.css";
 import { Box, Typography } from "@mui/material";
 import { customFetch } from "../custom/customFetch";
-import { useLocation } from "react-router-dom";
-import Donut from "./Donut";
+import Page5Chart from "./Page5Chart";
 import Page5Table from "./Page5Table";
 
 function ChartBox5() {
@@ -43,15 +42,16 @@ function ChartBox5() {
 
   return (
     <Box
-      className="chart-box5"
+      className="Page5Container"
       sx={{
+        display: "flex",
         border: "1px solid rgb(211, 211, 211)",
         padding: "0",
         boxSizing: "border-box",
-        width: "1600px",
+        width: "100%",
       }}
     >
-      <Box
+      {/* <Box
         sx={{
           borderBottom: "1px solid rgb(211, 211, 211)",
           display: "flex",
@@ -67,37 +67,46 @@ function ChartBox5() {
         >
           용접 불량률 관리
         </Typography>
-      </Box>
+      </Box> */}
 
       <Box
         sx={{
-          width: "100%",
           display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-around",
+          width: "50%",
+          height: "500px",
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap", // 여러 개의 차트가 가로로 나열되다가 공간이 부족하면 다음 줄로 넘김
-            justifyContent: "space-around",
-            width: "50%", // 각 차트 사이에 일정한 간격을 유지
-          }}
-        >
-          {data ? (
-            Object.keys(data).map((key, idx) => (
-              <Donut
-                key={idx}
+        {data ? (
+          Object.keys(data).map((key, idx) => (
+            <Box
+              key={idx}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                width: "200px",
+                margin: "10px",
+              }}
+            >
+              <Typography
+                sx={{ fontSize: "14px", textAlign: "center", width: "100%" }}
+              >
+                {key}
+              </Typography>
+              <Page5Chart
                 chartData={data[key]}
                 onClick={handleSelectChange}
-                sx={{ width: "200px", height: "200px", margin: "10px" }} // 각 Donut 차트의 크기를 지정
+                sx={{ width: "200px", height: "200px" }}
               />
-            ))
-          ) : (
-            <></>
-          )}
-        </Box>
-        <Page5Table tableData={tableData} />
+            </Box>
+          ))
+        ) : (
+          <></>
+        )}
       </Box>
+      <Page5Table tableData={tableData} />
     </Box>
   );
 }

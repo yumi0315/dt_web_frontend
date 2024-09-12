@@ -3,7 +3,7 @@ import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const Donut = ({ chartData, onClick }) => {
+const Page5Chart = ({ chartData, onClick }) => {
   const pastelColors = [
     "#F8BBD0", // Light Pink
     "#F4B9A1", // Light Coral
@@ -57,7 +57,6 @@ const Donut = ({ chartData, onClick }) => {
       style={{
         width: "200px",
         height: "200px",
-        maxWidth: "400px",
         margin: "0 auto",
       }}
     >
@@ -66,4 +65,4 @@ const Donut = ({ chartData, onClick }) => {
   );
 };
 
-export default Donut;
+export default Page5Chart;
