@@ -36,7 +36,14 @@ function Apple() {
       }}
     >
       {/* 첫 번째 드롭다운 */}
-      <FormControl sx={{ width: "150px", height: "95%", background: "white" }}>
+      <FormControl
+        sx={{
+          width: "150px",
+          height: "95%",
+          background: "white",
+          fontFamily: "Spoqa-Mid",
+        }}
+      >
         <InputLabel id="dropdown1-label">선박 종류</InputLabel>
         <Select
           labelId="dropdown1-label"

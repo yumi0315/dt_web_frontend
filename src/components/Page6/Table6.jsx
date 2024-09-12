@@ -78,6 +78,7 @@ function Table6() {
         checkboxSelection
         disableRowSelectionOnClick
         pagination={false}
+        sx={{ fontFamily: "Spoqa-Mid" }}
       />
     </Box>
   );

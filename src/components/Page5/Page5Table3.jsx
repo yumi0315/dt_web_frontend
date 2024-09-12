@@ -27,6 +27,8 @@ const useStyles = makeStyles({
       padding: 0,
       textAlign: "center",
       borderRight: "1px solid #D5DDE4",
+      fontFamily: "Spoqa-bold",
+
       "&:last-child": {
         borderRight: "0px",
       },
@@ -35,6 +37,11 @@ const useStyles = makeStyles({
       height: 35,
       padding: 0,
       textAlign: "center",
+      fontFamily: "Spoqa-mid",
+    },
+    borderRight: "1px solid #e0e0e0", // 열 간 구분선 색상
+    "&:last-child": {
+      borderRight: "none", // 마지막 열에는 구분선이 없음
     },
   },
   tableBodyRow: {
@@ -60,68 +67,78 @@ function Page5Table3() {
   ];
 
   return (
-    <TableContainer
-      component={Paper}
-      className={classes.tableContainer} // tableContainer 스타일 적용
-      sx={{
-        width: "90%",
-        margin: "10px",
-        maxHeight: "240px",
+    <div
+      style={{
+        borderBottom: "1px solid gray",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        padding: "10px 0 ",
       }}
     >
-      <Table aria-label="simple table" stickyHeader>
-        <TableHead>
-          <TableRow className={classes.tableRow}>
-            {/* tableRow 스타일 적용 */}
-            <TableCell
-              align="center"
-              className={classes.tableCell}
-              style={{ backgroundColor: "#EFF2F5" }}
-            ></TableCell>
-            <TableCell
-              align="center"
-              className={classes.tableCell}
-              style={{ backgroundColor: "#EFF2F5" }}
-            >
-              보류
-            </TableCell>
-            <TableCell
-              align="center"
-              className={classes.tableCell}
-              style={{ backgroundColor: "#EFF2F5" }}
-            >
-              승인
-            </TableCell>
-            <TableCell
-              align="center"
-              className={classes.tableCell}
-              style={{ backgroundColor: "#EFF2F5" }}
-            >
-              불량률
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rowData.map((row, index) => (
-            <TableRow key={index} className={classes.tableBodyRow}>
-              {/* tableBodyRow 스타일 적용 */}
-              <TableCell align="center" className={classes.tableCell}>
-                {row.dep}
+      <TableContainer
+        component={Paper}
+        className={classes.tableContainer} // tableContainer 스타일 적용
+        sx={{
+          width: "90%",
+          margin: "10px",
+          maxHeight: "240px",
+        }}
+      >
+        <Table aria-label="simple table" stickyHeader>
+          <TableHead>
+            <TableRow className={classes.tableRow}>
+              {/* tableRow 스타일 적용 */}
+              <TableCell
+                align="center"
+                className={classes.tableCell}
+                style={{ backgroundColor: "#EFF2F5" }}
+              ></TableCell>
+              <TableCell
+                align="center"
+                className={classes.tableCell}
+                style={{ backgroundColor: "#EFF2F5" }}
+              >
+                보류
               </TableCell>
-              <TableCell align="center" className={classes.tableCell}>
-                {row.defect}
+              <TableCell
+                align="center"
+                className={classes.tableCell}
+                style={{ backgroundColor: "#EFF2F5" }}
+              >
+                승인
               </TableCell>
-              <TableCell align="center" className={classes.tableCell}>
-                {row.approved}
-              </TableCell>
-              <TableCell align="center" className={classes.tableCell}>
-                {row.defectRate}
+              <TableCell
+                align="center"
+                className={classes.tableCell}
+                style={{ backgroundColor: "#EFF2F5" }}
+              >
+                불량률
               </TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rowData.map((row, index) => (
+              <TableRow key={index} className={classes.tableBodyRow}>
+                {/* tableBodyRow 스타일 적용 */}
+                <TableCell align="center" className={classes.tableCell}>
+                  {row.dep}
+                </TableCell>
+                <TableCell align="center" className={classes.tableCell}>
+                  {row.defect}
+                </TableCell>
+                <TableCell align="center" className={classes.tableCell}>
+                  {row.approved}
+                </TableCell>
+                <TableCell align="center" className={classes.tableCell}>
+                  {row.defectRate}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 }
 

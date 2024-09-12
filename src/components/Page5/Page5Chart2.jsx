@@ -25,6 +25,11 @@ const options = {
   scales: {
     x: {},
     y: {
+      ticks: {
+        font: {
+          family: "Spoqa-Mid",
+        },
+      },
       type: "linear",
       display: true,
       position: "left", // 왼쪽 y축: 보류 건수
@@ -34,6 +39,11 @@ const options = {
       },
     },
     y1: {
+      ticks: {
+        font: {
+          family: "Spoqa-Mid",
+        },
+      },
       type: "linear",
       display: true,
       position: "right", // 오른쪽 y축: 전체 건수
@@ -41,6 +51,11 @@ const options = {
         drawOnChartArea: false, // 두 번째 y축의 그리드라인을 비활성화
       },
       title: {
+        ticks: {
+          font: {
+            family: "Spoqa-Mid",
+          },
+        },
         display: true,
         text: "건수 (전체)",
       },
@@ -81,9 +96,12 @@ function Page5Chart2() {
   return (
     <Box
       sx={{
-        marginTop: "20px",
+        display: "flex",
+        marginTop: "7px",
         width: "100%",
-        height: "400px",
+        height: "360px",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <Bar options={options} data={data} />

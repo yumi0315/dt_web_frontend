@@ -7,6 +7,7 @@ import Page5Table from "./Page5Table";
 import Page5Table2 from "./Page5Table2";
 import Page5Table3 from "./Page5Table3";
 import Page5Chart2 from "./Page5Chart2";
+import "../../CSS/Page1.css";
 
 function ChartBox5() {
   const [selectedOption, setSelectedOption] = useState(undefined);
@@ -48,7 +49,6 @@ function ChartBox5() {
       sx={{
         display: "flex",
         width: "100%",
-        justifyContent: "space-between",
       }}
     >
       <Box
@@ -60,7 +60,7 @@ function ChartBox5() {
           boxSizing: "border-box",
           width: "49%",
           height: "800px",
-          borderRight: "1px solid #D5DDE4",
+          borderRight: "1px solid gray",
         }}
       >
         <Box
@@ -109,7 +109,6 @@ function ChartBox5() {
           boxSizing: "border-box",
           width: "49%",
           height: "800px",
-          justifyContent: "space-between",
           alignItems: "center",
         }}
       >
