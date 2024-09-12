@@ -49,7 +49,7 @@ function Page5Table({ tableData }) {
       className={classes.tableContainer} // 테이블 컨테이너 스타일 적용
       sx={{
         width: "100%", // 테이블의 너비를 100%로 확장
-        maxHeight: "600px",
+        maxHeight: "300px",
       }}
     >
       <Table

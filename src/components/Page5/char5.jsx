@@ -4,6 +4,9 @@ import { Box, Typography } from "@mui/material";
 import { customFetch } from "../custom/customFetch";
 import Page5Chart from "./Page5Chart";
 import Page5Table from "./Page5Table";
+import Page5Table2 from "./Page5Table2";
+import Page5Table3 from "./Page5Table3";
+import Page5Chart2 from "./Page5Chart2";
 
 function ChartBox5() {
   const [selectedOption, setSelectedOption] = useState(undefined);
@@ -104,7 +107,11 @@ function ChartBox5() {
           boxSizing: "border-box",
           width: "49.5%",
         }}
-      ></Box>
+      >
+        <Page5Table2 />
+        <Page5Table3 />
+        <Page5Chart2 />
+      </Box>
     </Box>
   );
 }
