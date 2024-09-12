@@ -1,4 +1,12 @@
-/* HeaderContainer 스타일 */
+@font-face {
+  font-family: "Spoqa-light";
+  src: url("../font/SpoqaHanSansNeo-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Spoqa-Bold";
+  src: url("../font/SpoqaHanSansNeo-Bold.ttf") format("truetype");
+}
+
 .HeaderContainer {
   display: flex;
   padding: 20px 17px;
@@ -19,4 +27,21 @@
 
 .LogoutBtn:hover {
   transform: scale(1.1); /* 호버 시 버튼 확대 */
+}
+
+.Logout {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.User {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+p {
+  font-family: Spoqa-light;
+}
+Button {
+  font-family: Spoqa-Bold;
 }

@@ -53,7 +53,11 @@ const Progress2 = ({ selectedOption, chartData }) => {
         borderRight: "1px solid #ccc",
       }}
     >
-      <Doughnut data={data} options={options} />
+      <Doughnut
+        data={data}
+        options={options}
+        sx={{ fontFamily: "Spoqa-Bold" }}
+      />
     </div>
   );
 };

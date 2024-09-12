@@ -1,0 +1,65 @@
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 96%;
+  align-items: center;
+  padding: 60px 0;
+}
+@font-face {
+  font-family: "Spoqa-Mid";
+  src: url("../font/SpoqaHanSansNeo-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Spoqa-Bold";
+  src: url("../font/SpoqaHanSansNeo-Bold.ttf") format("truetype");
+}
+
+.Title {
+  width: 500px;
+  text-align: left;
+}
+.Information {
+  width: 500px;
+  text-align: left;
+  margin: 30px 0;
+}
+.Link {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.IMG {
+  opacity: 0.4;
+  filter: brightness(50%); /* 검은색 */
+}
+.Box {
+  background-size: cover;
+  position: relative;
+  display: inline-block;
+  padding: 0;
+}
+.text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: x-large;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-family: Spoqa-light;
+}
+h2 {
+  font-weight: bold;
+  font-family: Spoqa-Bold;
+}
+h1 {
+  font-family: Spoqa-Bold;
+}
+h4 {
+  font-famil: Spoqa-light;
+  font-weight: 400;
+}

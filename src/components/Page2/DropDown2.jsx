@@ -35,7 +35,14 @@ function DropDown2() {
       }}
     >
       {/* 첫 번째 드롭다운 */}
-      <FormControl sx={{ width: "150px", height: "98%", background: "white" }}>
+      <FormControl
+        sx={{
+          width: "150px",
+          height: "98%",
+          background: "white",
+          fontFamily: "Spoqa-Bold",
+        }}
+      >
         <InputLabel id="dropdown1-label">프로젝트</InputLabel>
         <Select
           labelId="dropdown1-label"
