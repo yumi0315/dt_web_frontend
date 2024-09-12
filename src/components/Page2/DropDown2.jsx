@@ -8,18 +8,7 @@ import {
   TextField,
 } from "@mui/material";
 
-function DropDown2() {
-  const [selectedOption1, setSelectedOption1] = useState("");
-  const [selectedOption2, setSelectedOption2] = useState("");
-
-  const handleChange1 = (event) => {
-    setSelectedOption1(event.target.value);
-  };
-
-  const handleChange2 = (event) => {
-    setSelectedOption2(event.target.value);
-  };
-
+function DropDown2({ selectedOption, handleSelectChange }) {
   return (
     <Box
       sx={{
@@ -47,13 +36,13 @@ function DropDown2() {
         <Select
           labelId="dropdown1-label"
           id="dropdown1"
-          value={selectedOption1}
+          value={selectedOption}
           label="Select Option 1"
-          onChange={handleChange1}
+          onChange={handleSelectChange}
         >
-          <MenuItem value="option1">P1</MenuItem>
-          <MenuItem value="option2">P2</MenuItem>
-          <MenuItem value="option3">P3</MenuItem>
+          <MenuItem value="P1">P1</MenuItem>
+          <MenuItem value="P2">P2</MenuItem>
+          <MenuItem value="P3">P3</MenuItem>
         </Select>
       </FormControl>
     </Box>

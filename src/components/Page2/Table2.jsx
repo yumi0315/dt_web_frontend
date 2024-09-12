@@ -1,60 +1,74 @@
 import { Box } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import React, { Component } from "react";
+import { DataGrid } from "@mui/x-data-grid";
+import React from "react";
 import "../../CSS/page2.css";
-import { Pagination } from "@mui/material";
 
-function Table2() {
+function Table2({ tableData }) {
   const columns = [
     {
-      field: "Part",
+      field: "reg_type",
       headerName: "등록구분",
       width: 190,
       headerAlign: "center",
+      renderCell: (params) => (
+        <div style={{ textAlign: "center" }}>{params.value}</div>
+      ),
     },
     {
-      field: "ECN No",
+      field: "ECN_No",
       headerName: "ECN No.",
       width: 190,
       headerAlign: "center",
+      renderCell: (params) => (
+        <div style={{ textAlign: "center" }}>{params.value}</div>
+      ),
     },
     {
-      field: "IMPORT",
+      field: "import",
       headerName: "긴급도",
       width: 140,
       headerAlign: "center",
+      renderCell: (params) => (
+        <div style={{ textAlign: "center" }}>{params.value}</div>
+      ),
     },
     {
-      field: "URG",
+      field: "urg",
       headerName: "중요도",
       width: 140,
       headerAlign: "center",
+      renderCell: (params) => (
+        <div style={{ textAlign: "center" }}>{params.value}</div>
+      ),
     },
     {
-      field: "Req_Dep",
+      field: "request_dep",
       headerName: "요청부서",
       width: 140,
       headerAlign: "center",
+      renderCell: (params) => (
+        <div style={{ textAlign: "center" }}>{params.value}</div>
+      ),
     },
     {
-      field: "State",
+      field: "stat",
       headerName: "진행 상태",
       width: 140,
       headerAlign: "center",
+      renderCell: (params) => (
+        <div style={{ textAlign: "center" }}>{params.value}</div>
+      ),
     },
   ];
-
-  const rows = [
-    { id: 1, lastName: "Snow", firstName: "Jon", age: 14 },
-    { id: 2, lastName: "Lannister", firstName: "Cersei", age: 31 },
-    { id: 3, lastName: "Lannister", firstName: "Jaime", age: 31 },
-    { id: 4, lastName: "Stark", firstName: "Arya", age: 11 },
-    { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
-    { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
-    { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
-    { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
-    { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
-  ];
+  const rows = tableData.map((item, index) => ({
+    id: index + 1, // or you can use any unique ID
+    reg_type: item.reg_type,
+    ECN_No: item.ECN_No,
+    import: item.import,
+    urg: item.urg,
+    request_dep: item.request_dep,
+    stat: item.stat,
+  }));
 
   return (
     <Box sx={{ height: 400, width: "98%", margin: " 0 19px" }}>
