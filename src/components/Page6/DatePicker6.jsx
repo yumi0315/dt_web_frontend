@@ -4,10 +4,11 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { TextField } from "@mui/material";
+import dayjs from "dayjs";
 
 function DatePicker6() {
-  const [startdate, setStartdate] = React.useState(null);
-  const [enddate, setEnddate] = React.useState(null);
+  const [startdate, setStartdate] = React.useState(dayjs());
+  const [enddate, setEnddate] = React.useState(dayjs().endOf("month"));
 
   return (
     <div
@@ -24,7 +25,7 @@ function DatePicker6() {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <span style={{ margin: "0 18px", color: "gray" }}>조회 기간: </span>
         <DatePicker
-          startdate={startdate}
+          value={startdate}
           onChange={(newValue) => setStartdate(newValue)}
           renderInput={(params) => <TextField {...params} />}
           format="YY.MM.DD"
@@ -52,7 +53,7 @@ function DatePicker6() {
           ~
         </span>
         <DatePicker
-          enddate={enddate}
+          value={enddate}
           onChange={(newValue) => setEnddate(newValue)}
           renderInput={(params) => <TextField {...params} />}
           format="YY.MM.DD"
