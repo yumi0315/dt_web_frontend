@@ -1,5 +1,5 @@
 import React from "react";
-import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import { Box } from "@mui/material";
 import {
   Chart as ChartJS,
@@ -24,69 +24,49 @@ ChartJS.register(
   LineElement
 );
 
-const Excel3Chart = ({ data }) => {
-  const transData = data?.reduce(
+const LineChart = ({ data }) => {
+  const transData = data.reduce(
     (acc, cur) => {
-      if (cur.dp_bom_desc === "Total") {
-        return acc;
-      }
-      acc.dp_bom_desc.push(cur.dp_bom_desc);
+      acc.labels.push(cur.respon_dep);
       acc.Plan_count.push(cur.Plan_count);
       acc.Completed_Tasks.push(cur.Completed_Tasks);
+      acc.Achievement_Rate.push(cur.Achievement_Rate);
       return acc;
     },
-    { dp_bom_desc: [], Plan_count: [], Completed_Tasks: [] }
+    { labels: [], Plan_count: [], Completed_Tasks: [], Achievement_Rate: [] }
   );
+
   const chartData = {
-    labels: transData?.dp_bom_desc,
+    labels: transData.labels,
     datasets: [
       {
-        yAxisID: "y1",
-        type: "bar",
-        label: "계획량",
+        label: "실행계획",
         data: transData.Plan_count,
         backgroundColor: "rgba(255, 99, 132, 0.5)",
         borderColor: "rgba(255, 99, 132, 1)",
-        borderWidth: 1,
+        borderWidth: 2,
+        fill: false,
       },
       {
-        yAxisID: "y1",
-        type: "bar",
-        label: "완료량",
+        label: "완료건수",
         data: transData.Completed_Tasks,
         backgroundColor: "rgba(75, 192, 192, 0.5)",
         borderColor: "rgba(75, 192, 192, 1)",
-        borderWidth: 1,
+        borderWidth: 2,
+        fill: false,
       },
-      // {
-      //   yAxisID: "y2",
-      //   type: "line",
-      //   label: "Line차트",
-      //   data: [4000, 6000, 3000, 5000, 4000, 6000], // 임의의 고정된 데이터
-      //   backgroundColor: "rgba(54, 162, 235, 0.5)",
-      //   borderColor: "rgba(54, 162, 235, 1)",
-      //   borderWidth: 2,
-      //   fill: false,
-      //   tension: 0.1,
-      // },
     ],
   };
 
   const options = {
-    scales: {
-      y1: {
-        beginAtZero: true,
-        // position: "top",
-        // title: {
-        //   display: true,
-        //   text: "Bar차트",
-        // },
-        max: Math.max(transData?.Plan_count),
-      },
-    },
+    responsive: true,
     plugins: {
       legend: {
+        position: "top",
+      },
+      title: {
         display: true,
+        text: "Chart.js Line Chart",
       },
       datalabels: {
         formatter: (value, context) => {
@@ -109,9 +89,9 @@ const Excel3Chart = ({ data }) => {
         alignItems: "center",
       }}
     >
-      <Bar data={chartData} options={options} plugins={[ChartDataLabels]} />
+      <Line data={chartData} options={options} plugins={[ChartDataLabels]} />
     </Box>
   );
 };
 
-export default Excel3Chart;
+export default LineChart;

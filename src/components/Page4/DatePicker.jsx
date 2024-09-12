@@ -5,7 +5,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { TextField } from "@mui/material";
 
-function DatePicker4({ date, setDate }) {
+function DatePicker4({ date, setDate, title }) {
   return (
     <div
       style={{
@@ -19,7 +19,9 @@ function DatePicker4({ date, setDate }) {
       }}
     >
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <span style={{ margin: "0 18px", color: "gray" }}>조회 기간: </span>
+        <span style={{ margin: "0 18px", color: "gray" }}>
+          {title || "기준일:"}
+        </span>
         <DatePicker
           value={date}
           onChange={(newValue) => setDate(newValue)}

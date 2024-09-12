@@ -4,11 +4,14 @@ import Excel3Table from "./Excel3Table";
 import Excel3Chart from "./Excel3Chart";
 import dayjs from "dayjs";
 import { customFetch } from "../custom/customFetch";
+import DatePicker4 from "../Page4/DatePicker";
+import LineChart from "./LineChart";
 
 function Excel3() {
-  const [date] = useState(dayjs());
+  const [date, setDate] = useState(dayjs());
   const [selectedOption, setSelectedOption] = useState("P1");
   const [data, setData] = useState(undefined);
+  const [chartData, setChartData] = useState(undefined);
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
@@ -27,7 +30,20 @@ function Excel3() {
       setData(result); // 데이터를 상태에 저장
     };
     fetchData(); // 비동기 함수 호출
-  }, [selectedOption]);
+
+    const fetchChartData = async () => {
+      const result = await customFetch({
+        path: `/page3/chart`,
+        method: "POST",
+        body: {
+          date: date.format("YYYY-MM-DD"),
+          proj: selectedOption,
+        },
+      });
+      setChartData(result); // 데이터를 상태에 저장
+    };
+    fetchChartData(); // 비동기 함수 호출
+  }, [selectedOption, date]);
 
   return (
     <Box
@@ -63,10 +79,12 @@ function Excel3() {
           <MenuItem value="P2">P2</MenuItem>
           <MenuItem value="P3">P3</MenuItem>
         </Select>
+        <DatePicker4 date={date} setDate={setDate} />
       </Box>
 
       <Excel3Table tableData={data} />
-      <Excel3Chart />
+      {data && <Excel3Chart data={data} />}
+      {chartData && <LineChart data={chartData} />}
     </Box>
   );
 }
