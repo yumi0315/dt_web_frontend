@@ -1,7 +1,8 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import ChartDataLabels from "chartjs-plugin-datalabels"; // DataLabels 플러그인
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
 const Page5Chart = ({ chartData, onClick }) => {
   const pastelColors = [
@@ -43,12 +44,27 @@ const Page5Chart = ({ chartData, onClick }) => {
     responsive: true, // 반응형
     plugins: {
       legend: {
-        // position: "right",
-        display: false,
+        display: false, // 범례 비활성화
       },
       tooltip: {
         enabled: true, // 툴팁 활성화
       },
+      datalabels: {
+        color: "gray", // 레이블 색상을 검은색으로 변경
+        display: true, // 레이블 표시
+        formatter: (value, context) => {
+          // 레이블을 표시하는 함수
+          return context.chart.data.labels[context.dataIndex];
+        },
+        font: {
+          weight: "bold",
+          size: 12,
+        },
+        padding: 5,
+      },
+    },
+    layout: {
+      padding: 10,
     },
   };
 

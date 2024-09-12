@@ -13,13 +13,16 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: "White",
     color: theme.palette.common.black,
+    fontFamily: "Spoqa-bold",
+    fontSize: "15px",
   },
   [`&.${tableCellClasses.body}`]: {
     backgroundColor: "#f5f5f5",
     fontSize: 12,
+    fontFamily: "Spoqa-Mid",
   },
 
-  borderRight: "1px solid #CCC", // 열 간 구분선 색상
+  borderRight: "1px solid #e0e0e0", // 열 간 구분선 색상
   "&:last-child": {
     borderRight: "none", // 마지막 열에는 구분선이 없음
   },
@@ -45,10 +48,16 @@ export default function Table1({ tableData }) {
         overflowY: "auto", // 세로 스크롤 활성화
         margin: "0", // 테이블의 상하 여백 제거
         padding: "0", // 테이블의 패딩 제거
+        fontFamily: "Spoqa-Mid",
       }}
     >
       <Table
-        sx={{ minWidth: 500, mheight: "200px", tableLayout: "fixed" }}
+        sx={{
+          minWidth: 500,
+          mheight: "200px",
+          tableLayout: "fixed",
+          fontFamily: "Spoqa-Mid",
+        }}
         aria-label="customized table"
       >
         <TableHead>

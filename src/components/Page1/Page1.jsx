@@ -47,7 +47,12 @@ const Page1 = () => {
         >
           {/* 첫 번째 드롭다운 */}
           <FormControl
-            sx={{ width: "150px", height: "55px", background: "white" }}
+            sx={{
+              width: "150px",
+              height: "55px",
+              background: "white",
+              fontFamily: "Spoqa-Mid",
+            }}
           >
             <InputLabel id="dropdown1-label">프로젝트</InputLabel>
             <Select

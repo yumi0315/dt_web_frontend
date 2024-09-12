@@ -25,6 +25,8 @@ const useStyles = makeStyles({
       padding: 0,
       textAlign: "center",
       borderRight: "1px solid #D5DDE4",
+      fontFamily: "Spoqa-bold",
+
       "&:last-child": {
         borderRight: "0px",
       },
@@ -33,6 +35,11 @@ const useStyles = makeStyles({
       height: 35,
       padding: 0,
       textAlign: "center",
+      fontFamily: "Spoqa-mid",
+    },
+    borderRight: "1px solid #e0e0e0", // 열 간 구분선 색상
+    "&:last-child": {
+      borderRight: "none", // 마지막 열에는 구분선이 없음
     },
   },
   tableBodyRow: {
@@ -44,98 +51,101 @@ function Page5Table({ tableData }) {
   const classes = useStyles(); // 스타일 훅 사용
 
   return (
-    <TableContainer
-      component={Paper}
-      className={classes.tableContainer} // 테이블 컨테이너 스타일 적용
-      sx={{
-        width: "95%", // 테이블의 너비를 100%로 확장
-        maxHeight: "400px",
-      }}
-    >
-      <Table
-        sx={{ minWidth: 650, tableLayout: "fixed" }}
-        aria-label="simple table"
-        stickyHeader
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <TableContainer
+        component={Paper}
+        className={classes.tableContainer} // 테이블 컨테이너 스타일 적용
+        sx={{
+          width: "95%", // 테이블의 너비를 100%로 확장
+          maxHeight: "380px",
+          margin: "5px 0",
+        }}
       >
-        <TableHead>
-          <TableRow className={classes.tableRow}>
-            <TableCell
-              className={classes.tableCell}
-              style={{ backgroundColor: "#EFF2F5" }}
-            >
-              부서명
-            </TableCell>
-            <TableCell
-              align="right"
-              className={classes.tableCell}
-              style={{ backgroundColor: "#EFF2F5" }}
-            >
-              보류수량
-            </TableCell>
-            <TableCell
-              className={classes.tableCell}
-              style={{ backgroundColor: "#EFF2F5" }}
-            >
-              전체보류비율
-            </TableCell>
-            <TableCell
-              className={classes.tableCell}
-              style={{ backgroundColor: "#EFF2F5" }}
-            >
-              C1
-            </TableCell>
-            <TableCell
-              className={classes.tableCell}
-              style={{ backgroundColor: "#EFF2F5" }}
-            >
-              C2
-            </TableCell>
-            <TableCell
-              className={classes.tableCell}
-              style={{ backgroundColor: "#EFF2F5" }}
-            >
-              C3
-            </TableCell>
-            <TableCell
-              className={classes.tableCell}
-              style={{ backgroundColor: "#EFF2F5" }}
-            >
-              C4
-            </TableCell>
-            <TableCell
-              className={classes.tableCell}
-              style={{ backgroundColor: "#EFF2F5" }}
-            >
-              C5
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {tableData?.map((row, index) => (
-            <TableRow key={index} className={classes.tableBodyRow}>
+        <Table
+          sx={{ minWidth: 650, tableLayout: "fixed" }}
+          aria-label="simple table"
+          stickyHeader
+        >
+          <TableHead>
+            <TableRow className={classes.tableRow}>
               <TableCell
-                component="th"
-                scope="row"
                 className={classes.tableCell}
+                style={{ backgroundColor: "#EFF2F5" }}
               >
-                {row.dep}
+                부서명
               </TableCell>
-              <TableCell className={classes.tableCell}>
-                {row.defect_count}
+              <TableCell
+                align="right"
+                className={classes.tableCell}
+                style={{ backgroundColor: "#EFF2F5" }}
+              >
+                보류수량
               </TableCell>
-              <TableCell className={classes.tableCell}>
-                {row.def_rate}
+              <TableCell
+                className={classes.tableCell}
+                style={{ backgroundColor: "#EFF2F5" }}
+              >
+                전체보류비율
               </TableCell>
-              <TableCell className={classes.tableCell}>{row.C1}</TableCell>
-              <TableCell className={classes.tableCell}>{row.C2}</TableCell>
-              <TableCell className={classes.tableCell}>{row.C3}</TableCell>
-              <TableCell className={classes.tableCell}>{row.C4}</TableCell>
-              <TableCell className={classes.tableCell}>{row.C5}</TableCell>
+              <TableCell
+                className={classes.tableCell}
+                style={{ backgroundColor: "#EFF2F5" }}
+              >
+                C1
+              </TableCell>
+              <TableCell
+                className={classes.tableCell}
+                style={{ backgroundColor: "#EFF2F5" }}
+              >
+                C2
+              </TableCell>
+              <TableCell
+                className={classes.tableCell}
+                style={{ backgroundColor: "#EFF2F5" }}
+              >
+                C3
+              </TableCell>
+              <TableCell
+                className={classes.tableCell}
+                style={{ backgroundColor: "#EFF2F5" }}
+              >
+                C4
+              </TableCell>
+              <TableCell
+                className={classes.tableCell}
+                style={{ backgroundColor: "#EFF2F5" }}
+              >
+                C5
+              </TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {tableData?.map((row, index) => (
+              <TableRow key={index} className={classes.tableBodyRow}>
+                <TableCell
+                  component="th"
+                  scope="row"
+                  className={classes.tableCell}
+                >
+                  {row.dep}
+                </TableCell>
+                <TableCell className={classes.tableCell}>
+                  {row.defect_count}
+                </TableCell>
+                <TableCell className={classes.tableCell}>
+                  {row.def_rate}
+                </TableCell>
+                <TableCell className={classes.tableCell}>{row.C1}</TableCell>
+                <TableCell className={classes.tableCell}>{row.C2}</TableCell>
+                <TableCell className={classes.tableCell}>{row.C3}</TableCell>
+                <TableCell className={classes.tableCell}>{row.C4}</TableCell>
+                <TableCell className={classes.tableCell}>{row.C5}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 }
 

@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Spoqa-Mid";
+  src: url("../font/SpoqaHanSansNeo-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Spoqa-Bold";
+  src: url("../font/SpoqaHanSansNeo-Bold.ttf") format("truetype");
+}

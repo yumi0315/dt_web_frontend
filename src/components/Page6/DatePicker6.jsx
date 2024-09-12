@@ -23,7 +23,11 @@ function DatePicker6() {
       }}
     >
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <span style={{ margin: "0 18px", color: "gray" }}>조회 기간: </span>
+        <span
+          style={{ margin: "0 18px", color: "gray", fontFamily: "Spoqa-Mid" }}
+        >
+          조회 기간:{" "}
+        </span>
         <DatePicker
           value={startdate}
           onChange={(newValue) => setStartdate(newValue)}
@@ -32,6 +36,7 @@ function DatePicker6() {
           slotProps={{
             textField: {
               size: "small",
+              fontFamily: "Spoqa-Mid",
             },
           }}
           sx={{
@@ -49,7 +54,14 @@ function DatePicker6() {
               },
           }}
         />
-        <span style={{ display: "flex", alignItems: "center", margin: "8px" }}>
+        <span
+          style={{
+            display: "flex",
+            alignItems: "center",
+            margin: "8px",
+            fontFamily: "Spoqa-Mid",
+          }}
+        >
           ~
         </span>
         <DatePicker
@@ -60,6 +72,7 @@ function DatePicker6() {
           slotProps={{
             textField: {
               size: "small",
+              fontFamily: "Spoqa-Mid",
             },
           }}
           sx={{
