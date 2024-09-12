@@ -10,7 +10,7 @@ const Home = () => {
   };
 
   return (
-    <main>
+    <div className="Home">
       <div className="container">
         <div className="Title">
           <h1>공정현황 대시보드</h1>
@@ -59,7 +59,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 
