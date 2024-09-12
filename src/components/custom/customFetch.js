@@ -15,7 +15,6 @@ export const customFetch = async ({ path, method, headers, body }) => {
     const response = await fetch(`${BASE_URL}/api${path}`, options);
 
     const text = await response.json();
-    console.log(text);
 
     if (!response.ok) {
       throw new Error("서버에서 데이터를 가져오는 데 실패했습니다.");
