@@ -48,26 +48,66 @@ function Page5Table({ tableData }) {
       component={Paper}
       className={classes.tableContainer} // 테이블 컨테이너 스타일 적용
       sx={{
-        width: "100%", // 테이블의 너비를 100%로 확장
-        maxHeight: "300px",
+        width: "95%", // 테이블의 너비를 100%로 확장
+        maxHeight: "400px",
       }}
     >
       <Table
         sx={{ minWidth: 650, tableLayout: "fixed" }}
         aria-label="simple table"
+        stickyHeader
       >
         <TableHead>
           <TableRow className={classes.tableRow}>
-            <TableCell className={classes.tableCell}>부서명</TableCell>
-            <TableCell align="right" className={classes.tableCell}>
+            <TableCell
+              className={classes.tableCell}
+              style={{ backgroundColor: "#EFF2F5" }}
+            >
+              부서명
+            </TableCell>
+            <TableCell
+              align="right"
+              className={classes.tableCell}
+              style={{ backgroundColor: "#EFF2F5" }}
+            >
               보류수량
             </TableCell>
-            <TableCell className={classes.tableCell}>전체보류비율</TableCell>
-            <TableCell className={classes.tableCell}>C1</TableCell>
-            <TableCell className={classes.tableCell}>C2</TableCell>
-            <TableCell className={classes.tableCell}>C3</TableCell>
-            <TableCell className={classes.tableCell}>C4</TableCell>
-            <TableCell className={classes.tableCell}>C5</TableCell>
+            <TableCell
+              className={classes.tableCell}
+              style={{ backgroundColor: "#EFF2F5" }}
+            >
+              전체보류비율
+            </TableCell>
+            <TableCell
+              className={classes.tableCell}
+              style={{ backgroundColor: "#EFF2F5" }}
+            >
+              C1
+            </TableCell>
+            <TableCell
+              className={classes.tableCell}
+              style={{ backgroundColor: "#EFF2F5" }}
+            >
+              C2
+            </TableCell>
+            <TableCell
+              className={classes.tableCell}
+              style={{ backgroundColor: "#EFF2F5" }}
+            >
+              C3
+            </TableCell>
+            <TableCell
+              className={classes.tableCell}
+              style={{ backgroundColor: "#EFF2F5" }}
+            >
+              C4
+            </TableCell>
+            <TableCell
+              className={classes.tableCell}
+              style={{ backgroundColor: "#EFF2F5" }}
+            >
+              C5
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

@@ -59,7 +59,8 @@ function ChartBox5() {
           padding: "0",
           boxSizing: "border-box",
           width: "49%",
-          height: "700px",
+          height: "800px",
+          borderRight: "1px solid #D5DDE4",
         }}
       >
         <Box
@@ -107,6 +108,7 @@ function ChartBox5() {
           padding: "0",
           boxSizing: "border-box",
           width: "49%",
+          height: "800px",
           justifyContent: "space-between",
           alignItems: "center",
         }}

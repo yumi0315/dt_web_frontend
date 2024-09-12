@@ -51,8 +51,8 @@ function Page5Table3() {
       className={classes.tableContainer} // tableContainer 스타일 적용
       sx={{
         width: "90%",
-        maxHeight: "140px",
-        marginTop: "20px",
+        height: "200px",
+        margin: "10px",
       }}
     >
       <Table aria-label="simple table">

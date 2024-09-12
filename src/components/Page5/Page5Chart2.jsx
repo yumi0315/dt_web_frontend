@@ -81,8 +81,9 @@ function Page5Chart2() {
   return (
     <Box
       sx={{
-        marginTop: "50px",
+        marginTop: "20px",
         width: "100%",
+        height: "400px",
       }}
     >
       <Bar options={options} data={data} />
