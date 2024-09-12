@@ -1,6 +1,6 @@
 import React from "react";
 import Apple from "./apple";
-import Table5 from "./Table5";
+import Table6 from "./Table6";
 import { Box } from "@mui/material";
 import "../../CSS/page6.css";
 import Stack from "@mui/material/Stack";
@@ -21,7 +21,7 @@ const Page6 = () => {
         }}
       >
         <Apple />
-        <Table5 />
+        <Table6 />
       </Box>
       <div className="Contact">
         <Stack spacing={2} direction="row">

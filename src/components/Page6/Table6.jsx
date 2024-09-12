@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import "../../CSS/page6.css";
 import { Pagination } from "@mui/material";
 
-function Table5() {
+function Table6() {
   const columns = [
     { field: "Depnt No", headerName: "과", width: 190, headerAlign: "center" },
     {
@@ -83,4 +83,4 @@ function Table5() {
   );
 }
 
-export default Table5;
+export default Table6;
