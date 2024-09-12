@@ -48,8 +48,8 @@ function Page5Table({ tableData }) {
       component={Paper}
       className={classes.tableContainer} // 테이블 컨테이너 스타일 적용
       sx={{
-        width: "50%", // 테이블의 너비를 100%로 확장
-        maxHeight: "500px",
+        width: "100%", // 테이블의 너비를 100%로 확장
+        maxHeight: "600px",
       }}
     >
       <Table
@@ -58,30 +58,16 @@ function Page5Table({ tableData }) {
       >
         <TableHead>
           <TableRow className={classes.tableRow}>
-            <TableCell align="right" className={classes.tableCell}>
-              부서명
-            </TableCell>
+            <TableCell className={classes.tableCell}>부서명</TableCell>
             <TableCell align="right" className={classes.tableCell}>
               보류수량
             </TableCell>
-            <TableCell align="right" className={classes.tableCell}>
-              전체보류비율
-            </TableCell>
-            <TableCell align="right" className={classes.tableCell}>
-              C1
-            </TableCell>
-            <TableCell align="right" className={classes.tableCell}>
-              C2
-            </TableCell>
-            <TableCell align="right" className={classes.tableCell}>
-              C3
-            </TableCell>
-            <TableCell align="right" className={classes.tableCell}>
-              C4
-            </TableCell>
-            <TableCell align="right" className={classes.tableCell}>
-              C5
-            </TableCell>
+            <TableCell className={classes.tableCell}>전체보류비율</TableCell>
+            <TableCell className={classes.tableCell}>C1</TableCell>
+            <TableCell className={classes.tableCell}>C2</TableCell>
+            <TableCell className={classes.tableCell}>C3</TableCell>
+            <TableCell className={classes.tableCell}>C4</TableCell>
+            <TableCell className={classes.tableCell}>C5</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -94,27 +80,17 @@ function Page5Table({ tableData }) {
               >
                 {row.dep}
               </TableCell>
-              <TableCell align="right" className={classes.tableCell}>
+              <TableCell className={classes.tableCell}>
                 {row.defect_count}
               </TableCell>
-              <TableCell align="right" className={classes.tableCell}>
+              <TableCell className={classes.tableCell}>
                 {row.def_rate}
               </TableCell>
-              <TableCell align="right" className={classes.tableCell}>
-                {row.C1}
-              </TableCell>
-              <TableCell align="right" className={classes.tableCell}>
-                {row.C2}
-              </TableCell>
-              <TableCell align="right" className={classes.tableCell}>
-                {row.C3}
-              </TableCell>
-              <TableCell align="right" className={classes.tableCell}>
-                {row.C4}
-              </TableCell>
-              <TableCell align="right" className={classes.tableCell}>
-                {row.C5}
-              </TableCell>
+              <TableCell className={classes.tableCell}>{row.C1}</TableCell>
+              <TableCell className={classes.tableCell}>{row.C2}</TableCell>
+              <TableCell className={classes.tableCell}>{row.C3}</TableCell>
+              <TableCell className={classes.tableCell}>{row.C4}</TableCell>
+              <TableCell className={classes.tableCell}>{row.C5}</TableCell>
             </TableRow>
           ))}
         </TableBody>

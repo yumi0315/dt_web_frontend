@@ -55,8 +55,8 @@ const Page5Chart = ({ chartData, onClick }) => {
     <div
       onClick={() => onClick(chartData[0].welding_meth)}
       style={{
-        width: "200px",
-        height: "200px",
+        width: "150px",
+        height: "150px",
         margin: "0 auto",
       }}
     >

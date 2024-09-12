@@ -42,71 +42,69 @@ function ChartBox5() {
 
   return (
     <Box
-      className="Page5Container"
       sx={{
         display: "flex",
-        border: "1px solid rgb(211, 211, 211)",
-        padding: "0",
-        boxSizing: "border-box",
         width: "100%",
+        justifyContent: "space-between",
       }}
     >
-      {/* <Box
-        sx={{
-          borderBottom: "1px solid rgb(211, 211, 211)",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "5px",
-          height: "20px",
-        }}
-      >
-        <Typography
-          variant="subtitle1"
-          sx={{ margin: "10px", padding: "0px", fontSize: "12px" }}
-        >
-          용접 불량률 관리
-        </Typography>
-      </Box> */}
-
       <Box
+        className="Page5Container1"
         sx={{
           display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-around",
-          width: "50%",
-          height: "500px",
+          flexDirection: "column",
+          padding: "0",
+          boxSizing: "border-box",
+          width: "49.5%",
         }}
       >
-        {data ? (
-          Object.keys(data).map((key, idx) => (
-            <Box
-              key={idx}
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                width: "200px",
-                margin: "10px",
-              }}
-            >
-              <Typography
-                sx={{ fontSize: "14px", textAlign: "center", width: "100%" }}
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-around",
+            width: "100%",
+            height: "400px",
+          }}
+        >
+          {data ? (
+            Object.keys(data).map((key, idx) => (
+              <Box
+                key={idx}
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  width: "33.33%",
+                }}
               >
-                {key}
-              </Typography>
-              <Page5Chart
-                chartData={data[key]}
-                onClick={handleSelectChange}
-                sx={{ width: "200px", height: "200px" }}
-              />
-            </Box>
-          ))
-        ) : (
-          <></>
-        )}
+                <Typography
+                  sx={{ fontSize: "14px", textAlign: "center", width: "100%" }}
+                >
+                  {key}
+                </Typography>
+                <Page5Chart
+                  chartData={data[key]}
+                  onClick={handleSelectChange}
+                />
+              </Box>
+            ))
+          ) : (
+            <></>
+          )}
+        </Box>
+        <Page5Table tableData={tableData} />
       </Box>
-      <Page5Table tableData={tableData} />
+      <Box
+        className="Page5Container2"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          padding: "0",
+          boxSizing: "border-box",
+          width: "49.5%",
+        }}
+      ></Box>
     </Box>
   );
 }
