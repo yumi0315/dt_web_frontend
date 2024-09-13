@@ -36,3 +36,16 @@ img {
     box-shadow: 0 0 5px red; /* Return to subtle glow effect */
   }
 }
+.sub {
+  font-family: "Spoqa-Bold";
+  font-size: 14px;
+  margin-left: 20px;
+  margin-bottom: 0;
+  width: 130px;
+}
+.Page5Header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+}

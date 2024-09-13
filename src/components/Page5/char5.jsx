@@ -7,6 +7,7 @@ import Page5Table from "./Page5Table";
 import Page5Table2 from "./Page5Table2";
 import Page5Table3 from "./Page5Table3";
 import Page5Chart2 from "./Page5Chart2";
+import Info from "./InfoIcon";
 import "../../CSS/Page1.css";
 
 function ChartBox5() {
@@ -63,7 +64,10 @@ function ChartBox5() {
           borderRight: "1px solid #3333",
         }}
       >
-        <p className="sub">용접 방법별 보류 상태</p>
+        <div className="Page5Header">
+          <p className="sub">용접 방법별 보류 상태</p>
+          <Info />
+        </div>
         <Box
           sx={{
             display: "flex",
@@ -114,14 +118,17 @@ function ChartBox5() {
           alignItems: "center",
         }}
       >
-        <p className="sub">업체별 용접 상태</p>
-
+        <div className="Page5Header">
+          <p className="sub">업체별 용접 상태</p>
+        </div>
         <Page5Table2 />
-        <p className="sub">직반장별 용접 상태</p>
-
+        <div className="Page5Header">
+          <p className="sub">직반장별 용접 상태</p>
+        </div>
         <Page5Table3 />
-        <p className="sub">선종별 용접 상태</p>
-
+        <div className="Page5Header">
+          <p className="sub">선종별 용접 상태</p>
+        </div>
         <Page5Chart2 />
       </Box>
     </Box>
