@@ -40,7 +40,7 @@ function DatePicker3({ date, setDate, title }) {
               },
             "& .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.MuiInputBase-sizeSmall.MuiInputBase-adornedEnd":
               {
-                width: "100px",
+                width: "130px",
                 height: "40px",
               },
           }}

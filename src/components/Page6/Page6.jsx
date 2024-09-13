@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Apple from "./apple";
 import Table6 from "./Table6";
 import { Box } from "@mui/material";
@@ -8,6 +8,12 @@ import Button from "@mui/material/Button";
 import DatePicker6 from "./DatePicker6";
 
 const Page6 = () => {
+  const [selectedOption, setSelectedOption] = useState("LNG");
+
+  const handleChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
   return (
     <main>
       <Box
@@ -20,7 +26,7 @@ const Page6 = () => {
           alignItems: "center",
         }}
       >
-        <Apple />
+        <Apple selectedOption={selectedOption} handleChange={handleChange} />
         <Table6 />
       </Box>
       <div className="Contact">

@@ -38,7 +38,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export default function Table1({ tableData }) {
-  return tableData ? (
+  return (
     <TableContainer
       component={Paper}
       sx={{
@@ -68,7 +68,7 @@ export default function Table1({ tableData }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {tableData.map((row, idx) => (
+          {tableData?.map((row, idx) => (
             <StyledTableRow key={idx}>
               {/* <StyledTableCell component="th" scope="row">{row.name}</StyledTableCell> */}
               <StyledTableCell align="center">{row.draw_name}</StyledTableCell>
@@ -80,7 +80,5 @@ export default function Table1({ tableData }) {
         </TableBody>
       </Table>
     </TableContainer>
-  ) : (
-    <></>
   );
 }
