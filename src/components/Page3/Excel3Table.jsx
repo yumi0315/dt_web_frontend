@@ -8,39 +8,59 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import "../../CSS/Page1.css";
 
 // 테이블 셀 스타일 설정
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#3490DD",
-    color: theme.palette.common.white,
+    backgroundColor: "#EFF2F5",
+    color: theme.palette.common.black,
+    fontFamily: "Spoqa-bold",
+    fontSize: "15px",
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 12,
+    fontFamily: "Spoqa-Mid",
+    backgroundColor: "white",
+  },
+  borderRight: "1px solid #e0e0e0", // 열 간 구분선 색상
+
+  "&:last-child": {
+    borderRight: "none",
   },
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  "&:nth-of-type(odd)": {
-    backgroundColor: theme.palette.action.hover,
+  "&:hover": {
+    backgroundColor: "lightgray !important",
   },
+
   "&:last-child td, &:last-child th": {
     border: 0,
+  },
+  // 마지막 행에서도 열 구분선을 유지하기 위해, 모든 셀에 테두리를 적용
+  "& td, & th": {
+    borderRight: "1px solid #e0e0e0 !important",
+  },
+  // 마지막 셀의 오른쪽 테두리는 없음
+  "& td:last-child, & th:last-child": {
+    borderRight: "none",
   },
 }));
 
 export default function Excel3Table({ tableData }) {
   return tableData ? (
     <TableContainer
+      component={Paper}
       sx={{
         width: "100%",
-        height: "800px",
+        height: "460px",
       }}
     >
       <Table sx={{ margin: "0px", padding: "0px" }} aria-label="basic table">
         <TableHead>
           <TableRow>
-            {Object.keys(tableData[0]).map((key) => (
+            {["분류", "실행계획(건)", "완료계획(건)", "달성률"].map((key) => (
               <StyledTableCell align="center">{key}</StyledTableCell>
             ))}
           </TableRow>
