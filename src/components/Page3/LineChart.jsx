@@ -83,8 +83,8 @@ const LineChart = ({ data }) => {
     <Box
       sx={{
         display: "flex",
-        width: "70%",
-        height: "40%",
+        width: "100%",
+        height: "300px",
         justifyContent: "center",
         alignItems: "center",
       }}

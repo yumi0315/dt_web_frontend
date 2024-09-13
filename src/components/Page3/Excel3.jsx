@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Box, Select, MenuItem } from "@mui/material";
+import {
+  Box,
+  MenuItem,
+  Select,
+  FormControl,
+  InputLabel,
+  TextField,
+} from "@mui/material";
 import Excel3Table from "./Excel3Table";
 import Excel3Chart from "./Excel3Chart";
 import dayjs from "dayjs";
 import { customFetch } from "../custom/customFetch";
-import DatePicker4 from "../Page4/DatePicker";
+import DatePicker3 from "./DatePicker3";
 import LineChart from "./LineChart";
 
 function Excel3() {
@@ -47,44 +54,70 @@ function Excel3() {
 
   return (
     <Box
+      className="Page5"
       sx={{
         display: "flex",
         flexDirection: "column",
-        width: "100%",
-        height: "100%",
-        justifyContent: "center",
-        alignItems: "center",
+        width: "1540px",
+        padding: "5px",
       }}
     >
       <Box
-        id="Excel3Dropdown"
+        className="Page3Header"
         sx={{
           display: "flex",
-          justifyContent: "flex-end",
+          justifyContent: "space-between",
           width: "95%",
+          marginTop: "40px",
+          marginBottom: "20px",
         }}
       >
-        <Select
-          value={selectedOption}
-          onChange={handleSelectChange}
+        <FormControl
+          sx={{ width: "150px", height: "95%", background: "white" }}
+        >
+          <InputLabel id="dropdown-label">선박 종류</InputLabel>
+
+          <Select
+            labelId="dropdown-label"
+            id="dropdown"
+            value={selectedOption}
+            label="Select Option"
+            onChange={handleSelectChange}
+          >
+            <MenuItem value="P1">P1</MenuItem>
+            <MenuItem value="P2">P2</MenuItem>
+            <MenuItem value="P3">P3</MenuItem>
+          </Select>
+        </FormControl>
+
+        <DatePicker3 date={date} setDate={setDate} />
+      </Box>
+      <Box
+        className="PageContents"
+        sx={{ display: "flex", width: "100%", justifyContent: "space-between" }}
+      >
+        <Box
+          className="Page3Container1"
           sx={{
-            minWidth: "80px",
-            height: "30px",
-            padding: "0px",
-            fontSize: "14px",
-            background: "white",
+            width: "50%",
+            marginRight: "5px",
+            paddingRight: "25px",
+            borderRight: "1px solid #D5DDE4",
           }}
         >
-          <MenuItem value="P1">P1</MenuItem>
-          <MenuItem value="P2">P2</MenuItem>
-          <MenuItem value="P3">P3</MenuItem>
-        </Select>
-        <DatePicker4 date={date} setDate={setDate} />
+          <Excel3Table tableData={data} />
+        </Box>
+        <Box
+          className="Page3Container2"
+          sx={{
+            width: "50%",
+            marginLeft: "10px",
+          }}
+        >
+          {data && <Excel3Chart data={data} />}
+          {chartData && <LineChart data={chartData} />}
+        </Box>
       </Box>
-
-      <Excel3Table tableData={data} />
-      {data && <Excel3Chart data={data} />}
-      {chartData && <LineChart data={chartData} />}
     </Box>
   );
 }
