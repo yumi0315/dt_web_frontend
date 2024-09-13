@@ -58,17 +58,6 @@ const Excel3Chart = ({ data }) => {
         borderColor: "rgba(75, 192, 192, 1)",
         borderWidth: 1,
       },
-      // {
-      //   yAxisID: "y2",
-      //   type: "line",
-      //   label: "Line차트",
-      //   data: [4000, 6000, 3000, 5000, 4000, 6000], // 임의의 고정된 데이터
-      //   backgroundColor: "rgba(54, 162, 235, 0.5)",
-      //   borderColor: "rgba(54, 162, 235, 1)",
-      //   borderWidth: 2,
-      //   fill: false,
-      //   tension: 0.1,
-      // },
     ],
   };
 
@@ -103,8 +92,8 @@ const Excel3Chart = ({ data }) => {
     <Box
       sx={{
         display: "flex",
-        width: "70%",
-        height: "40%",
+        width: "100%",
+        height: "300px",
         justifyContent: "center",
         alignItems: "center",
       }}

@@ -33,8 +33,8 @@ export default function Excel3Table({ tableData }) {
   return tableData ? (
     <TableContainer
       sx={{
-        width: "70%",
-        height: "400px",
+        width: "100%",
+        height: "800px",
       }}
     >
       <Table sx={{ margin: "0px", padding: "0px" }} aria-label="basic table">
