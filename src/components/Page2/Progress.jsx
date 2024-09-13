@@ -8,7 +8,7 @@ import "chartjs-plugin-datalabels"; // 데이터 레이블 플러그인 임포�
 // Chart.js 요소 등록
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
-const Progress = ({ chartData }) => {
+const Progress = ({ chartData, style }) => {
   const transformData = chartData.reduce(
     (acc, cur) => {
       acc.labels.push(cur.stat);
@@ -53,7 +53,14 @@ const Progress = ({ chartData }) => {
       title: {
         display: true,
         text: `${chartData[0].proj} 작업 현황`,
-        fontSize: "20px",
+        font: { Size: "25px", weight: "bold" },
+      },
+      labels: {
+        padding: 40, //안되무
+        boxWidth: 50,
+      },
+      padding: {
+        right: 30,
       },
       legend: {
         position: "right",
@@ -73,18 +80,16 @@ const Progress = ({ chartData }) => {
         clip: false,
       },
     },
+    layout: {
+      padding: {
+        top: 20, // 차트와 상단의 간격
+        bottom: 20, // 차트와 하단의 간격
+      },
+    },
   };
 
   return (
-    <div
-      className="Pie"
-      style={{
-        width: "500px",
-        height: "300px",
-        margin: "0 auto",
-        borderRight: "1px solid gray",
-      }}
-    >
+    <div className="Pie" style={style}>
       <Doughnut
         data={data}
         options={options}

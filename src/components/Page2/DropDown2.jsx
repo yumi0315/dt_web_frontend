@@ -5,8 +5,31 @@ import {
   Select,
   FormControl,
   InputLabel,
-  TextField,
+  styled,
 } from "@mui/material";
+
+// Custom styled FormControl
+const CustomFormControl = styled(FormControl)(({ theme }) => ({
+  width: "150px",
+  background: "white",
+  fontFamily: "Spoqa-Bold",
+  "& .MuiInputBase-root": {
+    height: 40, // Adjust the height of the Select field
+  },
+  "& .MuiSelect-select": {
+    padding: "10px", // Adjust the padding inside the Select
+  },
+}));
+
+// Custom styled Select
+const CustomSelect = styled(Select)(({ theme }) => ({
+  height: 40, // Adjust the height of the Select field
+  "& .MuiSelect-select": {
+    display: "flex",
+    alignItems: "center",
+    padding: "10px", // Adjust the padding inside the Select
+  },
+}));
 
 function DropDown2({ selectedOption, handleSelectChange }) {
   return (
@@ -24,14 +47,7 @@ function DropDown2({ selectedOption, handleSelectChange }) {
       }}
     >
       {/* 첫 번째 드롭다운 */}
-      <FormControl
-        sx={{
-          width: "150px",
-          height: "98%",
-          background: "white",
-          fontFamily: "Spoqa-Bold",
-        }}
-      >
+      <CustomFormControl>
         <InputLabel id="dropdown1-label">프로젝트</InputLabel>
         <Select
           labelId="dropdown1-label"
@@ -44,7 +60,7 @@ function DropDown2({ selectedOption, handleSelectChange }) {
           <MenuItem value="P2">P2</MenuItem>
           <MenuItem value="P3">P3</MenuItem>
         </Select>
-      </FormControl>
+      </CustomFormControl>
     </Box>
   );
 }

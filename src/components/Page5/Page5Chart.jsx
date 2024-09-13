@@ -59,6 +59,7 @@ const Page5Chart = ({ chartData, onClick }) => {
         font: {
           weight: "bold",
           size: 12,
+          Family: "Spoqa-Bold",
         },
         padding: 5,
       },
