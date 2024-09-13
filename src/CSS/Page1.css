@@ -6,6 +6,7 @@
   font-family: "Spoqa-Bold";
   src: url("../font/SpoqaHanSansNeo-Bold.ttf") format("truetype");
 }
+
 img {
   display: block; /* Ensures no extra space below the image */
 }

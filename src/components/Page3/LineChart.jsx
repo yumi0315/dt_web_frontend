@@ -59,6 +59,10 @@ const LineChart = ({ data }) => {
   };
 
   const options = {
+    y: {
+      beginAtZero: true,
+      max: 800,
+    },
     responsive: true,
     plugins: {
       legend: {
@@ -76,6 +80,7 @@ const LineChart = ({ data }) => {
         color: "black",
         anchor: "end",
         align: "top",
+        padding: "10px",
       },
     },
   };
@@ -85,11 +90,11 @@ const LineChart = ({ data }) => {
       sx={{
         display: "flex",
         width: "100%",
-        height: "300px",
+        height: "320px",
         justifyContent: "center",
         alignItems: "center",
         paddingTop: "20px",
-        borderTop: "1px solid gray",
+        borderTop: "1px solid #3333",
       }}
     >
       <Line data={chartData} options={options} plugins={[ChartDataLabels]} />

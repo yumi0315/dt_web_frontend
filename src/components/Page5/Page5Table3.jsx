@@ -70,7 +70,7 @@ function Page5Table3() {
   return (
     <div
       style={{
-        borderBottom: "1px solid gray",
+        borderBottom: "1px solid #3333",
         width: "100%",
         display: "flex",
         justifyContent: "center",
@@ -81,9 +81,9 @@ function Page5Table3() {
         component={Paper}
         className={classes.tableContainer} // tableContainer 스타일 적용
         sx={{
-          width: "90%",
+          width: "95%",
           margin: "10px",
-          maxHeight: "240px",
+          maxHeight: "215px",
         }}
       >
         <Table aria-label="simple table" stickyHeader>
