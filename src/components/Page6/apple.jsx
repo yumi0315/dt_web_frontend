@@ -8,7 +8,14 @@ import {
 } from "@mui/material";
 import DatePicker6 from "./DatePicker6";
 
-function Apple({ selectedOption, handleChange }) {
+function Apple({
+  selectedOption,
+  handleChange,
+  startdate,
+  setStartdate,
+  enddate,
+  setEnddate,
+}) {
   return (
     <Box
       sx={{
@@ -45,7 +52,12 @@ function Apple({ selectedOption, handleChange }) {
           <MenuItem value="CNT">CNT</MenuItem>
         </Select>
       </FormControl>
-      <DatePicker6 />
+      <DatePicker6
+        startdate={startdate}
+        setStartdate={setStartdate}
+        enddate={enddate}
+        setEnddate={setEnddate}
+      />
     </Box>
   );
 }

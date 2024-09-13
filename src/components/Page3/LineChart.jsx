@@ -61,7 +61,7 @@ const LineChart = ({ data }) => {
   const options = {
     y: {
       beginAtZero: true,
-      max: 800,
+      max: Math.ceil(Math.max(...transData.Plan_count) / 100) * 100,
     },
     responsive: true,
     plugins: {

@@ -65,7 +65,7 @@ const Excel3Chart = ({ data }) => {
     scales: {
       y1: {
         beginAtZero: true,
-        max: 400,
+        max: Math.ceil(Math.max(...transData.Plan_count) / 100) * 100,
       },
     },
     plugins: {
