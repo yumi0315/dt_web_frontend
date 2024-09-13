@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   Box,
   MenuItem,
@@ -9,18 +8,7 @@ import {
 } from "@mui/material";
 import DatePicker6 from "./DatePicker6";
 
-function Apple() {
-  const [selectedOption1, setSelectedOption1] = useState("");
-  const [selectedOption2, setSelectedOption2] = useState("");
-
-  const handleChange1 = (event) => {
-    setSelectedOption1(event.target.value);
-  };
-
-  const handleChange2 = (event) => {
-    setSelectedOption2(event.target.value);
-  };
-
+function Apple({ selectedOption, handleChange }) {
   return (
     <Box
       sx={{
@@ -48,13 +36,13 @@ function Apple() {
         <Select
           labelId="dropdown1-label"
           id="dropdown1"
-          value={selectedOption1}
+          value={selectedOption}
           label="Select Option 1"
-          onChange={handleChange1}
+          onChange={handleChange}
         >
-          <MenuItem value="option1">P1</MenuItem>
-          <MenuItem value="option2">P2</MenuItem>
-          <MenuItem value="option3">P3</MenuItem>
+          <MenuItem value="LNG">LNG</MenuItem>
+          <MenuItem value="COT">COT</MenuItem>
+          <MenuItem value="CNT">CNT</MenuItem>
         </Select>
       </FormControl>
       <DatePicker6 />
