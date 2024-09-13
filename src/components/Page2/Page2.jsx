@@ -51,6 +51,9 @@ const Page2 = () => {
     fetchChart();
   }, [selectedOption]);
 
+  const chartKeys = Object.keys(data);
+  const totalCharts = chartKeys.length;
+
   return (
     <main>
       <div className="Chart1">
