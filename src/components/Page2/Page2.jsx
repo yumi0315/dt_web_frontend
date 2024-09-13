@@ -7,7 +7,7 @@ import Table2 from "./Table2";
 import DropDown2 from "./DropDown2";
 
 const styles = {
-  borderBottom: "1px solid rgb(211, 211, 211)",
+  borderBottom: "1px solid #3333",
 };
 
 const Page2 = () => {
@@ -57,10 +57,26 @@ const Page2 = () => {
   return (
     <main>
       <div className="Chart1">
-        {Object.keys(data).map(
-          (key, idx) =>
-            data[key] && <Progress key={idx} chartData={data[key]} />
-        )}
+        {Object.keys(data).map((key, idx) => {
+          const style =
+            idx < 2
+              ? {
+                  borderRight: "1px solid #3333",
+                  width: "500px",
+                  height: "300px",
+                  margin: "0 auto",
+                }
+              : {
+                  width: "500px",
+                  height: "300px",
+                  margin: "0 auto",
+                };
+          return (
+            data[key] && (
+              <Progress key={idx} style={style} chartData={data[key]} />
+            )
+          );
+        })}
       </div>
       <div className="Chart2">
         <DropDown2
