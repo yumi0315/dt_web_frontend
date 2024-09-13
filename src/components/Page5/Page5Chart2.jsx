@@ -84,8 +84,7 @@ function Page5Chart2() {
       x: {
         stacked: false,
         title: {
-          display: true,
-          text: "Type",
+          display: false,
         },
       },
       y: {
@@ -100,7 +99,8 @@ function Page5Chart2() {
         ticks: {
           beginAtZero: true,
         },
-        max: maxNum[0],
+        max: 11000,
+        // min: 4000,
       },
       y1: {
         id: "y1",
@@ -117,7 +117,7 @@ function Page5Chart2() {
         ticks: {
           beginAtZero: true,
         },
-        max: maxNum[1],
+        max: 100,
       },
     },
     plugins: {
@@ -142,7 +142,7 @@ function Page5Chart2() {
         display: "flex",
         marginTop: "7px",
         width: "100%",
-        height: "360px",
+        height: "310px",
         alignItems: "center",
         justifyContent: "center",
       }}

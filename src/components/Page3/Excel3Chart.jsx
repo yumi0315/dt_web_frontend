@@ -65,13 +65,14 @@ const Excel3Chart = ({ data }) => {
     scales: {
       y1: {
         beginAtZero: true,
-        max: Math.max(transData?.Plan_count),
+        max: 400,
       },
     },
     plugins: {
       legend: {
         display: true,
       },
+
       title: {
         display: true,
         text: "분류별 작업 상태",
@@ -84,6 +85,7 @@ const Excel3Chart = ({ data }) => {
         color: "black",
         anchor: "end",
         align: "top",
+        padding: "10px",
       },
     },
   };
@@ -93,7 +95,7 @@ const Excel3Chart = ({ data }) => {
       sx={{
         display: "flex",
         width: "100%",
-        height: "300px",
+        height: "320px",
         justifyContent: "center",
         alignItems: "center",
         marginBottom: "20px",

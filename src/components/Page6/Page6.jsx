@@ -16,23 +16,25 @@ const Page6 = () => {
 
   return (
     <main>
-      <Box
-        className="container"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          width: "1595px",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Apple selectedOption={selectedOption} handleChange={handleChange} />
-        <Table6 />
-      </Box>
-      <div className="Contact">
-        <Stack spacing={2} direction="row">
-          <Button variant="contained">Contact</Button>
-        </Stack>
+      <div className="page6">
+        <Box
+          className="container"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: "1595px",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Apple selectedOption={selectedOption} handleChange={handleChange} />
+          <Table6 />
+        </Box>
+        <div className="Contact">
+          <Stack spacing={2} direction="row">
+            <Button variant="contained">Contact</Button>
+          </Stack>
+        </div>
       </div>
     </main>
   );

@@ -54,12 +54,12 @@ function Excel3() {
 
   return (
     <Box
-      className="Page5"
+      className="Page3"
       sx={{
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        padding: "0px",
+        padding: "0 30px",
       }}
     >
       <Box
@@ -67,8 +67,8 @@ function Excel3() {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          width: "95%",
-          marginTop: "30px",
+          width: "100%",
+          marginTop: "20px",
           marginBottom: "30px",
         }}
       >
@@ -102,7 +102,7 @@ function Excel3() {
             width: "50%",
             // marginRight: "5px",
             paddingRight: "25px",
-            borderRight: "1px solid gray",
+            borderRight: "1px solid #3333",
           }}
         >
           <Excel3Table tableData={data} />
@@ -111,7 +111,6 @@ function Excel3() {
           className="Page3Container2"
           sx={{
             width: "50%",
-            // marginLeft: "10px",
           }}
         >
           {data && <Excel3Chart data={data} />}

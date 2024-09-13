@@ -9,7 +9,7 @@
 main {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  align-item: center;
   width: 96%;
   font-family: Spoqa-Mid;
 }

@@ -60,9 +60,10 @@ function ChartBox5() {
           boxSizing: "border-box",
           width: "49%",
           height: "800px",
-          borderRight: "1px solid gray",
+          borderRight: "1px solid #3333",
         }}
       >
+        <p className="sub">용접 방법별 보류 상태</p>
         <Box
           sx={{
             display: "flex",
@@ -70,6 +71,7 @@ function ChartBox5() {
             justifyContent: "space-around",
             width: "100%",
             height: "400px",
+            marginTop: "10px",
           }}
         >
           {data ? (
@@ -112,8 +114,14 @@ function ChartBox5() {
           alignItems: "center",
         }}
       >
+        <p className="sub">업체별 용접 상태</p>
+
         <Page5Table2 />
+        <p className="sub">직반장별 용접 상태</p>
+
         <Page5Table3 />
+        <p className="sub">선종별 용접 상태</p>
+
         <Page5Chart2 />
       </Box>
     </Box>

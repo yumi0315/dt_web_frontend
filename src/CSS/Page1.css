@@ -6,3 +6,11 @@
   font-family: "Spoqa-Bold";
   src: url("../font/SpoqaHanSansNeo-Bold.ttf") format("truetype");
 }
+.sub {
+  color: black;
+  font-family: "Spoqa-Bold";
+  font-size: 14px;
+  margin-left: 30px;
+  magin-top: 20px;
+  margin-bottom: 0px;
+}
