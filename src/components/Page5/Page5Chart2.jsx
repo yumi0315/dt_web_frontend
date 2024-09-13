@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { customFetch } from "../custom/customFetch";
 import {
   Chart as ChartJS,
   BarElement,
@@ -20,79 +21,121 @@ ChartJS.register(
   Legend
 );
 
-const options = {
-  responsive: true,
-  scales: {
-    x: {},
-    y: {
-      ticks: {
-        font: {
-          family: "Spoqa-Mid",
-        },
-      },
-      type: "linear",
-      display: true,
-      position: "left", // 왼쪽 y축: 보류 건수
-      title: {
-        display: true,
-        text: "건수 (보류)",
-      },
-    },
-    y1: {
-      ticks: {
-        font: {
-          family: "Spoqa-Mid",
-        },
-      },
-      type: "linear",
-      display: true,
-      position: "right", // 오른쪽 y축: 전체 건수
-      grid: {
-        drawOnChartArea: false, // 두 번째 y축의 그리드라인을 비활성화
-      },
-      title: {
-        ticks: {
-          font: {
-            family: "Spoqa-Mid",
-          },
-        },
-        display: true,
-        text: "건수 (전체)",
-      },
-    },
-  },
-  plugins: {
-    legend: {
-      position: "top",
-    },
-  },
-  barThickness: 20, // 막대의 두께를 조정 (20으로 설정)
-};
-
-const labels = ["보류", "전체"];
-
-const data = {
-  labels,
-  datasets: [
-    {
-      label: "CNT",
-      data: [15, 35], // 첫 번째 값은 보류, 두 번째 값은 전체
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-    },
-    {
-      label: "COT",
-      data: [25, 45], // 첫 번째 값은 보류, 두 번째 값은 전체
-      backgroundColor: "rgba(54, 162, 235, 0.5)",
-    },
-    {
-      label: "LNG",
-      data: [30, 40], // 첫 번째 값은 보류, 두 번째 값은 전체
-      backgroundColor: "rgba(75, 192, 192, 0.5)",
-    },
-  ],
-};
-
 function Page5Chart2() {
+  const [chartData, setChartData] = useState([]);
+
+  useEffect(() => {
+    const fetchChart2 = async () => {
+      const result = await customFetch({
+        path: `/page5/chart2`,
+        method: "GET",
+      });
+
+      const processedData = result.map((item) => ({
+        ...item,
+        defect_count: Number(item.defect_count),
+        total_count: Number(item.total_count),
+      }));
+
+      setChartData(processedData);
+    };
+    fetchChart2();
+  }, []);
+
+  const labels = chartData.map((item) => item.type1);
+
+  const color = [
+    "rgba(255, 99, 132, 0.5)",
+    "rgba(54, 162, 235, 0.5)",
+    "rgba(75, 192, 192, 0.5)",
+  ];
+  let maxNum = [Number.MIN_SAFE_INTEGER, Number.MIN_SAFE_INTEGER];
+
+  const datasets = [
+    {
+      label: "Total Count",
+      data: chartData.map((item) => {
+        maxNum[0] = maxNum[0] < item.total_count ? item.total_count : maxNum[0];
+        return item.total_count;
+      }),
+      backgroundColor: color[1],
+      yAxisID: "y",
+    },
+    {
+      label: "Defect Count",
+      data: chartData.map((item) => {
+        maxNum[1] =
+          maxNum[1] < item.defect_count ? item.defect_count : maxNum[1];
+        return item.defect_count;
+      }),
+      backgroundColor: color[0],
+      yAxisID: "y1",
+    },
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: datasets,
+  };
+
+  const options = {
+    responsive: true,
+    scales: {
+      x: {
+        stacked: false,
+        title: {
+          display: true,
+          text: "Type",
+        },
+      },
+      y: {
+        id: "y",
+        type: "linear",
+        display: true,
+        position: "left",
+        title: {
+          display: true,
+          text: "Total Count",
+        },
+        ticks: {
+          beginAtZero: true,
+        },
+        max: maxNum[0],
+      },
+      y1: {
+        id: "y1",
+        type: "linear",
+        display: true,
+        position: "right",
+        grid: {
+          drawOnChartArea: false, // Hide the grid lines for the right y-axis
+        },
+        title: {
+          display: true,
+          text: "Defect Count",
+        },
+        ticks: {
+          beginAtZero: true,
+        },
+        max: maxNum[1],
+      },
+    },
+    plugins: {
+      legend: {
+        position: "top",
+      },
+    },
+    barThickness: 20,
+    layout: {
+      padding: {
+        left: 10,
+        right: 10,
+        top: 10,
+        bottom: 10,
+      },
+    },
+  };
+
   return (
     <Box
       sx={{

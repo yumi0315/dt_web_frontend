@@ -39,9 +39,9 @@ function ChartBox5() {
         return acc;
       }, {});
       handleSelectChange(Object.keys(filterData)[0]);
-      setData(filterData); // 데이터를 상태에 저장
+      setData(filterData);
     };
-    fetchData(); // 비동기 함수 호출
+    fetchData();
   }, []);
 
   return (

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { customFetch } from "../custom/customFetch";
 import {
   Table,
   TableBody,
@@ -50,7 +51,21 @@ const useStyles = makeStyles({
 });
 
 function Page5Table3() {
-  const classes = useStyles(); // 스타일 훅 사용
+  const classes = useStyles();
+
+  const [tableData, setTableData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await customFetch({
+        path: `/page5/table2`,
+        method: "GET",
+      });
+
+      setTableData(result);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div
@@ -75,11 +90,9 @@ function Page5Table3() {
           <TableHead>
             <TableRow className={classes.tableRow}>
               {" "}
-              {/* tableRow 스타일 적용 */}
-              <TableCell
-                align="center"
-                className={classes.tableCell}
-              ></TableCell>
+              <TableCell align="center" className={classes.tableCell}>
+                구분
+              </TableCell>
               <TableCell align="center" className={classes.tableCell}>
                 보류
               </TableCell>
@@ -92,38 +105,23 @@ function Page5Table3() {
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow className={classes.tableBodyRow}>
-              {" "}
-              {/* tableBodyRow 스타일 적용 */}
-              <TableCell align="center" className={classes.tableCell}>
-                SHI
-              </TableCell>
-              <TableCell align="center" className={classes.tableCell}>
-                19
-              </TableCell>
-              <TableCell align="center" className={classes.tableCell}>
-                6714
-              </TableCell>
-              <TableCell align="center" className={classes.tableCell}>
-                0.28
-              </TableCell>
-            </TableRow>
-            <TableRow className={classes.tableBodyRow}>
-              {" "}
-              {/* tableBodyRow 스타일 적용 */}
-              <TableCell align="center" className={classes.tableCell}>
-                Vendor
-              </TableCell>
-              <TableCell align="center" className={classes.tableCell}>
-                133
-              </TableCell>
-              <TableCell align="center" className={classes.tableCell}>
-                17585
-              </TableCell>
-              <TableCell align="center" className={classes.tableCell}>
-                0.76
-              </TableCell>
-            </TableRow>
+            {tableData?.map((obj, idx) => (
+              <TableRow key={idx} className={classes.tableBodyRow}>
+                {" "}
+                <TableCell align="center" className={classes.tableCell}>
+                  {obj.vendor_type}
+                </TableCell>
+                <TableCell align="center" className={classes.tableCell}>
+                  {obj.defect_count}
+                </TableCell>
+                <TableCell align="center" className={classes.tableCell}>
+                  {obj.total_count}
+                </TableCell>
+                <TableCell align="center" className={classes.tableCell}>
+                  {obj.defect_rate}
+                </TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </TableContainer>

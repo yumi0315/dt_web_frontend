@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { customFetch } from "../custom/customFetch";
 import {
   Table,
   TableBody,
@@ -52,19 +53,19 @@ const useStyles = makeStyles({
 function Page5Table3() {
   const classes = useStyles(); // 스타일 훅 사용
 
-  // 임의의 데이터를 추가한 10개의 행
-  const rowData = [
-    { dep: "SHI", defect: 19, approved: 6714, defectRate: 0.28 },
-    { dep: "Vendor", defect: 133, approved: 17585, defectRate: 0.76 },
-    { dep: "D1", defect: 20, approved: 5432, defectRate: 0.36 },
-    { dep: "D2", defect: 50, approved: 1825, defectRate: 0.87 },
-    { dep: "D3", defect: 30, approved: 9874, defectRate: 0.12 },
-    { dep: "D4", defect: 45, approved: 2398, defectRate: 0.52 },
-    { dep: "D5", defect: 67, approved: 8210, defectRate: 0.61 },
-    { dep: "D6", defect: 10, approved: 5498, defectRate: 0.18 },
-    { dep: "D7", defect: 25, approved: 3210, defectRate: 0.42 },
-    { dep: "D8", defect: 18, approved: 4789, defectRate: 0.29 },
-  ];
+  const [tableData, setTableData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await customFetch({
+        path: `/page5/table3`,
+        method: "GET",
+      });
+
+      setTableData(result);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div
@@ -88,12 +89,13 @@ function Page5Table3() {
         <Table aria-label="simple table" stickyHeader>
           <TableHead>
             <TableRow className={classes.tableRow}>
-              {/* tableRow 스타일 적용 */}
               <TableCell
                 align="center"
                 className={classes.tableCell}
                 style={{ backgroundColor: "#EFF2F5" }}
-              ></TableCell>
+              >
+                구분
+              </TableCell>
               <TableCell
                 align="center"
                 className={classes.tableCell}
@@ -118,20 +120,19 @@ function Page5Table3() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rowData.map((row, index) => (
+            {tableData.map((obj, index) => (
               <TableRow key={index} className={classes.tableBodyRow}>
-                {/* tableBodyRow 스타일 적용 */}
                 <TableCell align="center" className={classes.tableCell}>
-                  {row.dep}
+                  {obj.super_code}
                 </TableCell>
                 <TableCell align="center" className={classes.tableCell}>
-                  {row.defect}
+                  {obj.super_code_defect_count}
                 </TableCell>
                 <TableCell align="center" className={classes.tableCell}>
-                  {row.approved}
+                  {obj.super_code_total_count}
                 </TableCell>
                 <TableCell align="center" className={classes.tableCell}>
-                  {row.defectRate}
+                  {obj.defect_rate}
                 </TableCell>
               </TableRow>
             ))}
