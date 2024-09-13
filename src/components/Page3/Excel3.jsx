@@ -75,7 +75,7 @@ function Excel3() {
         <FormControl
           sx={{ width: "150px", height: "96%", background: "white" }}
         >
-          <InputLabel id="dropdown-label">선박 종류</InputLabel>
+          <InputLabel id="dropdown-label">프로젝트</InputLabel>
 
           <Select
             labelId="dropdown-label"
@@ -100,9 +100,9 @@ function Excel3() {
           className="Page3Container1"
           sx={{
             width: "50%",
-            marginRight: "5px",
+            // marginRight: "5px",
             paddingRight: "25px",
-            borderRight: "1px solid #D5DDE4",
+            borderRight: "1px solid gray",
           }}
         >
           <Excel3Table tableData={data} />
@@ -111,7 +111,7 @@ function Excel3() {
           className="Page3Container2"
           sx={{
             width: "50%",
-            marginLeft: "10px",
+            // marginLeft: "10px",
           }}
         >
           {data && <Excel3Chart data={data} />}

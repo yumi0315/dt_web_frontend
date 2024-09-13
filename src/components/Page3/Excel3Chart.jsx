@@ -43,7 +43,7 @@ const Excel3Chart = ({ data }) => {
       {
         yAxisID: "y1",
         type: "bar",
-        label: "계획량",
+        label: "실행계획(건)",
         data: transData.Plan_count,
         backgroundColor: "rgba(255, 99, 132, 0.5)",
         borderColor: "rgba(255, 99, 132, 1)",
@@ -52,7 +52,7 @@ const Excel3Chart = ({ data }) => {
       {
         yAxisID: "y1",
         type: "bar",
-        label: "완료량",
+        label: "실행완료(건)",
         data: transData.Completed_Tasks,
         backgroundColor: "rgba(75, 192, 192, 0.5)",
         borderColor: "rgba(75, 192, 192, 1)",
@@ -65,11 +65,6 @@ const Excel3Chart = ({ data }) => {
     scales: {
       y1: {
         beginAtZero: true,
-        // position: "top",
-        // title: {
-        //   display: true,
-        //   text: "Bar차트",
-        // },
         max: Math.max(transData?.Plan_count),
       },
     },
@@ -77,9 +72,14 @@ const Excel3Chart = ({ data }) => {
       legend: {
         display: true,
       },
+      title: {
+        display: true,
+        text: "분류별 작업 상태",
+        position: "bottom",
+      },
       datalabels: {
         formatter: (value, context) => {
-          return value + "건"; // 레이블로 고정된 값 표시
+          return value; // 레이블로 고정된 값 표시
         },
         color: "black",
         anchor: "end",
@@ -96,6 +96,7 @@ const Excel3Chart = ({ data }) => {
         height: "300px",
         justifyContent: "center",
         alignItems: "center",
+        marginBottom: "20px",
       }}
     >
       <Bar data={chartData} options={options} plugins={[ChartDataLabels]} />

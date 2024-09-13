@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Table1 from "./Table1";
 import { customFetch } from "../custom/customFetch";
-import { useLocation } from "react-router-dom";
 import {
   Box,
   MenuItem,
@@ -13,13 +12,24 @@ import {
 import "../../CSS/Page1.css";
 
 const Page1 = () => {
-  const pageLocation = useLocation();
   const [data, setData] = useState(undefined);
 
   const [selectedOption, setSelectedOption] = useState("P1");
 
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
+  };
+
+  const [highlightPosition, setHighlightPosition] = useState({
+    left: 1150,
+    top: 430,
+  });
+
+  const handleRowClick = (position) => {
+    setHighlightPosition({
+      left: 1150 + Number(position) * 10,
+      top: 430 + Number(position) * 4,
+    });
   };
 
   useEffect(() => {
@@ -73,8 +83,19 @@ const Page1 = () => {
             </Select>
           </FormControl>
         </Box>
-        <Table1 tableData={data} />
+        <Table1 tableData={data} handleRowClick={handleRowClick} />
         <img src="/vessel.png" alt="Logo" style={{ width: "855px" }} />
+        {highlightPosition && (
+          <div
+            className="highlight"
+            style={{
+              left: `${highlightPosition.left}px`,
+              top: `${highlightPosition.top}px`,
+              width: "20px",
+              height: "20px",
+            }}
+          ></div>
+        )}
       </div>
     </main>
   );
