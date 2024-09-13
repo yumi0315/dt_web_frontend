@@ -38,11 +38,11 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export default function Table1({ tableData }) {
-  return tableData ? (
+  return (
     <TableContainer
       component={Paper}
       sx={{
-        width: "45%",
+        width: "100%",
         maxHeight: "658px",
         overflowY: "auto", // 세로 스크롤 활성화
         margin: "0", // 테이블의 상하 여백 제거
@@ -68,7 +68,7 @@ export default function Table1({ tableData }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {tableData.map((row, idx) => (
+          {tableData?.map((row, idx) => (
             <StyledTableRow key={idx}>
               {/* <StyledTableCell component="th" scope="row">{row.name}</StyledTableCell> */}
               <StyledTableCell align="center">{row.draw_name}</StyledTableCell>
@@ -80,7 +80,5 @@ export default function Table1({ tableData }) {
         </TableBody>
       </Table>
     </TableContainer>
-  ) : (
-    <></>
   );
 }
