@@ -3,13 +3,15 @@
   src: url("../font/SpoqaHanSansNeo-Light.ttf") format("truetype");
 }
 
-Aside {
+aside {
+  display: flex;
+  flex-direction: column;
   height: 945px;
   width: 250px;
   background: #3490dd;
-
   border-right: 8px solid rgba(255, 255, 255, 0.5);
 }
+
 .menu {
   display: flex;
   overflow: hidden;
@@ -21,8 +23,9 @@ h5 {
   color: #edeeff;
   font-family: "Spoqa-light";
   font-size: 18px;
-  line-height: 4px; /* 이 요소의 텍스트를 기준으로 위 아래 기준 텍스트를 가운데 정렬시킴 */
+  line-height: 4px; /* 텍스트를 위아래로 중앙 정렬 */
 }
+
 .icon {
   display: flex;
   padding: 7px; /* 아이콘 주변 여백 */
@@ -32,13 +35,29 @@ h5 {
 
 .menu:hover {
   background-color: #3456dd; /* 호버 시 배경색 */
-  color: #ffd700; /* 호버 시 아이콘 색상 */
+  color: #ffd700; /* 호버 시 텍스트 색상 */
   transform: scale(1.06);
   overflow-y: hidden;
 }
+
 .menu.active {
-  background-color: #3456dd; /* 호버 시 배경색 */
-  color: #ffd700; /* 호버 시 아이콘 색상 */
+  background-color: #3456dd; /* 활성화된 상태의 배경색 */
+  color: #ffd700; /* 활성화된 상태의 텍스트 색상 */
   transform: scale(1.06);
   overflow-y: hidden;
+}
+
+.quote {
+  background-color: #3456dd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+  color: rgb(255, 255, 255);
+  font-family: "Spoqa-light";
+  font-size: 18px;
+  margin-top: auto;
+  text-align: center;
+  margin-bottom: 100px;
 }
