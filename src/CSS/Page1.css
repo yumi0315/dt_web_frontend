@@ -6,3 +6,32 @@
   font-family: "Spoqa-Bold";
   src: url("../font/SpoqaHanSansNeo-Bold.ttf") format("truetype");
 }
+img {
+  display: block; /* Ensures no extra space below the image */
+}
+
+.highlight {
+  position: absolute;
+  border-radius: 50%; /* Makes it a circle */
+  border: 2px solid red; /* Red border for the circle */
+  background-color: transparent; /* No fill color */
+  width: 20px; /* Diameter of the circle */
+  height: 20px; /* Diameter of the circle */
+  transform: translate(-50%, -50%);
+  animation: sparkle 1.5s infinite; /* Apply animation */
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0.5;
+    box-shadow: 0 0 5px red; /* Subtle glow effect */
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 15px red; /* Stronger glow effect */
+  }
+  100% {
+    opacity: 0.5;
+    box-shadow: 0 0 5px red; /* Return to subtle glow effect */
+  }
+}
