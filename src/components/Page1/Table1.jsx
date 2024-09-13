@@ -47,7 +47,6 @@ export default function Table1({ tableData }) {
         overflowY: "auto", // 세로 스크롤 활성화
         margin: "0", // 테이블의 상하 여백 제거
         padding: "0", // 테이블의 패딩 제거
-        fontFamily: "Spoqa-Mid",
       }}
     >
       <Table
@@ -55,7 +54,6 @@ export default function Table1({ tableData }) {
           minWidth: 500,
           mheight: "200px",
           tableLayout: "fixed",
-          fontFamily: "Spoqa-Mid",
         }}
         aria-label="customized table"
         stickyHeader

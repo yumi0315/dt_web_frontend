@@ -40,7 +40,7 @@ const LineChart = ({ data }) => {
     labels: transData.labels,
     datasets: [
       {
-        label: "실행계획",
+        label: "실행계획(건)",
         data: transData.Plan_count,
         backgroundColor: "rgba(255, 99, 132, 0.5)",
         borderColor: "rgba(255, 99, 132, 1)",
@@ -48,7 +48,7 @@ const LineChart = ({ data }) => {
         fill: false,
       },
       {
-        label: "완료건수",
+        label: "실행완료(건)",
         data: transData.Completed_Tasks,
         backgroundColor: "rgba(75, 192, 192, 0.5)",
         borderColor: "rgba(75, 192, 192, 1)",
@@ -66,11 +66,12 @@ const LineChart = ({ data }) => {
       },
       title: {
         display: true,
-        text: "Chart.js Line Chart",
+        text: "부서별 작업 상태",
+        position: "bottom",
       },
       datalabels: {
         formatter: (value, context) => {
-          return value + "건"; // 레이블로 고정된 값 표시
+          return value; // 레이블로 고정된 값 표시
         },
         color: "black",
         anchor: "end",
@@ -87,6 +88,8 @@ const LineChart = ({ data }) => {
         height: "300px",
         justifyContent: "center",
         alignItems: "center",
+        paddingTop: "20px",
+        borderTop: "1px solid gray",
       }}
     >
       <Line data={chartData} options={options} plugins={[ChartDataLabels]} />
