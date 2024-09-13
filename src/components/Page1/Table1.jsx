@@ -11,13 +11,12 @@ import Paper from "@mui/material/Paper";
 // 테이블 셀 스타일 설정
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "White",
+    backgroundColor: "#EFF2F5",
     color: theme.palette.common.black,
     fontFamily: "Spoqa-bold",
     fontSize: "15px",
   },
   [`&.${tableCellClasses.body}`]: {
-    backgroundColor: "#f5f5f5",
     fontSize: 12,
     fontFamily: "Spoqa-Mid",
   },
@@ -30,7 +29,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:hover": {
-    backgroundColor: "gray !important",
+    backgroundColor: "lightgray !important",
   },
 
   "&:last-child td, &:last-child th": {
@@ -59,6 +58,7 @@ export default function Table1({ tableData }) {
           fontFamily: "Spoqa-Mid",
         }}
         aria-label="customized table"
+        stickyHeader
       >
         <TableHead>
           <TableRow>

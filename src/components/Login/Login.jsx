@@ -48,7 +48,7 @@ const Login = ({ onLoginSuccess }) => {
           <div class="login">
             <TextField
               id="outlined-basic"
-              label="ID"
+              label="사번 또는 아이디 입력"
               variant="outlined"
               value={id}
               onChange={(e) => setId(e.target.value)}
@@ -57,7 +57,7 @@ const Login = ({ onLoginSuccess }) => {
                 //height 및 width 변경
                 "& .MuiInputBase-root": {
                   height: 48,
-                  width: 335,
+                  width: 302,
                 },
               }}
             />
@@ -66,7 +66,7 @@ const Login = ({ onLoginSuccess }) => {
             <TextField
               variant="outlined"
               id="password"
-              label="password"
+              label="비밀번호 : 8-12자리 입력"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -74,7 +74,7 @@ const Login = ({ onLoginSuccess }) => {
                 //height 및 width 변경
                 "& .MuiInputBase-root": {
                   height: 48,
-                  width: 335,
+                  width: 302,
                 },
               }}
             />
