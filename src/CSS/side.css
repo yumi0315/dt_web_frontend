@@ -48,8 +48,9 @@ h5 {
 }
 
 .quote {
-  background-color: #3456dd;
+  background-color: rgba(52, 86, 221, 0.3); /* 반투명 배경 */
   display: flex;
+  flex-direction: column; /* 좌측 상단과 명언 텍스트를 세로로 배치 */
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -60,4 +61,20 @@ h5 {
   margin-top: auto;
   text-align: center;
   margin-bottom: 100px;
+  border-radius: 5px;
+  position: relative; /* 좌측 상단에 위치시키기 위해 */
+}
+
+.quote-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.quote p {
+  margin-top: 20px;
+  width: 240px;
 }
