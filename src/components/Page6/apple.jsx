@@ -24,7 +24,7 @@ function Apple({
         justifyContent: "space-between",
         padding: "10px",
         width: "95%",
-        height: "100%",
+        height: "56px",
         gap: "20px",
         margin: "10px",
         flexGrow: 0,
