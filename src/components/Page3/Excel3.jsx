@@ -58,8 +58,8 @@ function Excel3() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        width: "1540px",
-        padding: "5px",
+        width: "100%",
+        padding: "0px",
       }}
     >
       <Box
@@ -68,12 +68,12 @@ function Excel3() {
           display: "flex",
           justifyContent: "space-between",
           width: "95%",
-          marginTop: "40px",
-          marginBottom: "20px",
+          marginTop: "30px",
+          marginBottom: "30px",
         }}
       >
         <FormControl
-          sx={{ width: "150px", height: "95%", background: "white" }}
+          sx={{ width: "150px", height: "96%", background: "white" }}
         >
           <InputLabel id="dropdown-label">선박 종류</InputLabel>
 

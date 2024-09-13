@@ -42,7 +42,7 @@ export default function Table1({ tableData }) {
     <TableContainer
       component={Paper}
       sx={{
-        width: "100%",
+        width: "45%",
         maxHeight: "658px",
         overflowY: "auto", // 세로 스크롤 활성화
         margin: "0", // 테이블의 상하 여백 제거
