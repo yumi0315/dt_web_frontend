@@ -4,18 +4,17 @@
 }
 
 Aside {
-  display: flex;
-  flexdirection: column;
   height: 945px;
   width: 250px;
   background: #3490dd;
+
   border-right: 8px solid rgba(255, 255, 255, 0.5);
 }
 .menu {
   display: flex;
-  align-item: center;
   overflow: hidden;
   height: 53px;
+  width: 100%;
 }
 
 h5 {
@@ -28,8 +27,6 @@ h5 {
   display: flex;
   padding: 7px; /* 아이콘 주변 여백 */
   margin: 10px;
-  justifycontent: center;
-  aligncontent: center;
   width: 35px;
 }
 

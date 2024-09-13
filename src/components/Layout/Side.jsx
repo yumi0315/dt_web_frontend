@@ -4,6 +4,7 @@ import { faGears, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import "../../CSS/side.css";
 import React, { useState } from "react";
+import { Box } from "@mui/material";
 
 const menuItems = [
   { id: 1, text: "메뉴1", path: "/page1", icon: faChartSimple },
@@ -42,6 +43,7 @@ const Side = () => {
           </div>
         ))}
       </nav>
+      <Box>명언</Box>
     </aside>
   );
 };
