@@ -26,8 +26,7 @@ function App() {
       <Routes>
         {isLogin ? (
           <Route path={"/"} element={<Layout />}>
-            <Route index element={<Main />} /> {/* 기본 경로 */}
-            <Route path="Home" element={<Home />} />
+            <Route index element={<Home />} /> {/* 기본 경로 */}
             <Route path="page1" element={<Page1 />} />
             <Route path="page2" element={<Page2 />} />
             <Route path="page3" element={<Page3 />} />
