@@ -74,6 +74,7 @@ const Page1 = () => {
           </FormControl>
         </Box>
         <Table1 tableData={data} />
+        <img src="/vessel.png" alt="Logo" style={{ width: "855px" }} />
       </div>
     </main>
   );
