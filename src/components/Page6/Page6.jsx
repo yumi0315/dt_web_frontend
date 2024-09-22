@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Apple from "./apple";
 import Table6 from "./Table6";
 import { Box } from "@mui/material";
 import "../../CSS/page6.css";
+import Apple from "./apple";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import dayjs from "dayjs";
 import { customFetch } from "../custom/customFetch";
+import Contact from "./Contact";
 
 const Page6 = () => {
   const [selectedOption, setSelectedOption] = useState("LNG");
@@ -59,9 +60,7 @@ const Page6 = () => {
           <Table6 tableData={data} />
         </Box>
         <div className="Contact">
-          <Stack spacing={2} direction="row">
-            <Button variant="contained">Contact</Button>
-          </Stack>
+          <Contact />
         </div>
       </div>
     </main>
