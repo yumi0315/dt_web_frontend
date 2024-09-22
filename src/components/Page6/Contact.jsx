@@ -84,7 +84,7 @@ export default function CustomizedDialogs() {
             </div>
             <div className="EmailComponent">
               <p className="EmailName">제목</p>
-              <Inputy
+              <Input
                 inputProps={ariaLabel}
                 sx={{ maxHeight: "48px", minWidth: "750px" }}
               />
