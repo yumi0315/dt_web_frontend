@@ -1,6 +1,8 @@
 import React from "react";
 import "../../CSS/Home.css";
 import { useNavigate } from "react-router-dom";
+import { Box } from "@mui/material";
+import ToDoList from "./ToDoList";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -11,7 +13,7 @@ const Home = () => {
 
   return (
     <div className="Home">
-      <div className="container">
+      <div className="container1">
         <div className="Title">
           <h1>공정현황 대시보드</h1>
         </div>
@@ -26,7 +28,7 @@ const Home = () => {
               src="/First.jpg"
               alt="First"
               className="IMG"
-              style={{ width: "400px", height: "400px" }}
+              style={{ width: "250px", height: "250px" }}
             />
             <div className="text">
               <h2>20%</h2>
@@ -38,7 +40,7 @@ const Home = () => {
               src="/Second.jpg"
               alt="Second"
               className="IMG"
-              style={{ width: "400px", height: "400px" }}
+              style={{ width: "250px", height: "250px" }}
             />
             <div className="text">
               <h2>10%</h2>
@@ -50,7 +52,7 @@ const Home = () => {
               src="/Third.jpg"
               alt="Third"
               className="IMG"
-              style={{ width: "400px", height: "400px" }}
+              style={{ width: "250px", height: "250px" }}
             />
             <div className="text">
               <h2>0.5%</h2>
@@ -58,6 +60,9 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="container2">
+        <ToDoList />
       </div>
     </div>
   );
