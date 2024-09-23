@@ -49,3 +49,10 @@ img {
   align-items: flex-end;
   width: 100%;
 }
+.PartTable {
+  display: flex;
+  justify-content: space-between;
+  .sub {
+    margin: 10px 20px;
+  }
+}

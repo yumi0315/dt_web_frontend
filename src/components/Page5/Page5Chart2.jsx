@@ -53,7 +53,7 @@ function Page5Chart2() {
 
   const datasets = [
     {
-      label: "Total Count",
+      label: "총 검사 건수",
       data: chartData.map((item) => {
         maxNum[0] = maxNum[0] < item.total_count ? item.total_count : maxNum[0];
         return item.total_count;
@@ -62,7 +62,7 @@ function Page5Chart2() {
       yAxisID: "y",
     },
     {
-      label: "Defect Count",
+      label: "보류 건수",
       data: chartData.map((item) => {
         maxNum[1] =
           maxNum[1] < item.defect_count ? item.defect_count : maxNum[1];
@@ -94,7 +94,7 @@ function Page5Chart2() {
         position: "left",
         title: {
           display: true,
-          text: "Total Count",
+          text: "총 검사 건수",
         },
         ticks: {
           beginAtZero: true,
@@ -112,7 +112,7 @@ function Page5Chart2() {
         },
         title: {
           display: true,
-          text: "Defect Count",
+          text: "보류 건수",
         },
         ticks: {
           beginAtZero: true,

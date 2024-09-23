@@ -59,15 +59,13 @@ function Page5Table4({ tableData }) {
   ];
 
   return (
-    <div
-      style={{ display: "flex", justifyContent: "flex-end", margin: "0 18px" }}
-    >
+    <div style={{ margin: "0 20px 0px 0" }}>
       <TableContainer
         component={Paper}
         className={classes.tableContainer}
         sx={{
-          width: "50%",
-          maxHeight: "370px",
+          width: "280px",
+          maxHeight: "71.5px",
           margin: "5px 0",
         }}
       >
@@ -83,7 +81,11 @@ function Page5Table4({ tableData }) {
                 className={classes.tableBodyRow}
                 style={
                   index === 0
-                    ? { backgroundColor: "#EFF2F5", fontWeight: "bold" }
+                    ? {
+                        color: "#edeeff",
+                        backgroundColor: "#20439D",
+                        fontWeight: "bold",
+                      }
                     : {}
                 }
               >
@@ -92,7 +94,8 @@ function Page5Table4({ tableData }) {
                     className={classes.tableCell}
                     rowSpan={tableData1.length}
                     style={{
-                      backgroundColor: "#EFF2F5",
+                      backgroundColor: "#20439D",
+                      color: "#edeeff",
                       fontWeight: "bold",
                     }}
                   >
@@ -101,13 +104,17 @@ function Page5Table4({ tableData }) {
                 ) : null}
                 <TableCell
                   className={classes.tableCell}
-                  style={index === 0 ? { fontWeight: "bold" } : {}}
+                  style={
+                    index === 0 ? { fontWeight: "bold", color: "#edeeff" } : {}
+                  }
                 >
                   {row.col2}
                 </TableCell>
                 <TableCell
                   className={classes.tableCell}
-                  style={index === 0 ? { fontWeight: "bold" } : {}}
+                  style={
+                    index === 0 ? { fontWeight: "bold", color: "#edeeff" } : {}
+                  }
                 >
                   {row.col3}
                 </TableCell>

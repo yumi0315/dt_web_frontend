@@ -105,7 +105,12 @@ function ChartBox5() {
             <></>
           )}
         </Box>
-        {tableData && <Page5Table4 tableData={tableData} />}
+        <div className="PartTable">
+          <p className="sub" style={{ flex: "none" }}>
+            부서별 용접 불량 상태
+          </p>
+          {tableData && <Page5Table4 tableData={tableData} />}
+        </div>
         <Page5Table tableData={tableData} />
       </Box>
       <Box
