@@ -7,12 +7,16 @@ import React, { useState, useEffect } from "react";
 
 // 메뉴 아이템 목록
 const menuItems = [
-  { id: 1, text: "메뉴1", path: "/page1", icon: faChartSimple },
-  { id: 2, text: "메뉴2", path: "/page2", icon: faUser },
-  { id: 3, text: "메뉴3", path: "/page3", icon: faGears },
-  { id: 4, text: "메뉴4", path: "/page4", icon: faGears },
-  { id: 5, text: "메뉴5", path: "/page5", icon: faGears },
-  { id: 6, text: "메뉴6", path: "/page6", icon: faGears },
+  {
+    id: 1,
+    text: "개정 도면 실시간 모니터링",
+    path: "/page1",
+  },
+  { id: 2, text: "설계변경 요청 관리", path: "/page2" },
+  { id: 3, text: "구조 생산 성과평가", path: "/page3" },
+  { id: 4, text: "의장 공정 생산 평가", path: "/page4" },
+  { id: 5, text: "용접품질관리", path: "/page5" },
+  { id: 6, text: "작업 가능 기간 관리", path: "/page6" },
 ];
 
 // 무작위 명언 텍스트 배열

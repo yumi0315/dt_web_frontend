@@ -3,10 +3,18 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import React, { Component } from "react";
 import "../../CSS/page6.css";
 import { Pagination } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function Table6({ tableData }) {
+  const theme = createTheme({
+    palette: {
+      background: {
+        default: "#4A88DB",
+      },
+    },
+  });
   const columns = [
-    { field: "dep", headerName: "과", width: 190, headerAlign: "center" },
+    { field: "dep", headerName: "과", width: 160, headerAlign: "center" },
     {
       field: "dept_defect_rate",
       headerName: "불량률",
@@ -52,7 +60,7 @@ function Table6({ tableData }) {
     {
       field: "Range",
       headerName: "작업 가능 기간",
-      width: 190,
+      width: 250,
       headerAlign: "center",
     },
   ];
@@ -71,17 +79,29 @@ function Table6({ tableData }) {
   }));
 
   return (
-    <Box sx={{ height: 600, width: "95%" }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSizeOptions={[15]}
-        checkboxSelection
-        disableRowSelectionOnClick
-        pagination={false}
-        sx={{ fontFamily: "Spoqa-Mid" }}
-      />
-    </Box>
+    <ThemeProvider theme={theme}>
+      <Box sx={{ height: 600, width: "95%" }}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          pageSizeOptions={[15]}
+          checkboxSelection
+          disableRowSelectionOnClick
+          pagination={false}
+          sx={{
+            fontFamily: "Spoqa-Mid",
+            "& .MuiDataGrid-columnHeaders": {
+              color: "#edeeff",
+            },
+            "& .MuiDataGrid-cell": {
+              display: "flex",
+              justifyContent: "center", // 가로 정렬
+              alignItems: "center", // 세로 정렬
+            },
+          }}
+        />
+      </Box>
+    </ThemeProvider>
   );
 }
 

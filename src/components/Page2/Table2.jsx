@@ -2,8 +2,17 @@ import { Box } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import React from "react";
 import "../../CSS/page2.css";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function Table2({ tableData }) {
+  const theme = createTheme({
+    palette: {
+      background: {
+        default: "#4A88DB",
+      },
+    },
+  });
+
   const columns = [
     {
       field: "reg_type",
@@ -110,17 +119,24 @@ function Table2({ tableData }) {
   }));
 
   return (
-    <Box sx={{ height: 400, width: "98%", margin: " 0 19px" }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSizeOptions={[15]}
-        checkboxSelection
-        disableRowSelectionOnClick
-        pagination={false}
-        sx={{ fontFamily: "Spoqa-Mid" }}
-      />
-    </Box>
+    <ThemeProvider theme={theme}>
+      <Box sx={{ height: 400, width: "98%", margin: " 0 19px" }}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          pageSizeOptions={[15]}
+          checkboxSelection
+          disableRowSelectionOnClick
+          pagination={false}
+          sx={{
+            fontFamily: "Spoqa-Mid",
+            "& .MuiDataGrid-columnHeaders": {
+              color: "#edeeff",
+            },
+          }}
+        />
+      </Box>
+    </ThemeProvider>
   );
 }
 

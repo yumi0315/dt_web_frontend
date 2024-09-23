@@ -60,7 +60,7 @@ export default function Excel3Table({ tableData }) {
       <Table sx={{ margin: "0px", padding: "0px" }} aria-label="basic table">
         <TableHead>
           <TableRow>
-            {["분류", "실행계획(건)", "완료계획(건)", "달성률"].map((key) => (
+            {["분류", "실행계획(건)", "실행완료(건)", "달성률"].map((key) => (
               <StyledTableCell align="center">{key}</StyledTableCell>
             ))}
           </TableRow>
