@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   width: 96%;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 60px 0;
 }
@@ -11,11 +11,15 @@
   display: flex;
   flex-direction: column;
   width: 65%;
+  padding-right: 25px;
 }
 .container2 {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 35%;
+  min-height: 400px;
+  justify-content: flex-start;
+  border-left: 1px solid #3333;
 }
 @font-face {
   font-family: "Spoqa-Mid";
@@ -80,6 +84,7 @@ h4 {
   display: flex;
   justify-content: space-around;
   padding: 20px;
+  margin-top: 10px;
 }
 
 .weather-day {
@@ -90,18 +95,24 @@ h4 {
 
 .date {
   font-size: 14px;
+  color: rgb(101, 104, 104);
+}
+
+.temp-range {
+  font-size: 15px;
+  margin: 5px 0;
+  color: rgb(100, 100, 240);
+}
+.highest-temp {
+  color: red;
+  font-size: 16px;
   font-weight: bold;
 }
-
-.temp-range,
 .rain-chance {
-  font-size: 12px;
+  font-size: 11px;
   margin: 5px 0;
-}
-
-.icon img {
-  width: 40px;
-  height: 40px;
+  color: rgb(100, 100, 240);
+  font-weight: bold;
 }
 
 .ico {
@@ -128,4 +139,11 @@ h4 {
   background-image: url(https://ssl.pstatic.net/static/weather/image/sp_icon_weather_346e83fd.png);
   background-position: 0 0;
   background-repeat: no-repeat;
+}
+
+.hyperlink {
+  width: 90%;
+  padding: 25px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #3333;
 }

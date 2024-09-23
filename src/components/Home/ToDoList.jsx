@@ -113,7 +113,12 @@ const ToDoList = () => {
           ADD
         </Button>
       </div>
-      <List>
+      <List
+        style={{
+          maxHeight: "400px", // 최대 높이 설정
+          overflowY: "auto", // 스크롤바 활성화
+        }}
+      >
         {tasks.map((task, index) => (
           <ListItem
             key={index}
