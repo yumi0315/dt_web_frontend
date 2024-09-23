@@ -75,3 +75,57 @@ h4 {
   font-family: Spoqa-light;
   font-weight: 400;
 }
+
+.weather-forecast {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.weather-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.temp-range,
+.rain-chance {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.ico {
+  display: inline-block;
+  width: 34px; /* 원하는 크기로 설정 */
+  height: 34px; /* 원하는 크기로 설정 */
+  background-repeat: no-repeat;
+  background-size: 220px 220px; /* 원본 크기로 유지 */
+  background-position: center; /* 배경 이미지를 중앙에 배치 */
+}
+
+.ico_wt7 {
+  background-image: url(https://ssl.pstatic.net/static/weather/image/sp_icon_weather_346e83fd.png);
+  background-position: 100% 60%;
+  background-repeat: no-repeat;
+}
+
+.ico_wt5 {
+  background-image: url(https://ssl.pstatic.net/static/weather/image/sp_icon_weather_346e83fd.png);
+  background-position: 100% 20%;
+  background-repeat: no-repeat;
+}
+.ico_wt1 {
+  background-image: url(https://ssl.pstatic.net/static/weather/image/sp_icon_weather_346e83fd.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
