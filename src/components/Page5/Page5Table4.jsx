@@ -51,18 +51,20 @@ function Page5Table4() {
   ];
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div
+      style={{ display: "flex", justifyContent: "flex-end", margin: "0 18px" }}
+    >
       <TableContainer
         component={Paper}
         className={classes.tableContainer}
         sx={{
-          width: "95%",
+          width: "50%",
           maxHeight: "370px",
           margin: "5px 0",
         }}
       >
         <Table
-          sx={{ minWidth: 650, tableLayout: "fixed" }}
+          sx={{ tableLayout: "fixed" }}
           aria-label="simple table"
           stickyHeader
         >
