@@ -75,7 +75,7 @@ function ChartBox5() {
             flexWrap: "wrap",
             justifyContent: "space-around",
             width: "100%",
-            height: "400px",
+            minHeight: "400px",
             marginTop: "10px",
           }}
         >
