@@ -1,26 +1,19 @@
 .Home {
   display: flex;
-  flex-direction: row;
-  width: 96%;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 85%;
   padding: 60px 0;
 }
 
-.container1 {
+.HomeContents {
   display: flex;
-  flex-direction: column;
-  width: 65%;
-  padding-right: 25px;
+  width: 100%;
 }
-.container2 {
-  display: flex;
-  flex-direction: column;
-  width: 35%;
-  min-height: 400px;
-  justify-content: flex-start;
-  border-left: 1px solid #3333;
+
+.HomeContentsTitle {
+  padding: 20px;
 }
+
 @font-face {
   font-family: "Spoqa-Mid";
   src: url("../font/SpoqaHanSansNeo-Medium.ttf") format("truetype");
@@ -68,6 +61,10 @@
   color: white;
   font-family: Spoqa-light;
 }
+
+.hyperlink {
+  width: 300px;
+}
 h2 {
   font-weight: bold;
   font-family: Spoqa-Bold;
@@ -82,34 +79,35 @@ h4 {
 
 .weather-forecast {
   display: flex;
-  justify-content: space-around;
-  padding: 20px;
-  margin-top: 10px;
+  justify-content: space-between;
+  margin-top: 80px;
 }
 
 .weather-day {
   display: flex;
+  width: 130px;
+  height: 150px;
   flex-direction: column;
   align-items: center;
 }
 
 .date {
-  font-size: 14px;
+  font-size: 16px;
   color: rgb(101, 104, 104);
 }
 
 .temp-range {
-  font-size: 15px;
+  font-size: 17px;
   margin: 5px 0;
   color: rgb(100, 100, 240);
 }
 .highest-temp {
   color: red;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
 }
 .rain-chance {
-  font-size: 11px;
+  font-size: 13px;
   margin: 5px 0;
   color: rgb(100, 100, 240);
   font-weight: bold;
@@ -117,10 +115,10 @@ h4 {
 
 .ico {
   display: inline-block;
-  width: 34px; /* 원하는 크기로 설정 */
-  height: 34px; /* 원하는 크기로 설정 */
+  width: 45px; /* 원하는 크기로 설정 */
+  height: 45px; /* 원하는 크기로 설정 */
   background-repeat: no-repeat;
-  background-size: 220px 220px; /* 원본 크기로 유지 */
+  background-size: 238px 204px; /* 원본 크기로 유지 */
   background-position: center; /* 배경 이미지를 중앙에 배치 */
 }
 
@@ -139,11 +137,4 @@ h4 {
   background-image: url(https://ssl.pstatic.net/static/weather/image/sp_icon_weather_346e83fd.png);
   background-position: 0 0;
   background-repeat: no-repeat;
-}
-
-.hyperlink {
-  width: 90%;
-  padding: 25px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid #3333;
 }
