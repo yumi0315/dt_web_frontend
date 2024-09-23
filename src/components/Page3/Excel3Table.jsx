@@ -13,8 +13,8 @@ import "../../CSS/Page1.css";
 // 테이블 셀 스타일 설정
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#EFF2F5",
-    color: theme.palette.common.black,
+    backgroundColor: "#4A88DB",
+    color: "#edeeff",
     fontFamily: "Spoqa-bold",
     fontSize: "15px",
   },

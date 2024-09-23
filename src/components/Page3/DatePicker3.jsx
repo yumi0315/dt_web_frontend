@@ -40,11 +40,11 @@ function DatePicker3({ date, setDate, title }) {
                 padding: 0,
                 height: "0.8em",
                 width: "100%",
-                marginLeft: "8px",
+                marginLeft: "10px",
               },
             "& .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.MuiInputBase-sizeSmall.MuiInputBase-adornedEnd":
               {
-                width: "150px",
+                width: "135px",
                 height: "40px",
               },
           }}
