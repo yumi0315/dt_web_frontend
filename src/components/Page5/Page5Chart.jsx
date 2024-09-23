@@ -20,11 +20,11 @@ const Page5Chart = ({ chartData, onClick }) => {
   const filterData = chartData.reduce(
     (acc, cur) => {
       acc.dep.push(cur.dep);
-      acc.dep_def_rate.push(cur.dep_def_rate);
+      acc.dep_defect_count.push(cur.dep_defect_count);
 
       return acc;
     },
-    { dep: [], dep_def_rate: [] }
+    { dep: [], dep_defect_count: [] }
   );
 
   const length = filterData.dep.length > 5 ? 5 : filterData.dep.length;
@@ -33,7 +33,8 @@ const Page5Chart = ({ chartData, onClick }) => {
     labels: filterData.dep.splice(0, 5),
     datasets: [
       {
-        data: filterData.dep_def_rate.splice(0, 5),
+        label: "보류건수",
+        data: filterData.dep_defect_count.splice(0, 5),
         backgroundColor: pastelColors.slice(0, length),
         borderColor: pastelColors.slice(0, length),
       },

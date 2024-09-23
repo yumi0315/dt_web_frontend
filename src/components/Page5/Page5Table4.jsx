@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@mui/styles"; // 스타일 훅 가져오기
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -42,12 +42,20 @@ const useStyles = makeStyles({
   },
 });
 
-function Page5Table4() {
+function Page5Table4({ tableData }) {
   const classes = useStyles();
 
-  const tableData = [
-    { col1: "A", col2: "승인", col3: "보류", col4: "불량" },
-    { col1: "A", col2: "B", col3: "C", col4: "D" },
+  const tableData1 = [
+    {
+      col1: tableData[0].welding_meth,
+      col2: "승인",
+      col3: "보류",
+    },
+    {
+      col1: tableData[0].welding_meth,
+      col2: tableData[0].total_count - tableData[0].defect_count,
+      col3: tableData[0].defect_count,
+    },
   ];
 
   return (
@@ -69,7 +77,7 @@ function Page5Table4() {
           stickyHeader
         >
           <TableBody>
-            {tableData.map((row, index) => (
+            {tableData1.map((row, index) => (
               <TableRow
                 key={index}
                 className={classes.tableBodyRow}
@@ -82,7 +90,7 @@ function Page5Table4() {
                 {index === 0 ? (
                   <TableCell
                     className={classes.tableCell}
-                    rowSpan={tableData.length}
+                    rowSpan={tableData1.length}
                     style={{
                       backgroundColor: "#EFF2F5",
                       fontWeight: "bold",
@@ -102,12 +110,6 @@ function Page5Table4() {
                   style={index === 0 ? { fontWeight: "bold" } : {}}
                 >
                   {row.col3}
-                </TableCell>
-                <TableCell
-                  className={classes.tableCell}
-                  style={index === 0 ? { fontWeight: "bold" } : {}}
-                >
-                  {row.col4}
                 </TableCell>
               </TableRow>
             ))}

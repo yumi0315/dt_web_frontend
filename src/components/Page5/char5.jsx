@@ -105,7 +105,7 @@ function ChartBox5() {
             <></>
           )}
         </Box>
-        <Page5Table4 />
+        {tableData && <Page5Table4 tableData={tableData} />}
         <Page5Table tableData={tableData} />
       </Box>
       <Box

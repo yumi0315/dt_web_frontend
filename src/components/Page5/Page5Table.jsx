@@ -79,13 +79,13 @@ function Page5Table({ tableData }) {
                 className={classes.tableCell}
                 style={{ backgroundColor: "#EFF2F5" }}
               >
-                보류수량
+                보류건수
               </TableCell>
               <TableCell
                 className={classes.tableCell}
                 style={{ backgroundColor: "#EFF2F5" }}
               >
-                전체보류비율
+                불량율
               </TableCell>
               <TableCell
                 className={classes.tableCell}
@@ -130,10 +130,10 @@ function Page5Table({ tableData }) {
                   {row.dep}
                 </TableCell>
                 <TableCell className={classes.tableCell}>
-                  {row.defect_count}
+                  {row.dep_defect_count}
                 </TableCell>
                 <TableCell className={classes.tableCell}>
-                  {row.def_rate}
+                  {row.dep_def_rate}
                 </TableCell>
                 <TableCell className={classes.tableCell}>{row.C1}</TableCell>
                 <TableCell className={classes.tableCell}>{row.C2}</TableCell>
