@@ -80,7 +80,15 @@ const ToDoList = () => {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Container
+      maxWidth="xs"
+      style={{
+        width: "30%", // 부모 요소의 30%만 차지하도록 설정
+        margin: "0 auto", // 중앙 정렬
+        padding: "20px", // 패딩 추가
+        boxSizing: "border-box", // 패딩을 포함한 박스 크기 계산
+      }}
+    >
       <h1 style={{ textAlign: "center" }}>TODO</h1>
       <div
         style={{
@@ -95,11 +103,10 @@ const ToDoList = () => {
           fullWidth
           value={inputValue}
           onChange={handleInputChange}
-          style={{ width: 500, marginRight: 10 }}
+          style={{ width: "100%", marginRight: 10 }} // TextField를 부모의 100%로 설정
           InputProps={{
             style: {
               height: 40,
-              padding: 10,
               margin: 5,
             },
           }}
@@ -115,7 +122,7 @@ const ToDoList = () => {
       </div>
       <List
         style={{
-          maxHeight: "400px", // 최대 높이 설정
+          maxHeight: "300px", // 최대 높이 설정
           overflowY: "auto", // 스크롤바 활성화
         }}
       >
@@ -126,7 +133,7 @@ const ToDoList = () => {
               display: "flex",
               justifyContent: "space-between",
               backgroundColor: "#f9f9f9",
-              marginTop: "10px",
+              marginTop: "5px",
               borderRadius: "4px",
             }}
           >
