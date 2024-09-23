@@ -71,12 +71,13 @@ const Excel3Chart = ({ data }) => {
     plugins: {
       legend: {
         display: true,
+        position: "bottom",
       },
 
       title: {
         display: true,
         text: "분류별 작업 상태",
-        position: "bottom",
+        position: "top",
       },
       datalabels: {
         formatter: (value, context) => {

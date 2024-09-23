@@ -18,8 +18,9 @@
   background-color: #fffcfc; /* 페이지네이션 배경색 */
   height: 70px;
 }
-.MuiButtonBase-root {
+.MuiButtonBase-root.MuiIconButton-root {
   padding: 0;
+  width: 50px;
 }
 .container {
   padding: 10px;
@@ -96,7 +97,4 @@ main {
   align-content: center;
   margin: 10px 9px;
   gap: 5px;
-}
-DialogTitle {
-  font-family: Spoqa-Bold;
 }

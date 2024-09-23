@@ -13,8 +13,8 @@ import "../../CSS/Page1.css";
 // 테이블 셀 스타일 설정
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#EFF2F5",
-    color: theme.palette.common.black,
+    backgroundColor: "#4A88DB",
+    color: "#edeeff",
     fontFamily: "Spoqa-bold",
     fontSize: "15px",
   },
@@ -60,7 +60,7 @@ export default function Excel3Table({ tableData }) {
       <Table sx={{ margin: "0px", padding: "0px" }} aria-label="basic table">
         <TableHead>
           <TableRow>
-            {["분류", "실행계획(건)", "완료계획(건)", "달성률"].map((key) => (
+            {["분류", "실행계획(건)", "실행완료(건)", "달성률"].map((key) => (
               <StyledTableCell align="center">{key}</StyledTableCell>
             ))}
           </TableRow>

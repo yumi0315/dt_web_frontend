@@ -1,5 +1,5 @@
 import React from "react";
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import { Box } from "@mui/material";
 import {
   Chart as ChartJS,
@@ -24,54 +24,64 @@ ChartJS.register(
   LineElement
 );
 
-const LineChart = ({ data }) => {
-  const transData = data.reduce(
+const Excel3Chart2 = ({ data }) => {
+  const transData = data?.reduce(
     (acc, cur) => {
-      acc.labels.push(cur.respon_dep);
+      acc.respon_dep.push(cur.respon_dep);
       acc.Plan_count.push(cur.Plan_count);
       acc.Completed_Tasks.push(cur.Completed_Tasks);
       acc.Achievement_Rate.push(cur.Achievement_Rate);
       return acc;
     },
-    { labels: [], Plan_count: [], Completed_Tasks: [], Achievement_Rate: [] }
+    {
+      respon_dep: [],
+      Plan_count: [],
+      Completed_Tasks: [],
+      Achievement_Rate: [],
+    }
   );
 
   const chartData = {
-    labels: transData.labels,
+    labels: transData?.respon_dep,
     datasets: [
       {
+        yAxisID: "y1",
+        type: "bar",
         label: "실행계획(건)",
         data: transData.Plan_count,
         backgroundColor: "rgba(255, 99, 132, 0.5)",
         borderColor: "rgba(255, 99, 132, 1)",
-        borderWidth: 2,
-        fill: false,
+        borderWidth: 1,
       },
       {
+        yAxisID: "y1",
+        type: "bar",
         label: "실행완료(건)",
         data: transData.Completed_Tasks,
         backgroundColor: "rgba(75, 192, 192, 0.5)",
         borderColor: "rgba(75, 192, 192, 1)",
-        borderWidth: 2,
-        fill: false,
+        borderWidth: 1,
       },
     ],
   };
 
   const options = {
-    y: {
-      beginAtZero: true,
-      max: Math.ceil(Math.max(...transData.Plan_count) / 100) * 100,
+    scales: {
+      y1: {
+        beginAtZero: true,
+        max: Math.ceil(Math.max(...transData.Plan_count) / 100) * 100,
+      },
+      // responsive: true,
     },
-    responsive: true,
     plugins: {
       legend: {
-        position: "top",
+        display: true,
+        position: "bottom",
       },
       title: {
         display: true,
         text: "부서별 작업 상태",
-        position: "bottom",
+        position: "top",
       },
       datalabels: {
         formatter: (value, context) => {
@@ -93,13 +103,13 @@ const LineChart = ({ data }) => {
         height: "320px",
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: "20px",
+        paddingTop: "12px",
         borderTop: "1px solid #3333",
       }}
     >
-      <Line data={chartData} options={options} plugins={[ChartDataLabels]} />
+      <Bar data={chartData} options={options} plugins={[ChartDataLabels]} />
     </Box>
   );
 };
 
-export default LineChart;
+export default Excel3Chart2;

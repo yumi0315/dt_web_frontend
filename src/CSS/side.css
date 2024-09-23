@@ -20,15 +20,18 @@ aside {
 .menu {
   display: flex;
   overflow: hidden;
-  height: 53px;
+  height: 55px;
   width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 h5 {
   color: #edeeff;
   font-family: "Spoqa-light";
-  font-size: 18px;
-  line-height: 4px; /* 텍스트를 위아래로 중앙 정렬 */
+  font-size: 15px;
+  line-height: 4px;
+  margin: 25px 22px; /* 텍스트를 위아래로 중앙 정렬 */
+  text-align: center;
 }
 
 .icon {
@@ -43,6 +46,7 @@ h5 {
   color: #ffd700; /* 호버 시 텍스트 색상 */
   transform: scale(1.06);
   overflow-y: hidden;
+  border-bottom: hidden;
 }
 
 .menu.active {

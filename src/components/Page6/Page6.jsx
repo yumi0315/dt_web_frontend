@@ -14,7 +14,7 @@ const Page6 = () => {
 
   const [data, setData] = useState(undefined);
 
-  const [startdate, setStartdate] = React.useState(dayjs());
+  const [startdate, setStartdate] = React.useState(dayjs("2023.07.20"));
   const [enddate, setEnddate] = React.useState(dayjs().endOf("month"));
 
   const handleChange = (event) => {
