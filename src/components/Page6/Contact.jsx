@@ -9,8 +9,10 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Input from "@mui/material/Input";
 import "../../CSS/page6.css";
-import "./Upload";
+import UploadButton from "./UploadButton";
 import { Upload } from "@mui/icons-material";
+import TextField from "@mui/material/TextField";
+import EmailToggle from "./EmailToggle";
 
 const ariaLabel = { "aria-label": "description" };
 
@@ -50,7 +52,10 @@ export default function CustomizedDialogs() {
           },
         }}
       >
-        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+        <DialogTitle
+          sx={{ m: 0, p: 2, fontFamily: "Spoqa-Bold" }}
+          id="customized-dialog-title"
+        >
           E-Mail
         </DialogTitle>
         <IconButton
@@ -72,7 +77,7 @@ export default function CustomizedDialogs() {
               <p className="EmailName">수신</p>
               <Input
                 inputProps={ariaLabel}
-                sx={{ maxHeight: "48px", minWidth: "750px" }}
+                sx={{ maxHeight: "48px", minWidth: "750px", padding: "0px" }}
               />
             </div>
             <div className="EmailComponent">
@@ -89,14 +94,28 @@ export default function CustomizedDialogs() {
                 sx={{ maxHeight: "48px", minWidth: "750px" }}
               />
             </div>
-            <div className="EmailComponent">
+            <div className="EmailUpload">
               <p className="EmailName">파일첨부</p>
-              <Upload />
+              <UploadButton />
             </div>
+          </div>
+          <div className="EmailMain">
+            <EmailToggle />
           </div>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose} sx={{ width: "70px" }}>
+          <Button
+            autoFocus
+            onClick={handleClose}
+            sx={{ width: "70px", height: "30px" }}
+          >
+            Cancel
+          </Button>
+          <Button
+            autoFocus
+            onClick={handleClose}
+            sx={{ width: "70px", height: "30px" }}
+          >
             Send
           </Button>
         </DialogActions>
