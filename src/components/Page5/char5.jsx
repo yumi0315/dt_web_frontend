@@ -9,6 +9,7 @@ import Page5Table3 from "./Page5Table3";
 import Page5Chart2 from "./Page5Chart2";
 import Info from "./InfoIcon";
 import "../../CSS/Page1.css";
+import Page5Table4 from "./Page5Table4";
 
 function ChartBox5() {
   const [selectedOption, setSelectedOption] = useState(undefined);
@@ -104,6 +105,7 @@ function ChartBox5() {
             <></>
           )}
         </Box>
+        <Page5Table4 />
         <Page5Table tableData={tableData} />
       </Box>
       <Box
