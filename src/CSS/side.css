@@ -30,15 +30,15 @@ h5 {
   font-family: "Spoqa-light";
   font-size: 15px;
   line-height: 4px;
-  margin: 25px 22px; /* 텍스트를 위아래로 중앙 정렬 */
-  text-align: center;
+  margin: 25px 0px; /* 텍스트를 위아래로 중앙 정렬 */
+  /* text-align: center; */
 }
 
 .icon {
   display: flex;
   padding: 7px; /* 아이콘 주변 여백 */
-  margin: 10px;
-  width: 35px;
+  margin: 8px 10px;
+  width: 20px;
 }
 
 .menu:hover {
@@ -60,28 +60,29 @@ h5 {
 .quote {
   background: linear-gradient(
     120deg,
-    #8eaccd,
-    #d2e0fb
+    rgba(240, 245, 252, 0.7),
+    rgba(230, 239, 250, 0.9)
   ); /* 부드러운 그라데이션 */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 230px;
+  width: 221px;
   height: 15%;
   color: black;
   font-family: "Spoqa-light";
-  font-size: 16px;
+  font-size: 13px;
   margin-top: auto;
   text-align: center;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 100px;
-  border-radius: 15px; /* 모서리 둥글게 */
+  border-radius: 10px; /* 모서리 둥글게 */
   position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 약간의 그림자 */
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.8); /* 약간의 그림자 */
   animation: fadeIn 1s ease-in-out; /* 텍스트 페이드 인 애니메이션 */
-  opacity: 0.9;
+  opacity: 0.85;
+  padding: 5px;
 }
 
 /* quote-label 스타일 */

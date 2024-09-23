@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   },
   tableRow: {
     height: 40,
-    background: "#EFF2F5",
+    background: "#4A88DB",
   },
   tableCell: {
     flexGrow: 1, // 모든 셀이 동일한 비율로 크기 조정
@@ -29,6 +29,7 @@ const useStyles = makeStyles({
       textAlign: "center",
       borderRight: "1px solid #D5DDE4",
       fontFamily: "Spoqa-bold",
+      color: "#edeeff",
 
       "&:last-child": {
         borderRight: "0px",
@@ -92,28 +93,28 @@ function Page5Table3() {
               <TableCell
                 align="center"
                 className={classes.tableCell}
-                style={{ backgroundColor: "#EFF2F5" }}
+                style={{ backgroundColor: "#4A88DB" }}
               >
                 구분
               </TableCell>
               <TableCell
                 align="center"
                 className={classes.tableCell}
-                style={{ backgroundColor: "#EFF2F5" }}
+                style={{ backgroundColor: "#4A88DB" }}
               >
                 보류
               </TableCell>
               <TableCell
                 align="center"
                 className={classes.tableCell}
-                style={{ backgroundColor: "#EFF2F5" }}
+                style={{ backgroundColor: "#4A88DB" }}
               >
                 승인
               </TableCell>
               <TableCell
                 align="center"
                 className={classes.tableCell}
-                style={{ backgroundColor: "#EFF2F5" }}
+                style={{ backgroundColor: "#4A88DB" }}
               >
                 불량률
               </TableCell>

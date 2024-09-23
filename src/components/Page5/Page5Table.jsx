@@ -26,6 +26,7 @@ const useStyles = makeStyles({
       textAlign: "center",
       borderRight: "1px solid #D5DDE4",
       fontFamily: "Spoqa-bold",
+      color: "#edeeff",
 
       "&:last-child": {
         borderRight: "0px",
@@ -70,50 +71,50 @@ function Page5Table({ tableData }) {
             <TableRow className={classes.tableRow}>
               <TableCell
                 className={classes.tableCell}
-                style={{ backgroundColor: "#EFF2F5" }}
+                style={{ backgroundColor: "#4A88DB" }}
               >
                 부서명
               </TableCell>
               <TableCell
                 align="right"
                 className={classes.tableCell}
-                style={{ backgroundColor: "#EFF2F5" }}
+                style={{ backgroundColor: "#4A88DB" }}
               >
                 보류건수
               </TableCell>
               <TableCell
                 className={classes.tableCell}
-                style={{ backgroundColor: "#EFF2F5" }}
+                style={{ backgroundColor: "#4A88DB" }}
               >
                 불량율
               </TableCell>
               <TableCell
                 className={classes.tableCell}
-                style={{ backgroundColor: "#EFF2F5" }}
+                style={{ backgroundColor: "#4A88DB" }}
               >
                 C1
               </TableCell>
               <TableCell
                 className={classes.tableCell}
-                style={{ backgroundColor: "#EFF2F5" }}
+                style={{ backgroundColor: "#4A88DB" }}
               >
                 C2
               </TableCell>
               <TableCell
                 className={classes.tableCell}
-                style={{ backgroundColor: "#EFF2F5" }}
+                style={{ backgroundColor: "#4A88DB" }}
               >
                 C3
               </TableCell>
               <TableCell
                 className={classes.tableCell}
-                style={{ backgroundColor: "#EFF2F5" }}
+                style={{ backgroundColor: "#4A88DB" }}
               >
                 C4
               </TableCell>
               <TableCell
                 className={classes.tableCell}
-                style={{ backgroundColor: "#EFF2F5" }}
+                style={{ backgroundColor: "#4A88DB" }}
               >
                 C5
               </TableCell>
