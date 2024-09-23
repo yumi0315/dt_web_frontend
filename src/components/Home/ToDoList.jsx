@@ -83,10 +83,9 @@ const ToDoList = () => {
     <Container
       maxWidth="xs"
       style={{
-        width: "30%", // 부모 요소의 30%만 차지하도록 설정
+        width: "36%", // 부모 요소의 30%만 차지하도록 설정
         margin: "0 auto", // 중앙 정렬
-        padding: "20px", // 패딩 추가
-        boxSizing: "border-box", // 패딩을 포함한 박스 크기 계산
+        padding: "10px", // 패딩 추가
       }}
     >
       <h1 style={{ textAlign: "center" }}>TODO</h1>
@@ -122,7 +121,7 @@ const ToDoList = () => {
       </div>
       <List
         style={{
-          maxHeight: "300px", // 최대 높이 설정
+          maxHeight: "430px", // 최대 높이 설정
           overflowY: "auto", // 스크롤바 활성화
         }}
       >
