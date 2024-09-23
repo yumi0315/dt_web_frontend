@@ -88,7 +88,11 @@ const ToDoList = () => {
         padding: "10px", // 패딩 추가
       }}
     >
-      <h1 style={{ textAlign: "center" }}>TODO</h1>
+      <h1
+        style={{ textAlign: "center", marginBottom: "25px", marginTop: "30px" }}
+      >
+        TODO
+      </h1>
       <div
         style={{
           display: "flex",
@@ -132,7 +136,7 @@ const ToDoList = () => {
               display: "flex",
               justifyContent: "space-between",
               backgroundColor: "#f9f9f9",
-              marginTop: "5px",
+              marginTop: "2px",
               borderRadius: "4px",
             }}
           >
