@@ -1,16 +1,20 @@
 .Home {
   display: flex;
-  flex-direction: column;
   width: 85%;
   padding: 60px 0;
 }
 
-.HomeContents {
+.HomeContainer1 {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  width: 60%;
+  padding: 20px;
 }
 
-.HomeContentsTitle {
+.HomeContainer2 {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
   padding: 20px;
 }
 
@@ -23,12 +27,13 @@
   src: url("../font/SpoqaHanSansNeo-Bold.ttf") format("truetype");
 }
 
-.Title {
+/* .Title {
   width: 500px;
   text-align: left;
   margin: 10px;
   height: 50px;
-}
+} */
+
 .Information {
   width: 500px;
   text-align: left;
@@ -80,34 +85,34 @@ h4 {
 .weather-forecast {
   display: flex;
   justify-content: space-between;
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .weather-day {
   display: flex;
-  width: 130px;
-  height: 150px;
+  width: 140px;
+  height: 160px;
   flex-direction: column;
   align-items: center;
 }
 
 .date {
-  font-size: 16px;
+  font-size: 17px;
   color: rgb(101, 104, 104);
 }
 
 .temp-range {
-  font-size: 17px;
+  font-size: 18px;
   margin: 5px 0;
   color: rgb(100, 100, 240);
 }
 .highest-temp {
   color: red;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: bold;
 }
 .rain-chance {
-  font-size: 13px;
+  font-size: 14px;
   margin: 5px 0;
   color: rgb(100, 100, 240);
   font-weight: bold;
@@ -115,26 +120,24 @@ h4 {
 
 .ico {
   display: inline-block;
-  width: 45px; /* 원하는 크기로 설정 */
-  height: 45px; /* 원하는 크기로 설정 */
+  width: 60px; /* 원하는 크기로 설정 */
+  height: 60px; /* 원하는 크기로 설정 */
   background-repeat: no-repeat;
   background-size: 238px 204px; /* 원본 크기로 유지 */
   background-position: center; /* 배경 이미지를 중앙에 배치 */
 }
 
 .ico_wt7 {
-  background-image: url(https://ssl.pstatic.net/static/weather/image/sp_icon_weather_346e83fd.png);
-  background-position: 100% 60%;
+  background-image: url("../../public/weathericons/foggy.png");
   background-repeat: no-repeat;
 }
 
 .ico_wt5 {
-  background-image: url(https://ssl.pstatic.net/static/weather/image/sp_icon_weather_346e83fd.png);
-  background-position: 100% 20%;
+  background-image: url("../../public/weathericons/Partly_cloudy.png");
   background-repeat: no-repeat;
 }
+
 .ico_wt1 {
-  background-image: url(https://ssl.pstatic.net/static/weather/image/sp_icon_weather_346e83fd.png);
-  background-position: 0 0;
+  background-image: url("../../public/weathericons/sunny.png");
   background-repeat: no-repeat;
 }
