@@ -47,7 +47,7 @@ function Page5Table4() {
 
   const tableData = [
     { col1: "A", col2: "승인", col3: "보류", col4: "불량" },
-    { col1: "A", col2: "E", col3: "F", col4: "G" },
+    { col1: "A", col2: "B", col3: "C", col4: "D" },
   ];
 
   return (
