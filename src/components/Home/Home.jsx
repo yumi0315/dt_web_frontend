@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../CSS/Home.css";
 import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
+import { customFetch } from "../custom/customFetch";
 import ToDoList from "./ToDoList";
 
 const Home = () => {
@@ -10,6 +11,21 @@ const Home = () => {
   const handleClick = (path) => {
     navigate(path);
   };
+
+  const [weeklyForecast, setWeeklyForecast] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await customFetch({
+        path: `/weather`,
+        method: "GET",
+      });
+
+      setWeeklyForecast(response);
+      console.log(response);
+    };
+    fetchData(); // 비동기 함수 호출
+  }, []);
 
   return (
     <div className="Home">
@@ -61,8 +77,26 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="container2">
+      {/* <div className="container2">
         <ToDoList />
+      </div> */}
+      <div className="weather-forecast">
+        {weeklyForecast.map((day, index) => (
+          <div key={index} className="weather-day">
+            <div className="date">{day.date}</div>
+            <div className="temp-range">{`${day.weather[0].temperature.lowest}° / ${day.weather[0].temperature.highest}°`}</div>
+            <div className="rain-chance">{`Rain: ${day.weather[0].rainfall}% / ${day.weather[1].rainfall}%`}</div>
+            <i
+              className={`ico ico_wt${day.weather[0].weatherCode}`} // 첫 번째 시간대의 weatherCode 사용
+              data-tooltip={day.weather[0].weatherDescription} // 첫 번째 시간대의 weatherDescription 사용
+            />
+            <i
+              className={`ico ico_wt${day.weather[1].weatherCode}`} // 첫 번째 시간대의 weatherCode 사용
+              data-tooltip={day.weather[1].weatherDescription} // 첫 번째 시간대의 weatherDescription 사용
+            />
+            <span className="blind">{day.weather[0].weatherDescription}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
