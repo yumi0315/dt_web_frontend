@@ -84,8 +84,10 @@ h4 {
 
 .weather-forecast {
   display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
+  justify-content: space-between; /* 내부 아이템 간의 간격을 유지 */
+  width: 100%;
+  max-width: 800px; /* 원하는 너비로 제한 가능 */
+  margin: 35px auto 0 auto; /* 수평 중앙 정렬 */
 }
 
 .weather-day {
@@ -97,22 +99,22 @@ h4 {
 }
 
 .date {
-  font-size: 17px;
+  font-size: 18px;
   color: rgb(101, 104, 104);
 }
 
 .temp-range {
-  font-size: 18px;
+  font-size: 19px;
   margin: 5px 0;
   color: rgb(100, 100, 240);
 }
 .highest-temp {
   color: red;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: bold;
 }
 .rain-chance {
-  font-size: 14px;
+  font-size: 15px;
   margin: 5px 0;
   color: rgb(100, 100, 240);
   font-weight: bold;
@@ -120,10 +122,10 @@ h4 {
 
 .ico {
   display: inline-block;
-  width: 60px; /* 원하는 크기로 설정 */
-  height: 60px; /* 원하는 크기로 설정 */
+  width: 66px; /* 원하는 크기로 설정 */
+  height: 66px; /* 원하는 크기로 설정 */
   background-repeat: no-repeat;
-  background-size: 238px 204px; /* 원본 크기로 유지 */
+  background-size: 64px 60px; /* 원본 크기로 유지 */
   background-position: center; /* 배경 이미지를 중앙에 배치 */
 }
 
@@ -133,7 +135,7 @@ h4 {
 }
 
 .ico_wt5 {
-  background-image: url("../../public/weathericons/Partly_cloudy.png");
+  background-image: url("../../public/weathericons/partly_cloudy.png");
   background-repeat: no-repeat;
 }
 

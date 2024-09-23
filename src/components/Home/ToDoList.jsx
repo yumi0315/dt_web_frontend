@@ -121,7 +121,7 @@ const ToDoList = () => {
       </div>
       <List
         style={{
-          maxHeight: "430px", // 최대 높이 설정
+          maxHeight: "435px", // 최대 높이 설정
           overflowY: "auto", // 스크롤바 활성화
         }}
       >

@@ -44,7 +44,7 @@ const Home = () => {
               src="/First.jpg"
               alt="First"
               className="IMG"
-              style={{ width: "255px", height: "255px" }}
+              style={{ width: "250px", height: "250px" }}
             />
             <div className="text">
               <h4>20%</h4>
@@ -56,7 +56,7 @@ const Home = () => {
               src="/Second.jpg"
               alt="Second"
               className="IMG"
-              style={{ width: "255px", height: "255px" }}
+              style={{ width: "250px", height: "250px" }}
             />
             <div className="text">
               <h4>10%</h4>
@@ -68,7 +68,7 @@ const Home = () => {
               src="/Third.jpg"
               alt="Third"
               className="IMG"
-              style={{ width: "255px", height: "255px" }}
+              style={{ width: "250px", height: "250px" }}
             />
             <div className="text">
               <h4>0.5%</h4>
