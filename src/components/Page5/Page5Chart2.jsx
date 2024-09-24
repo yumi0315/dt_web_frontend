@@ -49,6 +49,13 @@ function Page5Chart2() {
     "rgba(54, 162, 235, 0.5)",
     "rgba(75, 192, 192, 0.5)",
   ];
+
+  const borderColor = [
+    "rgba(255, 99, 132, 1)",
+    "rgba(54, 162, 235, 1)",
+    "rgba(75, 192, 192, 1)",
+  ];
+
   let maxNum = [Number.MIN_SAFE_INTEGER, Number.MIN_SAFE_INTEGER];
 
   const datasets = [
@@ -59,6 +66,8 @@ function Page5Chart2() {
         return item.total_count;
       }),
       backgroundColor: color[1],
+      borderColor: borderColor[1],
+      borderWidth: 0.5,
       yAxisID: "y",
     },
     {
@@ -69,6 +78,8 @@ function Page5Chart2() {
         return item.defect_count;
       }),
       backgroundColor: color[0],
+      borderColor: borderColor[0],
+      borderWidth: 0.5,
       yAxisID: "y1",
     },
   ];

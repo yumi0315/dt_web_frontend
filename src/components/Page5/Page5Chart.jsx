@@ -6,15 +6,12 @@ ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
 const Page5Chart = ({ chartData, onClick }) => {
   const pastelColors = [
-    "#F8BBD0", // Light Pink
-    "#F4B9A1", // Light Coral
-    "#F7E5D3", // Light Peach
-    "#D0E6F4", // Light Blue
-    "#C4E1C1", // Light Mint Green
-    "#E6D0C4", // Light Tan
-    "#DCE4F0", // Light Periwinkle
-    "#F5F3F5", // Very Light Gray
-    "#C3E1C3", // Pale Olive Green
+    "rgba(255, 99, 132, 0.5)", // 연한 핑크색
+    "rgba(54, 162, 235, 0.5)", // 연한 파란색
+    "rgba(75, 192, 192, 0.5)", // 연한 청록색
+    "rgba(153, 102, 255, 0.5)", // 연한 보라색
+    "rgba(255, 206, 86, 0.5)", // 연한 노란색
+    "rgba(255, 159, 64, 0.5)", // 연한 오렌지색
   ];
   const filterData = chartData
     .sort((a, b) => b.dep_defect_count - a.dep_defect_count)
@@ -45,6 +42,7 @@ const Page5Chart = ({ chartData, onClick }) => {
         data: filterData.dep_defect_count.splice(0, length),
         backgroundColor: pastelColors.slice(0, length),
         borderColor: pastelColors.slice(0, length),
+        borderWidth: 0.65,
       },
     ],
   };
