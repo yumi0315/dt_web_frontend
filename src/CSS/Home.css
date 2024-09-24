@@ -68,8 +68,38 @@
 }
 
 .hyperlink {
-  width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
 }
+
+.hyperlink-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #3333;
+  border-top: 0px;
+}
+
+.hyperlink .hyperlink-box:first-child {
+  border-top: 1px solid #3333;
+}
+
+.hyperlink-img {
+  margin: 5px;
+  margin-right: 10px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
 h2 {
   font-weight: bold;
   font-family: Spoqa-Bold;
@@ -87,7 +117,7 @@ h4 {
   justify-content: space-between; /* 내부 아이템 간의 간격을 유지 */
   width: 100%;
   max-width: 800px; /* 원하는 너비로 제한 가능 */
-  margin: 35px auto 0 auto; /* 수평 중앙 정렬 */
+  margin: 70px auto 0 auto; /* 수평 중앙 정렬 */
 }
 
 .weather-day {
@@ -141,5 +171,15 @@ h4 {
 
 .ico_wt1 {
   background-image: url("../../public/weathericons/sunny.png");
+  background-repeat: no-repeat;
+}
+
+.ico_wt9 {
+  background-image: url("../../public/weathericons/rainy.png");
+  background-repeat: no-repeat;
+}
+
+.ico_wt22 {
+  background-image: url("../../public/weathericons/sunnyrainy.png");
   background-repeat: no-repeat;
 }

@@ -101,33 +101,59 @@ const Home = () => {
           ))}
         </div>
       </div>
-      {/* <Box className="hyperlink">
-          <a
-            href="https://www.google.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Google
-          </a>
-          <br />
-          <a
-            href="https://www.naver.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Naver
-          </a>
-          <br />
-          <a
-            href="http://www.samsungshi.com/Ko/Default.aspx"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Samsung Heavy Industries
-          </a>
-        </Box> */}
-
-      <ToDoList />
+      <div className="HomeContainer2">
+        <div className="hyperlink">
+          <div className="hyperlink-box">
+            <img
+              src="/google.png"
+              alt="google"
+              className="hyperlink-img"
+              style={{ width: "50px", height: "50px" }}
+            />
+            <a
+              id="google-mail"
+              href="https://www.google.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google
+            </a>
+          </div>
+          <div className="hyperlink-box">
+            <img
+              src="/knox.png"
+              alt="knox"
+              className="hyperlink-img"
+              style={{ width: "50px", height: "50px" }}
+            />
+            <a
+              id="naver"
+              href="https://www.naver.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Naver
+            </a>
+          </div>
+          <div className="hyperlink-box">
+            <img
+              src="/samsung.png"
+              alt="samsung"
+              className="hyperlink-img"
+              style={{ width: "50px", height: "50px" }}
+            />
+            <a
+              id="samsung"
+              href="http://www.samsungshi.com/Ko/Default.aspx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Samsung Heavy Industries
+            </a>
+          </div>
+        </div>
+        <ToDoList />
+      </div>
     </div>
   );
 };
