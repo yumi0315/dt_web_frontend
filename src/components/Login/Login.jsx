@@ -16,8 +16,8 @@ const Login = ({ onLoginSuccess }) => {
   const [message, setMessage] = useState("");
 
   // 하드코딩된 사용자 정보
-  const validId = "user";
-  const validPassword = "123";
+  const validId = "20190203";
+  const validPassword = "20190203";
 
   // 로그인 처리 함수
   const handleLogin = (event) => {
@@ -47,17 +47,16 @@ const Login = ({ onLoginSuccess }) => {
         <form onSubmit={handleLogin}>
           <div class="login">
             <TextField
-              id="outlined-basic"
+              id="id"
               label="사번 또는 아이디 입력"
-              variant="outlined"
               value={id}
               onChange={(e) => setId(e.target.value)}
               required
               sx={{
                 //height 및 width 변경
                 "& .MuiInputBase-root": {
-                  height: 48,
-                  width: 302,
+                  height: 56,
+                  width: 382,
                 },
               }}
             />
@@ -65,6 +64,7 @@ const Login = ({ onLoginSuccess }) => {
           <div class="login">
             <TextField
               variant="outlined"
+              type="password"
               id="password"
               label="비밀번호 : 8-12자리 입력"
               value={password}
@@ -73,8 +73,8 @@ const Login = ({ onLoginSuccess }) => {
               sx={{
                 //height 및 width 변경
                 "& .MuiInputBase-root": {
-                  height: 48,
-                  width: 302,
+                  height: 56,
+                  width: 382,
                 },
               }}
             />

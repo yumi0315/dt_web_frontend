@@ -14,7 +14,7 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [isLogin, setIsLogin] = useState(true); //임의로 true를 주고 코드를 작성. false로 수정해야 함.
+  const [isLogin, setIsLogin] = useState(false); //임의로 true를 주고 코드를 작성. false로 수정해야 함.
 
   const handleLoginSuccess = () => {
     setIsLogin(true);
