@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import Table6 from "./Table6";
 import { Box } from "@mui/material";
 import "../../CSS/page6.css";
-import Apple from "./apple";
+import Tags from "./Tags";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import dayjs from "dayjs";
 import { customFetch } from "../custom/customFetch";
 import Contact from "./Contact";
+import DatePicker6 from "./DatePicker6";
 
 const Page6 = () => {
   const [selectedOption, setSelectedOption] = useState("LNG");
@@ -49,14 +50,17 @@ const Page6 = () => {
             alignItems: "center",
           }}
         >
-          <Apple
-            selectedOption={selectedOption}
-            handleChange={handleChange}
-            startdate={startdate}
-            setStartdate={setStartdate}
-            enddate={enddate}
-            setEnddate={setEnddate}
-          />
+          <div className="Page6Header">
+            <Tags />
+            <DatePicker6
+              selectedOption={selectedOption}
+              handleChange={handleChange}
+              startdate={startdate}
+              setStartdate={setStartdate}
+              enddate={enddate}
+              setEnddate={setEnddate}
+            />
+          </div>
           <Table6 tableData={data} />
         </Box>
         <div className="Contact">

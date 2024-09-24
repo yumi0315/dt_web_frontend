@@ -1,21 +1,27 @@
 .Home {
   display: flex;
-  width: 85%;
+  width: 90%;
   padding: 60px 0;
 }
 
 .HomeContainer1 {
   display: flex;
   flex-direction: column;
-  width: 60%;
-  padding: 20px;
+  width: 65%;
+  padding: 5px;
 }
-
+.Box {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 20px;
+  z-index: 2;
+}
 .HomeContainer2 {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  padding: 20px;
+  width: 35%;
+  padding: 5px;
 }
 
 @font-face {
@@ -27,23 +33,12 @@
   src: url("../font/SpoqaHanSansNeo-Bold.ttf") format("truetype");
 }
 
-/* .Title {
-  width: 500px;
-  text-align: left;
-  margin: 10px;
-  height: 50px;
-} */
-
-.Information {
-  width: 500px;
-  text-align: left;
-}
 .Link {
   display: flex;
   flex-direction: row;
-  gap: 40px;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding-top: 40px;
 }
 .IMG {
   opacity: 0.4;
@@ -63,7 +58,7 @@
   font-size: x-large;
   text-align: center;
   width: 100%;
-  color: white;
+  /* color: white; */
   font-family: Spoqa-light;
 }
 
@@ -71,19 +66,26 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 25px;
+  margin-top: 10px;
 }
 
 .hyperlink-box {
   width: 100%;
   display: flex;
   align-items: center;
-  border: 1px solid #3333;
-  border-top: 0px;
+  border-bottom: 1px solid #3333;
+  padding: 10px 0px;
+}
+.hyperlink-box:last-child {
+  border: 0;
 }
 
-.hyperlink .hyperlink-box:first-child {
-  border-top: 1px solid #3333;
+.hyperlink {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #3333;
+  padding: 0 10px;
+  width: 95%;
 }
 
 .hyperlink-img {
@@ -103,29 +105,37 @@ a:visited {
 h2 {
   font-weight: bold;
   font-family: Spoqa-Bold;
+  /* text-align: center; */
 }
 h1 {
   font-family: Spoqa-Bold;
 }
-h4 {
-  font-family: Spoqa-light;
-  font-weight: 400;
-}
 
+.weaherCon {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #3333;
+  margin-top: 10px; /* 수평 중앙 정렬 */
+  max-width: 1100px; /* 원하는 너비로 제한 가능 */
+}
 .weather-forecast {
   display: flex;
   justify-content: space-between; /* 내부 아이템 간의 간격을 유지 */
   width: 100%;
-  max-width: 800px; /* 원하는 너비로 제한 가능 */
-  margin: 70px auto 0 auto; /* 수평 중앙 정렬 */
+  padding-bottom: 20px;
 }
 
 .weather-day {
   display: flex;
-  width: 140px;
-  height: 160px;
+  width: 135px;
+  height: 170.5px;
   flex-direction: column;
   align-items: center;
+  border-right: 1px solid #3333;
+  padding: 15px;
+}
+.weather-day:last-child {
+  border-right: 0;
 }
 
 .date {
@@ -182,4 +192,14 @@ h4 {
 .ico_wt22 {
   background-image: url("../../public/weathericons/sunnyrainy.png");
   background-repeat: no-repeat;
+}
+.Summary {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #3333;
+  padding-bottom: 20px;
+  height: 349px;
+  background-image: url("../../public/First.jpg");
+  opacity: 0.4;
+  filter: brightness(50%); /* 검은색 */
 }

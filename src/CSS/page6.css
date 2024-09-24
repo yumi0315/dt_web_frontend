@@ -98,3 +98,9 @@ main {
   margin: 10px 9px;
   gap: 5px;
 }
+.Page6Header {
+  display: flex;
+  flex-direction: row;
+  gap: 690px;
+  margin: 0 0 20px 0;
+}

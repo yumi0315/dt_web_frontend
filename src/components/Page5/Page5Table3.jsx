@@ -95,7 +95,7 @@ function Page5Table3() {
                 className={classes.tableCell}
                 style={{ backgroundColor: "#4A88DB" }}
               >
-                구분
+                직반장
               </TableCell>
               <TableCell
                 align="center"
