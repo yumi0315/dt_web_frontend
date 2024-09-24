@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   },
   tableRow: {
     height: 40,
-    background: "#4A88DB",
+    background: "#90a4ae",
   },
   tableCell: {
     flexGrow: 1, // 모든 셀이 동일한 비율로 크기 조정
@@ -29,7 +29,7 @@ const useStyles = makeStyles({
       textAlign: "center",
       borderRight: "1px solid #D5DDE4",
       fontFamily: "Spoqa-bold",
-      color: "#edeeff",
+      color: "#e9ecef",
 
       "&:last-child": {
         borderRight: "0px",

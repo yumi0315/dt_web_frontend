@@ -9,7 +9,7 @@ function Table6({ tableData }) {
   const theme = createTheme({
     palette: {
       background: {
-        default: "#4A88DB",
+        default: "#90a4ae",
       },
     },
   });
@@ -91,7 +91,8 @@ function Table6({ tableData }) {
           sx={{
             fontFamily: "Spoqa-Mid",
             "& .MuiDataGrid-columnHeaders": {
-              color: "#edeeff",
+              color: "#e9ecef",
+              fontFamily: "Spoqa-Bold",
             },
             "& .MuiDataGrid-cell": {
               display: "flex",

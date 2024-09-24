@@ -91,7 +91,7 @@ const ToDoList = () => {
         border: "1px solid #3333",
       }}
     >
-      <h2 style={{ margin: "10px" }}>ToDo</h2>
+      <h2 style={{ margin: "10px" }}>일정 관리</h2>
       <div
         style={{
           display: "flex",
@@ -156,7 +156,13 @@ const ToDoList = () => {
                   fullWidth
                 />
               ) : (
-                <ListItemText primary={task.text} />
+                <ListItemText
+                  primary={task.text}
+                  style={{
+                    textDecoration: task.checked ? "line-through" : "none",
+                    color: task.checked ? "gray" : "black",
+                  }}
+                />
               )}
             </div>
             <div style={{ display: "flex" }}>
@@ -171,7 +177,7 @@ const ToDoList = () => {
               ) : (
                 <IconButton
                   onClick={() => toggleEdit(index)}
-                  sx={{ width: "40px", color: "red" }}
+                  sx={{ width: "40px", color: "rgba(184,58,62, 0.8)" }}
                 >
                   <EditIcon />
                 </IconButton>

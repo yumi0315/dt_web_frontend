@@ -33,6 +33,7 @@ const Info = () => {
             fontSize: "14px",
             boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
             boxSizing: "border-box",
+            border: "1px solid #3333",
           }}
         >
           C1: 용입불량 <br></br>C2: 용합불량 <br></br>C3: 공극률 <br></br>C4:

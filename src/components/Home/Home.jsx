@@ -32,60 +32,27 @@ const Home = () => {
       <div className="HomeContainer1">
         <div className="Summary">
           <div className="Title">
-            <h2 style={{ margin: "20px" }}>공정현황 대시보드</h2>
+            <h2 style={{ margin: "20px", position: "relative", zIndex: "1" }}>
+              공정현황 대시보드
+            </h2>
           </div>
-          {/* <div className="Information">
-          <h4>
-            최종 개정도 관리, 개정도 작업 현황, 용접률 불량 관리를 관리합니다.
-          </h4>
-        </div> */}
           <div className="Link">
             <div className="Box" onClick={() => handleClick("/Page2")}>
-              {/* <img
-                src="/First.jpg"
-                alt="First"
-                className="IMG"
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  borderRadius: "20px",
-                }}
-              /> */}
               <div className="text">
                 <h2>8.55%</h2>
-                설계 변경 미완료율
+                <p className="info"> 설계 변경 미완료율</p>
               </div>
             </div>
             <div className="Box" onClick={() => handleClick("/Page3")}>
-              {/* <img
-                src="/Second.jpg"
-                alt="Second"
-                className="IMG"
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  borderRadius: "20px",
-                }}
-              /> */}
               <div className="text">
                 <h2>12.8%</h2>
-                DP 작업 미완료율{" "}
+                <p className="info"> DP 작업 미완료율</p>
               </div>
             </div>
             <div className="Box" onClick={() => handleClick("/Page5")}>
-              {/* <img
-                src="/Third.jpg"
-                alt="Third"
-                className="IMG"
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  borderRadius: "20px",
-                }}
-              /> */}
               <div className="text">
                 <h2>0.63%</h2>
-                용접 불량률{" "}
+                <p className="info">용접 불량률</p>
               </div>
             </div>
           </div>
@@ -129,7 +96,7 @@ const Home = () => {
           <h2 style={{ margin: "20px  0 0px 10px" }}>SSO</h2>
           <div className="hyperlink-box">
             <img
-              src="/google.png"
+              src="/samsung.png"
               alt="google"
               className="hyperlink-img"
               style={{ width: "50px", height: "50px", borderRadius: "15px" }}
@@ -140,39 +107,39 @@ const Home = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Email
+              Symphony
             </a>
           </div>
           <div className="hyperlink-box">
             <img
-              src="/knox.png"
+              src="/yardview.png"
+              alt="yradview"
+              className="hyperlink-img"
+              style={{ width: "50px", height: "50px", borderRadius: "15px" }}
+            />
+            <a
+              id="YardView"
+              href="https://www.yardview.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Yard View
+            </a>
+          </div>
+          <div className="hyperlink-box">
+            <img
+              src="/Knox.jpg"
               alt="knox"
               className="hyperlink-img"
               style={{ width: "50px", height: "50px", borderRadius: "15px" }}
             />
             <a
-              id="naver"
-              href="https://www.naver.com/"
+              id="Knox"
+              href="https://www.samsungknox.com/ko"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Noxs
-            </a>
-          </div>
-          <div className="hyperlink-box">
-            <img
-              src="/samsung.png"
-              alt="samsung"
-              className="hyperlink-img"
-              style={{ width: "50px", height: "50px", borderRadius: "15px" }}
-            />
-            <a
-              id="samsung"
-              href="http://www.samsungshi.com/Ko/Default.aspx"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              SHI Harmony
+              Knox
             </a>
           </div>
         </div>

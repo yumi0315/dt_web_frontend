@@ -10,7 +10,11 @@ export default function Tags() {
       multiple
       id="tags-outlined"
       options={ShipType}
-      sx={{ width: "350px", height: "56px", backgroundColor: "white" }}
+      sx={{
+        width: "350px",
+        height: "56px",
+        backgroundColor: "white",
+      }}
       getOptionLabel={(option) => option.title}
       defaultValue={[ShipType[0], ShipType[1], ShipType[2]]}
       filterSelectedOptions

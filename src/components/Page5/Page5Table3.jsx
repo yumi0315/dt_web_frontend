@@ -29,7 +29,7 @@ const useStyles = makeStyles({
       textAlign: "center",
       borderRight: "1px solid #D5DDE4",
       fontFamily: "Spoqa-bold",
-      color: "#edeeff",
+      color: "#e9ecef",
 
       "&:last-child": {
         borderRight: "0px",
@@ -93,28 +93,28 @@ function Page5Table3() {
               <TableCell
                 align="center"
                 className={classes.tableCell}
-                style={{ backgroundColor: "#4A88DB" }}
+                style={{ backgroundColor: "#90a4ae" }}
               >
                 직반장
               </TableCell>
               <TableCell
                 align="center"
                 className={classes.tableCell}
-                style={{ backgroundColor: "#4A88DB" }}
+                style={{ backgroundColor: "#90a4ae" }}
               >
                 보류
               </TableCell>
               <TableCell
                 align="center"
                 className={classes.tableCell}
-                style={{ backgroundColor: "#4A88DB" }}
+                style={{ backgroundColor: "#90a4ae" }}
               >
                 승인
               </TableCell>
               <TableCell
                 align="center"
                 className={classes.tableCell}
-                style={{ backgroundColor: "#4A88DB" }}
+                style={{ backgroundColor: "#90a4ae" }}
               >
                 불량률
               </TableCell>

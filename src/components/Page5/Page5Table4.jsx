@@ -83,7 +83,7 @@ function Page5Table4({ tableData }) {
                   index === 0
                     ? {
                         color: "#edeeff",
-                        backgroundColor: "#20439D",
+                        backgroundColor: "#6a7686",
                         fontWeight: "bold",
                       }
                     : {}
@@ -94,7 +94,7 @@ function Page5Table4({ tableData }) {
                     className={classes.tableCell}
                     rowSpan={tableData1.length}
                     style={{
-                      backgroundColor: "#20439D",
+                      backgroundColor: "#6a7686",
                       color: "#edeeff",
                       fontWeight: "bold",
                     }}

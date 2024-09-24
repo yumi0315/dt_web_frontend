@@ -23,15 +23,20 @@ const menuItems = [
   },
   {
     id: 2,
-    text: "개정 도면 실시간 모니터링",
+    text: "최종 개정도 모니터링",
     path: "/page1",
     icon: faDesktop,
   },
   { id: 3, text: "설계변경 요청 관리", path: "/page2", icon: faFileInvoice },
-  { id: 4, text: "구조 생산 성과평가", path: "/page3", icon: faCube },
-  { id: 5, text: "의장 공정 생산 평가", path: "/page4", icon: faWrench },
-  { id: 6, text: "용접품질관리", path: "/page5", icon: faFireFlameCurved },
-  { id: 7, text: "작업 가능 기간 관리", path: "/page6", icon: faCalendarDays },
+  { id: 4, text: "구조 생산 DP 현황", path: "/page3", icon: faCube },
+  { id: 5, text: "의장 공정 DP 현황", path: "/page4", icon: faWrench },
+  { id: 6, text: "용접 품질관리", path: "/page5", icon: faFireFlameCurved },
+  {
+    id: 7,
+    text: "용접 작업 가능 기간 관리",
+    path: "/page6",
+    icon: faCalendarDays,
+  },
 ];
 
 // 무작위 명언 텍스트 배열
