@@ -53,6 +53,6 @@ img {
   display: flex;
   justify-content: space-between;
   .sub {
-    margin: 10px 20px;
+    margin: 0px 5px 5px 20px;
   }
 }

@@ -75,7 +75,7 @@ function Page5Table3() {
         width: "100%",
         display: "flex",
         justifyContent: "center",
-        padding: "3px 0 ",
+        padding: "3px 0px 10px ",
       }}
     >
       <TableContainer

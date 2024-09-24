@@ -11,30 +11,38 @@ const Page5Chart = ({ chartData, onClick }) => {
     "#F7E5D3", // Light Peach
     "#D0E6F4", // Light Blue
     "#C4E1C1", // Light Mint Green
-    "#F0E5CF", // Light Beige
     "#E6D0C4", // Light Tan
     "#DCE4F0", // Light Periwinkle
     "#F5F3F5", // Very Light Gray
     "#C3E1C3", // Pale Olive Green
   ];
-  const filterData = chartData.reduce(
-    (acc, cur) => {
-      acc.dep.push(cur.dep);
-      acc.dep_defect_count.push(cur.dep_defect_count);
+  const filterData = chartData
+    .sort((a, b) => b.dep_defect_count - a.dep_defect_count)
+    .reduce(
+      (acc, cur, idx) => {
+        if (idx < 5) {
+          acc.dep.push(cur.dep);
+          acc.dep_defect_count.push(cur.dep_defect_count);
+        } else {
+          if (!acc.dep.includes("기타")) {
+            acc.dep.push("기타");
+            acc.dep_defect_count.push(0); // 초기값 설정
+          }
+          acc.dep_defect_count[5] += cur.dep_defect_count;
+        }
+        return acc;
+      },
+      { dep: [], dep_defect_count: [] }
+    );
 
-      return acc;
-    },
-    { dep: [], dep_defect_count: [] }
-  );
-
-  const length = filterData.dep.length > 5 ? 5 : filterData.dep.length;
+  const length = filterData.dep.length;
 
   const Data = {
-    labels: filterData.dep.splice(0, 5),
+    labels: filterData.dep.splice(0, length),
     datasets: [
       {
         label: "보류건수",
-        data: filterData.dep_defect_count.splice(0, 5),
+        data: filterData.dep_defect_count.splice(0, length),
         backgroundColor: pastelColors.slice(0, length),
         borderColor: pastelColors.slice(0, length),
       },
