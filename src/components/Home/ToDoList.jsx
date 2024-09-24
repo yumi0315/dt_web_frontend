@@ -85,13 +85,13 @@ const ToDoList = () => {
         width: "100%", // 부모 요소의 30%만 차지하도록 설정
         margin: "0 auto", // 중앙 정렬
         padding: "10px", // 패딩 추가
+        backgroundColor: "white",
+        height: "370px",
+        borderRadius: "10px",
+        border: "1px solid #3333",
       }}
     >
-      <h1
-        style={{ textAlign: "center", marginBottom: "25px", marginTop: "30px" }}
-      >
-        TODO
-      </h1>
+      <h2 style={{ margin: "10px" }}>ToDo</h2>
       <div
         style={{
           display: "flex",
@@ -100,7 +100,6 @@ const ToDoList = () => {
         }}
       >
         <TextField
-          label="TODO"
           variant="outlined"
           fullWidth
           value={inputValue}
@@ -124,7 +123,7 @@ const ToDoList = () => {
       </div>
       <List
         style={{
-          maxHeight: "300px", // 최대 높이 설정
+          maxHeight: "220px", // 최대 높이 설정
           overflowY: "auto", // 스크롤바 활성화
         }}
       >
@@ -172,7 +171,7 @@ const ToDoList = () => {
               ) : (
                 <IconButton
                   onClick={() => toggleEdit(index)}
-                  sx={{ width: "40px", color: "gray" }}
+                  sx={{ width: "40px", color: "red" }}
                 >
                   <EditIcon />
                 </IconButton>
