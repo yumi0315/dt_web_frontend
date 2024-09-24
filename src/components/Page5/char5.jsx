@@ -66,7 +66,7 @@ function ChartBox5() {
         }}
       >
         <div className="Page5Header">
-          <p className="sub">용접 방법별 보류 상태</p>
+          <p className="sub">용접 방법별 보류 현황</p>
           <Info />
         </div>
         <Box
@@ -107,7 +107,7 @@ function ChartBox5() {
         </Box>
         <div className="PartTable">
           <p className="sub" style={{ flex: "none" }}>
-            부서별 용접 불량 상태
+            부서별 용접 보류 현황
           </p>
           {tableData && <Page5Table4 tableData={tableData} />}
         </div>
@@ -126,15 +126,15 @@ function ChartBox5() {
         }}
       >
         <div className="Page5Header">
-          <p className="sub">업체별 용접 상태</p>
+          <p className="sub">업체별 용접 현황</p>
         </div>
         <Page5Table2 />
         <div className="Page5Header">
-          <p className="sub">직반장별 용접 상태</p>
+          <p className="sub">직반장별 용접 현황</p>
         </div>
         <Page5Table3 />
         <div className="Page5Header">
-          <p className="sub">선종별 용접 상태</p>
+          <p className="sub">선종별 용접 현황</p>
         </div>
         <Page5Chart2 />
       </Box>
